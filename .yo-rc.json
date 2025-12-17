@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "baseName": "smartAsset",
+    "clientFramework": "react",
+    "clientTestFrameworks": [],
+    "clientTheme": "sketchy",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1765984570309,
+    "enableTranslation": true,
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "languages": ["fr", "ar-ly", "en", "es"],
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "fr",
+    "skipServer": true,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}
