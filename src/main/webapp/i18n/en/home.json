@@ -13,6 +13,40 @@
       "chat": "JHipster public chat room",
       "follow": "follow @jhipster on Twitter"
     },
+    "dashboard": {
+      "title": "Smart Asset Core",
+      "subtitle": "Industrial asset supervision – locations, events and maintenance",
+      "logged": "You are logged in as {{username}}"
+    },
+    "kpi": {
+      "assets": "Assets",
+      "assets.total": "Total registered",
+      "operational": "Operational",
+      "operational.label": "In service",
+      "alerts": "Alerts",
+      "alerts.label": "To be monitored",
+      "maintenance": "Maintenance",
+      "maintenance.label": "Open interventions"
+    },
+    "events": {
+      "title": "Latest events",
+      "sample.entry": "Asset entry – Warehouse zone",
+      "sample.exit": "Asset exit – Maintenance workshop",
+      "sample.alert": "Temperature alert – Compressor",
+      "sample.movement": "Unplanned movement – Critical area"
+    },
+    "shortcuts": {
+      "title": "Quick access",
+      "assets": "Asset management",
+      "zones": "Zones & locations",
+      "locationEvents": "Location events",
+      "maintenance": "Maintenance & interventions",
+      "documents": "Technical documentation"
+    },
+    "login": {
+      "required": "Please sign in to access the application features.",
+      "link": "Sign in"
+    },
     "like": "If you like JHipster, don't forget to give us a star on",
     "github": "GitHub"
   }

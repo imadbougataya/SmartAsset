@@ -1,0 +1,28 @@
+{
+  "smartassetcoreApp": {
+    "sensorMeasurement": {
+      "home": {
+        "title": "Sensor Measurements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sensor Measurement",
+        "createOrEditLabel": "Create or edit a Sensor Measurement",
+        "notFound": "No Sensor Measurements found"
+      },
+      "created": "A new Sensor Measurement is created with identifier {{ param }}",
+      "updated": "A Sensor Measurement is updated with identifier {{ param }}",
+      "deleted": "A Sensor Measurement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sensor Measurement {{ id }}?"
+      },
+      "detail": {
+        "title": "Sensor Measurement"
+      },
+      "id": "ID",
+      "measuredAt": "Measured At",
+      "value": "Value",
+      "quality": "Quality",
+      "source": "Source",
+      "sensor": "Sensor"
+    }
+  }
+}

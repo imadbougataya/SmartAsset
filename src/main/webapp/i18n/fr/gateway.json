@@ -1,0 +1,34 @@
+{
+  "smartassetcoreApp": {
+    "gateway": {
+      "home": {
+        "title": "Gateways",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Gateway",
+        "createOrEditLabel": "Créer ou éditer un Gateway",
+        "notFound": "Aucun Gateway trouvé"
+      },
+      "created": "Un nouveau Gateway a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Gateway avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Gateway avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Gateway {{ id }} ?"
+      },
+      "detail": {
+        "title": "Gateway"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "vendor": "Vendor",
+      "model": "Model",
+      "macAddress": "Mac Address",
+      "ipAddress": "Ip Address",
+      "installedAt": "Installed At",
+      "active": "Active",
+      "locationEvents": "Location Events",
+      "site": "Site",
+      "zone": "Zone"
+    }
+  }
+}

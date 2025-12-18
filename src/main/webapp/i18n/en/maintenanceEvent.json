@@ -1,0 +1,36 @@
+{
+  "smartassetcoreApp": {
+    "maintenanceEvent": {
+      "home": {
+        "title": "Maintenance Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Maintenance Event",
+        "createOrEditLabel": "Create or edit a Maintenance Event",
+        "notFound": "No Maintenance Events found"
+      },
+      "created": "A new Maintenance Event is created with identifier {{ param }}",
+      "updated": "A Maintenance Event is updated with identifier {{ param }}",
+      "deleted": "A Maintenance Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Maintenance Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Maintenance Event"
+      },
+      "id": "ID",
+      "maintenanceType": "Maintenance Type",
+      "status": "Status",
+      "requestedAt": "Requested At",
+      "plannedAt": "Planned At",
+      "startedAt": "Started At",
+      "finishedAt": "Finished At",
+      "title": "Title",
+      "description": "Description",
+      "technician": "Technician",
+      "downtimeMinutes": "Downtime Minutes",
+      "costAmount": "Cost Amount",
+      "notes": "Notes",
+      "asset": "Asset"
+    }
+  }
+}

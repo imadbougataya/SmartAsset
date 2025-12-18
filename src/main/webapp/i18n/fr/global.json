@@ -1,13 +1,26 @@
 {
   "global": {
-    "title": "SmartAsset",
+    "title": "Smartassetcore",
     "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
     "menu": {
       "home": "Accueil",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "site": "Site",
+        "productionLine": "Production Line",
+        "zone": "Zone",
+        "gateway": "Gateway",
+        "asset": "Asset",
+        "sensor": "Sensor",
+        "sensorMeasurement": "Sensor Measurement",
+        "maintenanceEvent": "Maintenance Event",
+        "document": "Document",
+        "documentLink": "Document Link",
+        "assetMovementRequest": "Asset Movement Request",
+        "locationEvent": "Location Event",
+        "systemEvent": "System Event"
       },
       "account": {
         "main": "Compte",

@@ -1,0 +1,28 @@
+{
+  "smartassetcoreApp": {
+    "sensorMeasurement": {
+      "home": {
+        "title": "SensorMeasurements",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Sensor Measurement",
+        "createOrEditLabel": "Créer ou éditer un Sensor Measurement",
+        "notFound": "Aucun Sensor Measurement trouvé"
+      },
+      "created": "Un nouveau Sensor Measurement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Sensor Measurement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Sensor Measurement avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Sensor Measurement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Sensor Measurement"
+      },
+      "id": "ID",
+      "measuredAt": "Measured At",
+      "value": "Value",
+      "quality": "Quality",
+      "source": "Source",
+      "sensor": "Sensor"
+    }
+  }
+}

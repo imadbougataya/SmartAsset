@@ -4,7 +4,6 @@ const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
 const sass = require('sass');
-const postcssRTLCSS = require('postcss-rtlcss');
 
 const utils = require('./utils.js');
 const commonConfig = require('./webpack.common.js');
@@ -36,11 +35,6 @@ module.exports = async options =>
             },
             {
               loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  plugins: [postcssRTLCSS()],
-                },
-              },
             },
             {
               loader: 'sass-loader',
@@ -103,7 +97,7 @@ module.exports = async options =>
         },
       ),
       new WebpackNotifierPlugin({
-        title: 'Smart Asset',
+        title: 'Smartassetcore',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     ].filter(Boolean),

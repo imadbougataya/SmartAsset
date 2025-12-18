@@ -1,0 +1,9 @@
+export enum TemperatureProbeType {
+  NONE = 'NONE',
+
+  PTC = 'PTC',
+
+  PT100 = 'PT100',
+
+  PT1000 = 'PT1000',
+}

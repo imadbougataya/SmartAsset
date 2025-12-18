@@ -1,0 +1,9 @@
+{
+  "smartassetcoreApp": {
+    "AssetType": {
+      "null": "",
+      "INDUSTRIAL_ASSET": "INDUSTRIAL_ASSET",
+      "NON_INDUSTRIAL_ASSET": "NON_INDUSTRIAL_ASSET"
+    }
+  }
+}

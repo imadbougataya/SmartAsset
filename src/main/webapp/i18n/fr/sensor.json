@@ -1,0 +1,33 @@
+{
+  "smartassetcoreApp": {
+    "sensor": {
+      "home": {
+        "title": "Sensors",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Sensor",
+        "createOrEditLabel": "Créer ou éditer un Sensor",
+        "notFound": "Aucun Sensor trouvé"
+      },
+      "created": "Un nouveau Sensor a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Sensor avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Sensor avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Sensor {{ id }} ?"
+      },
+      "detail": {
+        "title": "Sensor"
+      },
+      "id": "ID",
+      "sensorType": "Sensor Type",
+      "name": "Name",
+      "unit": "Unit",
+      "minThreshold": "Min Threshold",
+      "maxThreshold": "Max Threshold",
+      "installedAt": "Installed At",
+      "active": "Active",
+      "externalId": "External Id",
+      "measurements": "Measurements",
+      "asset": "Asset"
+    }
+  }
+}

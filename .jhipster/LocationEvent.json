@@ -1,0 +1,84 @@
+{
+  "annotations": {
+    "changelogDate": "20251217152059"
+  },
+  "applications": ["smartassetcore"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "source",
+      "fieldType": "LocationSource",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "BLE,GNSS,MANUAL"
+    },
+    {
+      "fieldName": "observedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "zoneConfidence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rssi",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "txPower",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "accuracyMeters",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "speedKmh",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "rawPayload",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "4000"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "LocationEvent",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "assetCode",
+      "otherEntityName": "asset",
+      "otherEntityRelationshipName": "locationEvents",
+      "relationshipName": "asset",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "code",
+      "otherEntityName": "zone",
+      "otherEntityRelationshipName": "locationEvents",
+      "relationshipName": "zone",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "code",
+      "otherEntityName": "gateway",
+      "otherEntityRelationshipName": "locationEvents",
+      "relationshipName": "gateway",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,18 @@
+{
+  "smartassetcoreApp": {
+    "SystemEntityType": {
+      "null": "",
+      "ASSET": "ASSET",
+      "LOCATION_EVENT": "LOCATION_EVENT",
+      "SENSOR": "SENSOR",
+      "SENSOR_MEASUREMENT": "SENSOR_MEASUREMENT",
+      "MAINTENANCE_EVENT": "MAINTENANCE_EVENT",
+      "MOVEMENT_REQUEST": "MOVEMENT_REQUEST",
+      "DOCUMENT": "DOCUMENT",
+      "ZONE": "ZONE",
+      "GATEWAY": "GATEWAY",
+      "USER": "USER",
+      "FORESIGHT": "FORESIGHT"
+    }
+  }
+}

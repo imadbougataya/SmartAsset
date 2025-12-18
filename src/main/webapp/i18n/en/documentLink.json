@@ -1,0 +1,28 @@
+{
+  "smartassetcoreApp": {
+    "documentLink": {
+      "home": {
+        "title": "Document Links",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Document Link",
+        "createOrEditLabel": "Create or edit a Document Link",
+        "notFound": "No Document Links found"
+      },
+      "created": "A new Document Link is created with identifier {{ param }}",
+      "updated": "A Document Link is updated with identifier {{ param }}",
+      "deleted": "A Document Link is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Document Link {{ id }}?"
+      },
+      "detail": {
+        "title": "Document Link"
+      },
+      "id": "ID",
+      "entityType": "Entity Type",
+      "entityId": "Entity Id",
+      "label": "Label",
+      "linkedAt": "Linked At",
+      "document": "Document"
+    }
+  }
+}

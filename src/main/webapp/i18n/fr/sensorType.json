@@ -1,0 +1,17 @@
+{
+  "smartassetcoreApp": {
+    "SensorType": {
+      "null": "",
+      "TEMPERATURE": "TEMPERATURE",
+      "VIBRATION": "VIBRATION",
+      "PRESSURE": "PRESSURE",
+      "CURRENT": "CURRENT",
+      "VOLTAGE": "VOLTAGE",
+      "OIL_LEVEL": "OIL_LEVEL",
+      "LIQUID_LEVEL": "LIQUID_LEVEL",
+      "HUMIDITY": "HUMIDITY",
+      "BLE_TAG": "BLE_TAG",
+      "GNSS_TRACKER": "GNSS_TRACKER"
+    }
+  }
+}

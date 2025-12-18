@@ -1,0 +1,7 @@
+export enum DocumentEntityType {
+  ASSET = 'ASSET',
+
+  MAINTENANCE_EVENT = 'MAINTENANCE_EVENT',
+
+  MOVEMENT_REQUEST = 'MOVEMENT_REQUEST',
+}

@@ -1,0 +1,11 @@
+{
+  "smartassetcoreApp": {
+    "MaintenanceType": {
+      "null": "",
+      "PREVENTIVE": "PREVENTIVE",
+      "CORRECTIVE": "CORRECTIVE",
+      "REVISION": "REVISION",
+      "INSPECTION": "INSPECTION"
+    }
+  }
+}

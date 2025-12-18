@@ -1,0 +1,36 @@
+{
+  "smartassetcoreApp": {
+    "locationEvent": {
+      "home": {
+        "title": "Location Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Location Event",
+        "createOrEditLabel": "Create or edit a Location Event",
+        "notFound": "No Location Events found"
+      },
+      "created": "A new Location Event is created with identifier {{ param }}",
+      "updated": "A Location Event is updated with identifier {{ param }}",
+      "deleted": "A Location Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Event"
+      },
+      "id": "ID",
+      "source": "Source",
+      "observedAt": "Observed At",
+      "zoneConfidence": "Zone Confidence",
+      "rssi": "Rssi",
+      "txPower": "Tx Power",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "accuracyMeters": "Accuracy Meters",
+      "speedKmh": "Speed Kmh",
+      "rawPayload": "Raw Payload",
+      "asset": "Asset",
+      "zone": "Zone",
+      "gateway": "Gateway"
+    }
+  }
+}

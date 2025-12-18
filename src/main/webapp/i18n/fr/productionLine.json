@@ -1,0 +1,27 @@
+{
+  "smartassetcoreApp": {
+    "productionLine": {
+      "home": {
+        "title": "ProductionLines",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Production Line",
+        "createOrEditLabel": "Créer ou éditer un Production Line",
+        "notFound": "Aucun Production Line trouvé"
+      },
+      "created": "Un nouveau Production Line a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Production Line avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Production Line avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Production Line {{ id }} ?"
+      },
+      "detail": {
+        "title": "Production Line"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "site": "Site"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "smartassetcoreApp": {
+    "systemEvent": {
+      "home": {
+        "title": "System Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new System Event",
+        "createOrEditLabel": "Create or edit a System Event",
+        "notFound": "No System Events found"
+      },
+      "created": "A new System Event is created with identifier {{ param }}",
+      "updated": "A System Event is updated with identifier {{ param }}",
+      "deleted": "A System Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete System Event {{ id }}?"
+      },
+      "detail": {
+        "title": "System Event"
+      },
+      "id": "ID",
+      "eventType": "Event Type",
+      "entityType": "Entity Type",
+      "entityId": "Entity Id",
+      "severity": "Severity",
+      "source": "Source",
+      "message": "Message",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "correlationId": "Correlation Id",
+      "payload": "Payload",
+      "asset": "Asset"
+    }
+  }
+}

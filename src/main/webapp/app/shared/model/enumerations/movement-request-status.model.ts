@@ -1,0 +1,15 @@
+export enum MovementRequestStatus {
+  DRAFT = 'DRAFT',
+
+  SUBMITTED = 'SUBMITTED',
+
+  SIGNING = 'SIGNING',
+
+  SIGNED = 'SIGNED',
+
+  REJECTED = 'REJECTED',
+
+  EXECUTED = 'EXECUTED',
+
+  CANCELLED = 'CANCELLED',
+}

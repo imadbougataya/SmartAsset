@@ -1,0 +1,36 @@
+{
+  "smartassetcoreApp": {
+    "assetMovementRequest": {
+      "home": {
+        "title": "Asset Movement Requests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset Movement Request",
+        "createOrEditLabel": "Create or edit a Asset Movement Request",
+        "notFound": "No Asset Movement Requests found"
+      },
+      "created": "A new Asset Movement Request is created with identifier {{ param }}",
+      "updated": "A Asset Movement Request is updated with identifier {{ param }}",
+      "deleted": "A Asset Movement Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset Movement Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset Movement Request"
+      },
+      "id": "ID",
+      "status": "Status",
+      "requestedAt": "Requested At",
+      "reason": "Reason",
+      "fromLocationLabel": "From Location Label",
+      "toLocationLabel": "To Location Label",
+      "esignWorkflowId": "Esign Workflow Id",
+      "esignStatus": "Esign Status",
+      "esignLastUpdate": "Esign Last Update",
+      "signedAt": "Signed At",
+      "executedAt": "Executed At",
+      "requestedBy": "Requested By",
+      "approvedBy": "Approved By",
+      "asset": "Asset"
+    }
+  }
+}

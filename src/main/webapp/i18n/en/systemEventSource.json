@@ -1,0 +1,13 @@
+{
+  "smartassetcoreApp": {
+    "SystemEventSource": {
+      "null": "",
+      "UI": "UI",
+      "API": "API",
+      "GATEWAY": "GATEWAY",
+      "ESIGN": "ESIGN",
+      "SCHEDULER": "SCHEDULER",
+      "SYSTEM": "SYSTEM"
+    }
+  }
+}

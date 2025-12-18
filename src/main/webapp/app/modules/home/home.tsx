@@ -2,8 +2,8 @@ import './home.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Alert, Col, Row, Card, CardBody, CardTitle } from 'reactstrap';
 import { Translate } from 'react-jhipster';
-import { Alert, Col, Row } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
 
@@ -11,89 +11,167 @@ export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
 
   return (
-    <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
-      <Col md="9">
-        <h1 className="display-4">
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
-        </h1>
-        <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
-        </p>
-        {account?.login ? (
-          <div>
+    <div className="home-dashboard">
+      {/* ================= HEADER ================= */}
+      <Row className="mb-4">
+        <Col>
+          <h1 className="display-6 mb-1">
+            <Translate contentKey="home.dashboard.title">Smart Asset Core</Translate>
+          </h1>
+          <p className="text-muted">
+            <Translate contentKey="home.dashboard.subtitle">Industrial asset supervision – locations, events and maintenance</Translate>
+          </p>
+        </Col>
+      </Row>
+
+      {/* ================= LOGIN INFO ================= */}
+      {account?.login && (
+        <Row className="mb-4">
+          <Col>
             <Alert color="success">
-              <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
-                You are logged in as user {account.login}.
-              </Translate>
+              <Translate contentKey="home.dashboard.logged" interpolate={{ username: account.login }} />
             </Alert>
-          </div>
-        ) : (
-          <div>
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
+          </Col>
+        </Row>
+      )}
 
+      {/* ================= KPIs ================= */}
+      <Row className="mb-4">
+        <Col md="3">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.kpi.assets">Assets</Translate>
+              </CardTitle>
+              <h2 className="text-ocp">128</h2>
+              <span className="text-muted">
+                <Translate contentKey="home.kpi.assets.total">Total registered</Translate>
+              </span>
+            </CardBody>
+          </Card>
+        </Col>
+
+        <Col md="3">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.kpi.operational">Operational</Translate>
+              </CardTitle>
+              <h2 className="text-success">112</h2>
+              <span className="text-muted">
+                <Translate contentKey="home.kpi.operational.label">In service</Translate>
+              </span>
+            </CardBody>
+          </Card>
+        </Col>
+
+        <Col md="3">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.kpi.alerts">Alerts</Translate>
+              </CardTitle>
+              <h2 className="text-warning">9</h2>
+              <span className="text-muted">
+                <Translate contentKey="home.kpi.alerts.label">To be monitored</Translate>
+              </span>
+            </CardBody>
+          </Card>
+        </Col>
+
+        <Col md="3">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.kpi.maintenance">Maintenance</Translate>
+              </CardTitle>
+              <h2 className="text-danger">7</h2>
+              <span className="text-muted">
+                <Translate contentKey="home.kpi.maintenance.label">Open interventions</Translate>
+              </span>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* ================= MAIN CONTENT ================= */}
+      <Row className="mb-4">
+        <Col md="6">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.events.title">Latest events</Translate>
+              </CardTitle>
+              <ul className="mb-0">
+                <li>
+                  <Translate contentKey="home.events.sample.entry">Asset entry – Warehouse zone</Translate>
+                </li>
+                <li>
+                  <Translate contentKey="home.events.sample.exit">Asset exit – Maintenance workshop</Translate>
+                </li>
+                <li>
+                  <Translate contentKey="home.events.sample.alert">Temperature alert – Compressor</Translate>
+                </li>
+                <li>
+                  <Translate contentKey="home.events.sample.movement">Unplanned movement – Critical area</Translate>
+                </li>
+              </ul>
+            </CardBody>
+          </Card>
+        </Col>
+
+        <Col md="6">
+          <Card>
+            <CardBody>
+              <CardTitle tag="h6">
+                <Translate contentKey="home.shortcuts.title">Quick access</Translate>
+              </CardTitle>
+              <ul className="mb-0">
+                <li>
+                  <Link to="/asset">
+                    <Translate contentKey="home.shortcuts.assets">Asset management</Translate>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/zone">
+                    <Translate contentKey="home.shortcuts.zones">Zones & locations</Translate>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/location-event">
+                    <Translate contentKey="home.shortcuts.locationEvents">Location events</Translate>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/maintenance-event">
+                    <Translate contentKey="home.shortcuts.maintenance">Maintenance & interventions</Translate>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/document">
+                    <Translate contentKey="home.shortcuts.documents">Technical documentation</Translate>
+                  </Link>
+                </li>
+              </ul>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* ================= AUTH PROMPT ================= */}
+      {!account?.login && (
+        <Row>
+          <Col>
+            <Alert color="warning">
+              <Translate contentKey="home.login.required">Please sign in to access the application features.</Translate>{' '}
               <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-              </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
-            </Alert>
-
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
-              <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
+                <Translate contentKey="home.login.link">Sign in</Translate>
               </Link>
             </Alert>
-          </div>
-        )}
-        <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-        </p>
-
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
-            </a>
-          </li>
-        </ul>
-
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
-      </Col>
-    </Row>
+          </Col>
+        </Row>
+      )}
+    </div>
   );
 };
 

@@ -1,0 +1,10 @@
+{
+  "smartassetcoreApp": {
+    "LocationSource": {
+      "null": "",
+      "BLE": "BLE",
+      "GNSS": "GNSS",
+      "MANUAL": "MANUAL"
+    }
+  }
+}

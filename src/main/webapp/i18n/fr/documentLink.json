@@ -1,0 +1,28 @@
+{
+  "smartassetcoreApp": {
+    "documentLink": {
+      "home": {
+        "title": "DocumentLinks",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Document Link",
+        "createOrEditLabel": "Créer ou éditer un Document Link",
+        "notFound": "Aucun Document Link trouvé"
+      },
+      "created": "Un nouveau Document Link a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Document Link avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Document Link avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Document Link {{ id }} ?"
+      },
+      "detail": {
+        "title": "Document Link"
+      },
+      "id": "ID",
+      "entityType": "Entity Type",
+      "entityId": "Entity Id",
+      "label": "Label",
+      "linkedAt": "Linked At",
+      "document": "Document"
+    }
+  }
+}

@@ -1,0 +1,308 @@
+/* =========================================================
+   GLOBAL THEME – OCP (Sketchy Override)
+   Projet : JHipster React Client Only
+   Objectif : Adapter Sketchy à la charte OCP
+   ========================================================= */
+
+/* ================================
+   🎨 OCP COLOR PALETTE
+   ================================ */
+:root {
+  --ocp-green: #006633;
+  --ocp-green-dark: #004d26;
+  --ocp-green-light: #2e8b57;
+
+  --ocp-gray-900: #1f2933;
+  --ocp-gray-700: #4b5563;
+  --ocp-gray-300: #d1d5db;
+  --ocp-gray-100: #f3f4f6;
+
+  --ocp-danger: #b91c1c;
+  --ocp-warning: #f59e0b;
+  --ocp-info: #0369a1;
+}
+
+/* ================================
+   🅰️ TYPOGRAPHY
+   ================================ */
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ffffff;
+  color: var(--ocp-gray-900);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--ocp-gray-900);
+}
+
+/* Links */
+a {
+  color: var(--ocp-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ocp-green-dark);
+  text-decoration: underline;
+}
+
+/* ================================
+   🧭 NAVBAR
+   ================================ */
+.navbar {
+  background-color: var(--ocp-green) !important;
+  border-bottom: 1px solid var(--ocp-green-dark);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.navbar .nav-link:hover {
+  color: #e6f2ec !important;
+}
+
+/* ================================
+   🔘 BUTTONS
+   ================================ */
+.btn {
+  border-width: 1px;
+  box-shadow: none !important;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--ocp-green);
+  border-color: var(--ocp-green);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--ocp-green-dark);
+  border-color: var(--ocp-green-dark);
+}
+
+.btn-outline-primary {
+  color: var(--ocp-green);
+  border-color: var(--ocp-green);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--ocp-green);
+  color: #ffffff;
+}
+
+/* ================================
+   🧱 CARDS
+   ================================ */
+.card {
+  border: 1px solid var(--ocp-gray-300);
+  border-radius: 0.25rem;
+  box-shadow: none !important;
+}
+
+.card-header {
+  background-color: var(--ocp-gray-100);
+  font-weight: 600;
+}
+
+/* ================================
+   🧪 FORMS
+   ================================ */
+.form-control,
+.form-select {
+  border-width: 1px;
+  box-shadow: none !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ocp-green);
+  box-shadow: 0 0 0 0.15rem rgba(0, 102, 51, 0.25) !important;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+}
+
+/* ================================
+   🚨 ALERTS
+   ================================ */
+.alert {
+  border-width: 1px;
+  box-shadow: none !important;
+}
+
+.alert-success {
+  background-color: #e6f2ec;
+  border-color: var(--ocp-green-light);
+  color: var(--ocp-green-dark);
+}
+
+.alert-warning {
+  background-color: #fff7e6;
+  border-color: var(--ocp-warning);
+  color: #92400e;
+}
+
+.alert-danger {
+  background-color: #fdecea;
+  border-color: var(--ocp-danger);
+  color: #7f1d1d;
+}
+
+.alert-info {
+  background-color: #e0f2fe;
+  border-color: var(--ocp-info);
+  color: #0c4a6e;
+}
+
+/* ================================
+   🏷️ BADGES (STATUTS INDUSTRIELS)
+   ================================ */
+.badge {
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: var(--ocp-green-light);
+}
+
+.badge-warning {
+  background-color: var(--ocp-warning);
+  color: #000000;
+}
+
+.badge-danger {
+  background-color: var(--ocp-danger);
+}
+
+.badge-info {
+  background-color: var(--ocp-info);
+}
+
+/* ================================
+   📊 TABLES
+   ================================ */
+.table {
+  color: var(--ocp-gray-900);
+}
+
+.table thead th {
+  background-color: var(--ocp-gray-100);
+  border-bottom: 2px solid var(--ocp-gray-300);
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ================================
+   🧩 MODALS
+   ================================ */
+.modal-content {
+  border-radius: 0.3rem;
+  border: 1px solid var(--ocp-gray-300);
+}
+
+.modal-header {
+  background-color: var(--ocp-gray-100);
+  border-bottom: 1px solid var(--ocp-gray-300);
+}
+
+/* ================================
+   📌 UTILITIES
+   ================================ */
+.text-ocp {
+  color: var(--ocp-green) !important;
+}
+
+.bg-ocp {
+  background-color: var(--ocp-green) !important;
+  color: #ffffff !important;
+}
+
+.border-ocp {
+  border-color: var(--ocp-green) !important;
+}
+
+/* ================================
+   🔧 BOOTSTRAP COLOR OVERRIDES
+   ================================ */
+.text-primary {
+  color: var(--ocp-green) !important;
+}
+
+.bg-primary {
+  background-color: var(--ocp-green) !important;
+}
+
+.border-primary {
+  border-color: var(--ocp-green) !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ocp-green);
+  outline-offset: 2px;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8faf9;
+}
+
+.page-link {
+  color: var(--ocp-green);
+}
+
+.page-item.active .page-link {
+  background-color: var(--ocp-green);
+  border-color: var(--ocp-green);
+}
+
+.page-link:hover {
+  color: var(--ocp-green-dark);
+}
+
+.dropdown-menu {
+  border: 1px solid var(--ocp-gray-300);
+  box-shadow: none;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--ocp-green);
+  color: #ffffff;
+}
+
+.dropdown-item:hover {
+  background-color: var(--ocp-gray-100);
+}
+
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+}

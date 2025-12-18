@@ -1,0 +1,61 @@
+{
+  "smartassetcoreApp": {
+    "asset": {
+      "home": {
+        "title": "Assets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset",
+        "createOrEditLabel": "Create or edit a Asset",
+        "notFound": "No Assets found"
+      },
+      "created": "A new Asset is created with identifier {{ param }}",
+      "updated": "A Asset is updated with identifier {{ param }}",
+      "deleted": "A Asset is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset"
+      },
+      "id": "ID",
+      "assetType": "Asset Type",
+      "assetCode": "Asset Code",
+      "reference": "Reference",
+      "description": "Description",
+      "status": "Status",
+      "criticality": "Criticality",
+      "responsibleName": "Responsible Name",
+      "costCenter": "Cost Center",
+      "brand": "Brand",
+      "model": "Model",
+      "serialNumber": "Serial Number",
+      "powerKw": "Power Kw",
+      "voltageV": "Voltage V",
+      "currentA": "Current A",
+      "cosPhi": "Cos Phi",
+      "speedRpm": "Speed Rpm",
+      "ipRating": "Ip Rating",
+      "insulationClass": "Insulation Class",
+      "mountingType": "Mounting Type",
+      "shaftDiameterMm": "Shaft Diameter Mm",
+      "footDistanceAmm": "Foot Distance Amm",
+      "footDistanceBmm": "Foot Distance Bmm",
+      "frontFlangeMm": "Front Flange Mm",
+      "rearFlangeMm": "Rear Flange Mm",
+      "iecAxisHeightMm": "Iec Axis Height Mm",
+      "dimensionsSource": "Dimensions Source",
+      "hasHeating": "Has Heating",
+      "temperatureProbeType": "Temperature Probe Type",
+      "lastCommissioningDate": "Last Commissioning Date",
+      "lastMaintenanceDate": "Last Maintenance Date",
+      "maintenanceCount": "Maintenance Count",
+      "sensors": "Sensors",
+      "maintenanceEvents": "Maintenance Events",
+      "movementRequests": "Movement Requests",
+      "locationEvents": "Location Events",
+      "site": "Site",
+      "productionLine": "Production Line",
+      "currentZone": "Current Zone"
+    }
+  }
+}

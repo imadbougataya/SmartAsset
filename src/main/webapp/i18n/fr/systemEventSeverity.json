@@ -1,0 +1,10 @@
+{
+  "smartassetcoreApp": {
+    "SystemEventSeverity": {
+      "null": "",
+      "INFO": "INFO",
+      "WARNING": "WARNING",
+      "ERROR": "ERROR"
+    }
+  }
+}

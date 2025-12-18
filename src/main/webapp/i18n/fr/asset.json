@@ -1,0 +1,61 @@
+{
+  "smartassetcoreApp": {
+    "asset": {
+      "home": {
+        "title": "Assets",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Asset",
+        "createOrEditLabel": "Créer ou éditer un Asset",
+        "notFound": "Aucun Asset trouvé"
+      },
+      "created": "Un nouveau Asset a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Asset avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Asset avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Asset {{ id }} ?"
+      },
+      "detail": {
+        "title": "Asset"
+      },
+      "id": "ID",
+      "assetType": "Asset Type",
+      "assetCode": "Asset Code",
+      "reference": "Reference",
+      "description": "Description",
+      "status": "Status",
+      "criticality": "Criticality",
+      "responsibleName": "Responsible Name",
+      "costCenter": "Cost Center",
+      "brand": "Brand",
+      "model": "Model",
+      "serialNumber": "Serial Number",
+      "powerKw": "Power Kw",
+      "voltageV": "Voltage V",
+      "currentA": "Current A",
+      "cosPhi": "Cos Phi",
+      "speedRpm": "Speed Rpm",
+      "ipRating": "Ip Rating",
+      "insulationClass": "Insulation Class",
+      "mountingType": "Mounting Type",
+      "shaftDiameterMm": "Shaft Diameter Mm",
+      "footDistanceAmm": "Foot Distance Amm",
+      "footDistanceBmm": "Foot Distance Bmm",
+      "frontFlangeMm": "Front Flange Mm",
+      "rearFlangeMm": "Rear Flange Mm",
+      "iecAxisHeightMm": "Iec Axis Height Mm",
+      "dimensionsSource": "Dimensions Source",
+      "hasHeating": "Has Heating",
+      "temperatureProbeType": "Temperature Probe Type",
+      "lastCommissioningDate": "Last Commissioning Date",
+      "lastMaintenanceDate": "Last Maintenance Date",
+      "maintenanceCount": "Maintenance Count",
+      "sensors": "Sensors",
+      "maintenanceEvents": "Maintenance Events",
+      "movementRequests": "Movement Requests",
+      "locationEvents": "Location Events",
+      "site": "Site",
+      "productionLine": "Production Line",
+      "currentZone": "Current Zone"
+    }
+  }
+}
