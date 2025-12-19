@@ -6,6 +6,7 @@ import { Alert, Col, Row, Card, CardBody, CardTitle } from 'reactstrap';
 import { Translate } from 'react-jhipster';
 
 import { useAppSelector } from 'app/config/store';
+import SiteMap from 'app/shared/map/sitemap';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -24,15 +25,31 @@ export const Home = () => {
         </Col>
       </Row>
 
-      {/* ================= LOGIN INFO ================= */}
+      {/* ================= LOGIN INFO + MAP ================= */}
       {account?.login && (
-        <Row className="mb-4">
-          <Col>
-            <Alert color="success">
-              <Translate contentKey="home.dashboard.logged" interpolate={{ username: account.login }} />
-            </Alert>
-          </Col>
-        </Row>
+        <>
+          <Row className="mb-4">
+            <Col>
+              <Alert color="success">
+                <Translate contentKey="home.dashboard.logged" interpolate={{ username: account.login }} />
+              </Alert>
+            </Col>
+          </Row>
+
+          {/* ================= MAP ================= */}
+          <Row className="mb-4">
+            <Col>
+              <Card>
+                <CardBody>
+                  <CardTitle tag="h6">
+                    <Translate contentKey="home.map.title">Site map – Jorf Lasfar</Translate>
+                  </CardTitle>
+                  <SiteMap />
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </>
       )}
 
       {/* ================= KPIs ================= */}

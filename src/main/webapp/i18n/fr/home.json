@@ -5,6 +5,10 @@
     "logged": {
       "message": "Vous êtes connecté en tant que \"{{username}}\"."
     },
+    "map": {
+      "title": "Carte du site – Jorf Lasfar",
+      "subtitle": "Localisation temps réel des équipements industriels"
+    },
     "question": "Si vous avez des questions à propos de JHipster :",
     "link": {
       "homepage": "Page d'accueil de JHipster",

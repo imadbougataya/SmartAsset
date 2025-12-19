@@ -97,8 +97,8 @@ module.exports = async options =>
         },
       ),
       new WebpackNotifierPlugin({
-        title: 'Smartassetcore',
-        contentImage: path.join(__dirname, 'logo-jhipster.png'),
+        title: 'OCP Smart Asset',
+        contentImage: path.join(__dirname, 'ocp-group.png'),
       }),
     ].filter(Boolean),
   });
