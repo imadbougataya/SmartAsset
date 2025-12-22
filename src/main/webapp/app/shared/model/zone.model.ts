@@ -5,11 +5,10 @@ export interface IZone {
   code?: string;
   name?: string;
   description?: string | null;
-  zoneType?: string | null;
   centerLat?: number | null;
   centerLon?: number | null;
   radiusMeters?: number | null;
-  site?: ISite | null;
+  site?: ISite;
 }
 
 export const defaultValue: Readonly<IZone> = {};

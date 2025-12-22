@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,7 @@ import { deleteEntity, getEntity } from './document-link.reducer';
 
 export const DocumentLinkDeleteDialog = () => {
   const dispatch = useAppDispatch();
+  const pageLocation = useLocation();
   const navigate = useNavigate();
   const { id } = useParams<'id'>();
 
@@ -23,7 +24,7 @@ export const DocumentLinkDeleteDialog = () => {
   const updateSuccess = useAppSelector(state => state.documentLink.updateSuccess);
 
   const handleClose = () => {
-    navigate('/document-link');
+    navigate(`/document-link${pageLocation.search}`);
   };
 
   useEffect(() => {
@@ -42,8 +43,8 @@ export const DocumentLinkDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="documentLinkDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.documentLink.delete.question">
-        <Translate contentKey="smartassetcoreApp.documentLink.delete.question" interpolate={{ id: documentLinkEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.documentLink.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.documentLink.delete.question" interpolate={{ id: documentLinkEntity.id }}>
           Are you sure you want to delete this DocumentLink?
         </Translate>
       </ModalBody>

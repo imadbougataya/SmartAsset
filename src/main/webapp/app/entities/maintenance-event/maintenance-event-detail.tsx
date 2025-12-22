@@ -23,7 +23,7 @@ export const MaintenanceEventDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="maintenanceEventDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.maintenanceEvent.detail.title">MaintenanceEvent</Translate>
+          <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.detail.title">MaintenanceEvent</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,19 +34,19 @@ export const MaintenanceEventDetail = () => {
           <dd>{maintenanceEventEntity.id}</dd>
           <dt>
             <span id="maintenanceType">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.maintenanceType">Maintenance Type</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.maintenanceType">Maintenance Type</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.maintenanceType}</dd>
           <dt>
             <span id="status">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.status">Status</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.status">Status</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.status}</dd>
           <dt>
             <span id="requestedAt">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.requestedAt">Requested At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.requestedAt">Requested At</Translate>
             </span>
           </dt>
           <dd>
@@ -56,7 +56,7 @@ export const MaintenanceEventDetail = () => {
           </dd>
           <dt>
             <span id="plannedAt">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.plannedAt">Planned At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.plannedAt">Planned At</Translate>
             </span>
           </dt>
           <dd>
@@ -66,7 +66,7 @@ export const MaintenanceEventDetail = () => {
           </dd>
           <dt>
             <span id="startedAt">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.startedAt">Started At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.startedAt">Started At</Translate>
             </span>
           </dt>
           <dd>
@@ -76,7 +76,7 @@ export const MaintenanceEventDetail = () => {
           </dd>
           <dt>
             <span id="finishedAt">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.finishedAt">Finished At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.finishedAt">Finished At</Translate>
             </span>
           </dt>
           <dd>
@@ -86,44 +86,44 @@ export const MaintenanceEventDetail = () => {
           </dd>
           <dt>
             <span id="title">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.title">Title</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.title">Title</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.title}</dd>
           <dt>
             <span id="description">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.description">Description</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.description">Description</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.description}</dd>
           <dt>
             <span id="technician">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.technician">Technician</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.technician">Technician</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.technician}</dd>
           <dt>
             <span id="downtimeMinutes">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.downtimeMinutes">Downtime Minutes</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.downtimeMinutes">Downtime Minutes</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.downtimeMinutes}</dd>
           <dt>
             <span id="costAmount">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.costAmount">Cost Amount</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.costAmount">Cost Amount</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.costAmount}</dd>
           <dt>
             <span id="notes">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.notes">Notes</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.notes">Notes</Translate>
             </span>
           </dt>
           <dd>{maintenanceEventEntity.notes}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.maintenanceEvent.asset">Asset</Translate>
+            <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.asset">Asset</Translate>
           </dt>
-          <dd>{maintenanceEventEntity.asset ? maintenanceEventEntity.asset.assetCode : ''}</dd>
+          <dd>{maintenanceEventEntity.asset ? maintenanceEventEntity.asset.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/maintenance-event" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

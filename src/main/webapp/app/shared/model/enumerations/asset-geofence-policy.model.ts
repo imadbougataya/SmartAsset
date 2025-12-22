@@ -1,0 +1,7 @@
+export enum AssetGeofencePolicy {
+  NONE = 'NONE',
+
+  ZONE_ONLY = 'ZONE_ONLY',
+
+  SITE_ONLY = 'SITE_ONLY',
+}

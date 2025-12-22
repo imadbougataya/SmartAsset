@@ -1,31 +1,31 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "document": {
       "home": {
         "title": "Documents",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Document",
-        "createOrEditLabel": "Créer ou éditer un Document",
-        "notFound": "Aucun Document trouvé"
+        "createLabel": "Créer un nouveau document",
+        "createOrEditLabel": "Créer ou modifier un document",
+        "notFound": "Aucun document trouvé"
       },
-      "created": "Un nouveau Document a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Document avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Document avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau document a été créé avec l'identifiant {{ param }}",
+      "updated": "Le document avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le document avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Document {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le document {{ id }} ?"
       },
       "detail": {
         "title": "Document"
       },
-      "id": "ID",
-      "fileName": "File Name",
-      "mimeType": "Mime Type",
-      "sizeBytes": "Size Bytes",
-      "storageRef": "Storage Ref",
-      "checksumSha256": "Checksum Sha 256",
-      "uploadedAt": "Uploaded At",
-      "uploadedBy": "Uploaded By",
-      "links": "Links"
+      "id": "Identifiant",
+      "fileName": "Nom du fichier",
+      "mimeType": "Type MIME",
+      "sizeBytes": "Taille (octets)",
+      "storageRef": "Référence de stockage",
+      "checksumSha256": "Empreinte SHA-256",
+      "uploadedAt": "Date de dépôt",
+      "uploadedBy": "Déposé par",
+      "links": "Liens"
     }
   }
 }

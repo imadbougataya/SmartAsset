@@ -1,6 +1,8 @@
 import dayjs from 'dayjs';
 import { IAsset } from 'app/shared/model/asset.model';
+import { IUser } from 'app/shared/model/user.model';
 import { MovementRequestStatus } from 'app/shared/model/enumerations/movement-request-status.model';
+import { EsignStatus } from 'app/shared/model/enumerations/esign-status.model';
 
 export interface IAssetMovementRequest {
   id?: number;
@@ -10,13 +12,13 @@ export interface IAssetMovementRequest {
   fromLocationLabel?: string | null;
   toLocationLabel?: string | null;
   esignWorkflowId?: string | null;
-  esignStatus?: string | null;
+  esignStatus?: keyof typeof EsignStatus;
   esignLastUpdate?: dayjs.Dayjs | null;
   signedAt?: dayjs.Dayjs | null;
   executedAt?: dayjs.Dayjs | null;
-  requestedBy?: string | null;
-  approvedBy?: string | null;
-  asset?: IAsset | null;
+  asset?: IAsset;
+  requestedBy?: IUser;
+  approvedBy?: IUser | null;
 }
 
 export const defaultValue: Readonly<IAssetMovementRequest> = {};

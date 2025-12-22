@@ -23,7 +23,7 @@ export const DocumentUpdate = () => {
   const updateSuccess = useAppSelector(state => state.document.updateSuccess);
 
   const handleClose = () => {
-    navigate('/document');
+    navigate(`/document${location.search}`);
   };
 
   useEffect(() => {
@@ -75,8 +75,8 @@ export const DocumentUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.document.home.createOrEditLabel" data-cy="DocumentCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.document.home.createOrEditLabel">Create or edit a Document</Translate>
+          <h2 id="SmartAssetCoreApp.document.home.createOrEditLabel" data-cy="DocumentCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.document.home.createOrEditLabel">Create or edit a Document</Translate>
           </h2>
         </Col>
       </Row>
@@ -97,7 +97,7 @@ export const DocumentUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.document.fileName')}
+                label={translate('SmartAssetCoreApp.document.fileName')}
                 id="document-fileName"
                 name="fileName"
                 data-cy="fileName"
@@ -108,7 +108,7 @@ export const DocumentUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.mimeType')}
+                label={translate('SmartAssetCoreApp.document.mimeType')}
                 id="document-mimeType"
                 name="mimeType"
                 data-cy="mimeType"
@@ -119,14 +119,14 @@ export const DocumentUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.sizeBytes')}
+                label={translate('SmartAssetCoreApp.document.sizeBytes')}
                 id="document-sizeBytes"
                 name="sizeBytes"
                 data-cy="sizeBytes"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.storageRef')}
+                label={translate('SmartAssetCoreApp.document.storageRef')}
                 id="document-storageRef"
                 name="storageRef"
                 data-cy="storageRef"
@@ -137,7 +137,7 @@ export const DocumentUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.checksumSha256')}
+                label={translate('SmartAssetCoreApp.document.checksumSha256')}
                 id="document-checksumSha256"
                 name="checksumSha256"
                 data-cy="checksumSha256"
@@ -147,7 +147,7 @@ export const DocumentUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.uploadedAt')}
+                label={translate('SmartAssetCoreApp.document.uploadedAt')}
                 id="document-uploadedAt"
                 name="uploadedAt"
                 data-cy="uploadedAt"
@@ -158,7 +158,7 @@ export const DocumentUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.document.uploadedBy')}
+                label={translate('SmartAssetCoreApp.document.uploadedBy')}
                 id="document-uploadedBy"
                 name="uploadedBy"
                 data-cy="uploadedBy"

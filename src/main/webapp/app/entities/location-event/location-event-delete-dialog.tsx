@@ -43,8 +43,8 @@ export const LocationEventDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="locationEventDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.locationEvent.delete.question">
-        <Translate contentKey="smartassetcoreApp.locationEvent.delete.question" interpolate={{ id: locationEventEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.locationEvent.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.locationEvent.delete.question" interpolate={{ id: locationEventEntity.id }}>
           Are you sure you want to delete this LocationEvent?
         </Translate>
       </ModalBody>

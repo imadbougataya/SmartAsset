@@ -43,8 +43,8 @@ export const ZoneDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="zoneDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.zone.delete.question">
-        <Translate contentKey="smartassetcoreApp.zone.delete.question" interpolate={{ id: zoneEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.zone.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.zone.delete.question" interpolate={{ id: zoneEntity.id }}>
           Are you sure you want to delete this Zone?
         </Translate>
       </ModalBody>

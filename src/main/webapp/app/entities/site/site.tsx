@@ -91,16 +91,16 @@ export const Site = () => {
   return (
     <div>
       <h2 id="site-heading" data-cy="SiteHeading">
-        <Translate contentKey="smartassetcoreApp.site.home.title">Sites</Translate>
+        <Translate contentKey="SmartAssetCoreApp.site.home.title">Sites</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.site.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.site.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/site/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.site.home.createLabel">Create new Site</Translate>
+            <Translate contentKey="SmartAssetCoreApp.site.home.createLabel">Create new Site</Translate>
           </Link>
         </div>
       </h2>
@@ -110,19 +110,31 @@ export const Site = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.site.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
+                  <Translate contentKey="SmartAssetCoreApp.site.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('code')}>
-                  <Translate contentKey="smartassetcoreApp.site.code">Code</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.site.code">Code</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
                 </th>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="smartassetcoreApp.site.name">Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.site.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="smartassetcoreApp.site.description">Description</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.site.description">Description</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
+                </th>
+                <th className="hand" onClick={sort('centerLat')}>
+                  <Translate contentKey="SmartAssetCoreApp.site.centerLat">Center Lat</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('centerLat')} />
+                </th>
+                <th className="hand" onClick={sort('centerLon')}>
+                  <Translate contentKey="SmartAssetCoreApp.site.centerLon">Center Lon</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('centerLon')} />
+                </th>
+                <th className="hand" onClick={sort('radiusMeters')}>
+                  <Translate contentKey="SmartAssetCoreApp.site.radiusMeters">Radius Meters</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('radiusMeters')} />
                 </th>
                 <th />
               </tr>
@@ -138,6 +150,9 @@ export const Site = () => {
                   <td>{site.code}</td>
                   <td>{site.name}</td>
                   <td>{site.description}</td>
+                  <td>{site.centerLat}</td>
+                  <td>{site.centerLon}</td>
+                  <td>{site.radiusMeters}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/site/${site.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -180,7 +195,7 @@ export const Site = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.site.home.notFound">No Sites found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.site.home.notFound">No Sites found</Translate>
             </div>
           )
         )}

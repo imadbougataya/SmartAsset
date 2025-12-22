@@ -1,11 +1,11 @@
-import { ISite } from 'app/shared/model/site.model';
+import { IZone } from 'app/shared/model/zone.model';
 
 export interface IProductionLine {
   id?: number;
   code?: string;
   name?: string;
   description?: string | null;
-  site?: ISite | null;
+  zone?: IZone;
 }
 
 export const defaultValue: Readonly<IProductionLine> = {};

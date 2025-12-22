@@ -43,8 +43,8 @@ export const SensorDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="sensorDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.sensor.delete.question">
-        <Translate contentKey="smartassetcoreApp.sensor.delete.question" interpolate={{ id: sensorEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.sensor.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.sensor.delete.question" interpolate={{ id: sensorEntity.id }}>
           Are you sure you want to delete this Sensor?
         </Translate>
       </ModalBody>

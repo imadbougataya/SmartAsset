@@ -92,11 +92,11 @@ export const SensorMeasurement = () => {
   return (
     <div>
       <h2 id="sensor-measurement-heading" data-cy="SensorMeasurementHeading">
-        <Translate contentKey="smartassetcoreApp.sensorMeasurement.home.title">Sensor Measurements</Translate>
+        <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.home.title">Sensor Measurements</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.sensorMeasurement.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link
             to="/sensor-measurement/new"
@@ -106,7 +106,7 @@ export const SensorMeasurement = () => {
           >
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.sensorMeasurement.home.createLabel">Create new Sensor Measurement</Translate>
+            <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.home.createLabel">Create new Sensor Measurement</Translate>
           </Link>
         </div>
       </h2>
@@ -116,27 +116,27 @@ export const SensorMeasurement = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('measuredAt')}>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.measuredAt">Measured At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.measuredAt">Measured At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('measuredAt')} />
                 </th>
                 <th className="hand" onClick={sort('value')}>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.value">Value</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.value">Value</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('value')} />
                 </th>
                 <th className="hand" onClick={sort('quality')}>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.quality">Quality</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.quality">Quality</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('quality')} />
                 </th>
                 <th className="hand" onClick={sort('source')}>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.source">Source</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.source">Source</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('source')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.sensorMeasurement.sensor">Sensor</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.sensor">Sensor</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -159,7 +159,7 @@ export const SensorMeasurement = () => {
                   <td>{sensorMeasurement.source}</td>
                   <td>
                     {sensorMeasurement.sensor ? (
-                      <Link to={`/sensor/${sensorMeasurement.sensor.id}`}>{sensorMeasurement.sensor.name}</Link>
+                      <Link to={`/sensor/${sensorMeasurement.sensor.id}`}>{sensorMeasurement.sensor.id}</Link>
                     ) : (
                       ''
                     )}
@@ -212,7 +212,7 @@ export const SensorMeasurement = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.sensorMeasurement.home.notFound">No Sensor Measurements found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.home.notFound">No Sensor Measurements found</Translate>
             </div>
           )
         )}

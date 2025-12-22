@@ -1,0 +1,15 @@
+export enum EsignStatus {
+  NOT_STARTED = 'NOT_STARTED',
+
+  SENT = 'SENT',
+
+  IN_PROGRESS = 'IN_PROGRESS',
+
+  SIGNED = 'SIGNED',
+
+  REJECTED = 'REJECTED',
+
+  FAILED = 'FAILED',
+
+  CANCELLED = 'CANCELLED',
+}

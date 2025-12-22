@@ -7,7 +7,7 @@ export interface ISensorMeasurement {
   value?: number;
   quality?: string | null;
   source?: string | null;
-  sensor?: ISensor | null;
+  sensor?: ISensor;
 }
 
 export const defaultValue: Readonly<ISensorMeasurement> = {};

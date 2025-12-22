@@ -23,7 +23,7 @@ export const DocumentLinkDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="documentLinkDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.documentLink.detail.title">DocumentLink</Translate>
+          <Translate contentKey="SmartAssetCoreApp.documentLink.detail.title">DocumentLink</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,34 +34,66 @@ export const DocumentLinkDetail = () => {
           <dd>{documentLinkEntity.id}</dd>
           <dt>
             <span id="entityType">
-              <Translate contentKey="smartassetcoreApp.documentLink.entityType">Entity Type</Translate>
+              <Translate contentKey="SmartAssetCoreApp.documentLink.entityType">Entity Type</Translate>
             </span>
           </dt>
           <dd>{documentLinkEntity.entityType}</dd>
           <dt>
             <span id="entityId">
-              <Translate contentKey="smartassetcoreApp.documentLink.entityId">Entity Id</Translate>
+              <Translate contentKey="SmartAssetCoreApp.documentLink.entityId">Entity Id</Translate>
             </span>
           </dt>
           <dd>{documentLinkEntity.entityId}</dd>
           <dt>
             <span id="label">
-              <Translate contentKey="smartassetcoreApp.documentLink.label">Label</Translate>
+              <Translate contentKey="SmartAssetCoreApp.documentLink.label">Label</Translate>
             </span>
           </dt>
           <dd>{documentLinkEntity.label}</dd>
           <dt>
             <span id="linkedAt">
-              <Translate contentKey="smartassetcoreApp.documentLink.linkedAt">Linked At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.documentLink.linkedAt">Linked At</Translate>
             </span>
           </dt>
           <dd>
             {documentLinkEntity.linkedAt ? <TextFormat value={documentLinkEntity.linkedAt} type="date" format={APP_DATE_FORMAT} /> : null}
           </dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.documentLink.document">Document</Translate>
+            <span id="createdBy">
+              <Translate contentKey="SmartAssetCoreApp.documentLink.createdBy">Created By</Translate>
+            </span>
           </dt>
-          <dd>{documentLinkEntity.document ? documentLinkEntity.document.fileName : ''}</dd>
+          <dd>{documentLinkEntity.createdBy}</dd>
+          <dt>
+            <span id="createdDate">
+              <Translate contentKey="SmartAssetCoreApp.documentLink.createdDate">Created Date</Translate>
+            </span>
+          </dt>
+          <dd>
+            {documentLinkEntity.createdDate ? (
+              <TextFormat value={documentLinkEntity.createdDate} type="date" format={APP_DATE_FORMAT} />
+            ) : null}
+          </dd>
+          <dt>
+            <span id="lastModifiedBy">
+              <Translate contentKey="SmartAssetCoreApp.documentLink.lastModifiedBy">Last Modified By</Translate>
+            </span>
+          </dt>
+          <dd>{documentLinkEntity.lastModifiedBy}</dd>
+          <dt>
+            <span id="lastModifiedDate">
+              <Translate contentKey="SmartAssetCoreApp.documentLink.lastModifiedDate">Last Modified Date</Translate>
+            </span>
+          </dt>
+          <dd>
+            {documentLinkEntity.lastModifiedDate ? (
+              <TextFormat value={documentLinkEntity.lastModifiedDate} type="date" format={APP_DATE_FORMAT} />
+            ) : null}
+          </dd>
+          <dt>
+            <Translate contentKey="SmartAssetCoreApp.documentLink.document">Document</Translate>
+          </dt>
+          <dd>{documentLinkEntity.document ? documentLinkEntity.document.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/document-link" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

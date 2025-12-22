@@ -2,12 +2,12 @@
   "annotations": {
     "changelogDate": "20251217152057"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
       "fieldName": "entityType",
-      "fieldType": "DocumentEntityType",
+      "fieldType": "DocumentLinkEntityType",
       "fieldValidateRules": ["required"],
       "fieldValues": "ASSET,MAINTENANCE_EVENT,MOVEMENT_REQUEST"
     },
@@ -20,24 +20,44 @@
       "fieldName": "label",
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "150"
+      "fieldValidateRulesMaxlength": "200"
     },
     {
       "fieldName": "linkedAt",
       "fieldType": "Instant",
       "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "120"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "120"
+    },
+    {
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant"
     }
   ],
   "jpaMetamodelFiltering": true,
   "name": "DocumentLink",
+  "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityField": "fileName",
       "otherEntityName": "document",
-      "otherEntityRelationshipName": "links",
       "relationshipName": "document",
-      "relationshipSide": "right",
-      "relationshipType": "many-to-one"
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
     }
   ],
   "service": "serviceClass"

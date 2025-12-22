@@ -1,27 +1,28 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "productionLine": {
       "home": {
-        "title": "ProductionLines",
+        "title": "Ligne de production",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Production Line",
-        "createOrEditLabel": "Créer ou éditer un Production Line",
-        "notFound": "Aucun Production Line trouvé"
+        "createLabel": "Créer une nouvelle ligne de production",
+        "createOrEditLabel": "Créer ou éditer une ligne de production",
+        "notFound": "Aucune ligne de production trouvée"
       },
-      "created": "Un nouveau Production Line a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Production Line avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Production Line avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle ligne de production a été créé avec l'identifiant {{ param }}",
+      "updated": "La ligne de production avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La ligne de production avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Production Line {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer la ligne de production {{ id }} ?"
       },
       "detail": {
-        "title": "Production Line"
+        "title": "ligne de production"
       },
       "id": "ID",
       "code": "Code",
       "name": "Name",
       "description": "Description",
-      "site": "Site"
+      "site": "Site",
+      "zone": "Zone"
     }
   }
 }

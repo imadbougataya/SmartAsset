@@ -1,26 +1,29 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "site": {
       "home": {
         "title": "Sites",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Site",
-        "createOrEditLabel": "Créer ou éditer un Site",
-        "notFound": "Aucun Site trouvé"
+        "createLabel": "Créer un nouveau site",
+        "createOrEditLabel": "Créer ou modifier un site",
+        "notFound": "Aucun site trouvé"
       },
-      "created": "Un nouveau Site a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Site avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Site avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau site a été créé avec l'identifiant {{ param }}",
+      "updated": "Le site avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le site avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Site {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le site {{ id }} ?"
       },
       "detail": {
         "title": "Site"
       },
-      "id": "ID",
+      "id": "Identifiant",
       "code": "Code",
-      "name": "Name",
-      "description": "Description"
+      "name": "Nom",
+      "description": "Description",
+      "centerLat": "Latitude du centre",
+      "centerLon": "Longitude du centre",
+      "radiusMeters": "Rayon (mètres)"
     }
   }
 }

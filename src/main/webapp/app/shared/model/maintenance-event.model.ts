@@ -17,7 +17,7 @@ export interface IMaintenanceEvent {
   downtimeMinutes?: number | null;
   costAmount?: number | null;
   notes?: string | null;
-  asset?: IAsset | null;
+  asset?: IAsset;
 }
 
 export const defaultValue: Readonly<IMaintenanceEvent> = {};

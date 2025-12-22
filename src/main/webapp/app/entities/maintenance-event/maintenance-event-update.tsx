@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
+import { Button, Col, FormText, Row } from 'reactstrap';
 import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -99,8 +99,8 @@ export const MaintenanceEventUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.maintenanceEvent.home.createOrEditLabel" data-cy="MaintenanceEventCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.maintenanceEvent.home.createOrEditLabel">Create or edit a MaintenanceEvent</Translate>
+          <h2 id="SmartAssetCoreApp.maintenanceEvent.home.createOrEditLabel" data-cy="MaintenanceEventCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.home.createOrEditLabel">Create or edit a MaintenanceEvent</Translate>
           </h2>
         </Col>
       </Row>
@@ -121,7 +121,7 @@ export const MaintenanceEventUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.maintenanceType')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.maintenanceType')}
                 id="maintenance-event-maintenanceType"
                 name="maintenanceType"
                 data-cy="maintenanceType"
@@ -129,12 +129,12 @@ export const MaintenanceEventUpdate = () => {
               >
                 {maintenanceTypeValues.map(maintenanceType => (
                   <option value={maintenanceType} key={maintenanceType}>
-                    {translate(`smartassetcoreApp.MaintenanceType.${maintenanceType}`)}
+                    {translate(`SmartAssetCoreApp.MaintenanceType.${maintenanceType}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.status')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.status')}
                 id="maintenance-event-status"
                 name="status"
                 data-cy="status"
@@ -142,12 +142,12 @@ export const MaintenanceEventUpdate = () => {
               >
                 {maintenanceStatusValues.map(maintenanceStatus => (
                   <option value={maintenanceStatus} key={maintenanceStatus}>
-                    {translate(`smartassetcoreApp.MaintenanceStatus.${maintenanceStatus}`)}
+                    {translate(`SmartAssetCoreApp.MaintenanceStatus.${maintenanceStatus}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.requestedAt')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.requestedAt')}
                 id="maintenance-event-requestedAt"
                 name="requestedAt"
                 data-cy="requestedAt"
@@ -158,7 +158,7 @@ export const MaintenanceEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.plannedAt')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.plannedAt')}
                 id="maintenance-event-plannedAt"
                 name="plannedAt"
                 data-cy="plannedAt"
@@ -166,7 +166,7 @@ export const MaintenanceEventUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.startedAt')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.startedAt')}
                 id="maintenance-event-startedAt"
                 name="startedAt"
                 data-cy="startedAt"
@@ -174,7 +174,7 @@ export const MaintenanceEventUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.finishedAt')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.finishedAt')}
                 id="maintenance-event-finishedAt"
                 name="finishedAt"
                 data-cy="finishedAt"
@@ -182,7 +182,7 @@ export const MaintenanceEventUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.title')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.title')}
                 id="maintenance-event-title"
                 name="title"
                 data-cy="title"
@@ -192,7 +192,7 @@ export const MaintenanceEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.description')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.description')}
                 id="maintenance-event-description"
                 name="description"
                 data-cy="description"
@@ -202,7 +202,7 @@ export const MaintenanceEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.technician')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.technician')}
                 id="maintenance-event-technician"
                 name="technician"
                 data-cy="technician"
@@ -212,21 +212,21 @@ export const MaintenanceEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.downtimeMinutes')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.downtimeMinutes')}
                 id="maintenance-event-downtimeMinutes"
                 name="downtimeMinutes"
                 data-cy="downtimeMinutes"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.costAmount')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.costAmount')}
                 id="maintenance-event-costAmount"
                 name="costAmount"
                 data-cy="costAmount"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.maintenanceEvent.notes')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.notes')}
                 id="maintenance-event-notes"
                 name="notes"
                 data-cy="notes"
@@ -239,18 +239,22 @@ export const MaintenanceEventUpdate = () => {
                 id="maintenance-event-asset"
                 name="asset"
                 data-cy="asset"
-                label={translate('smartassetcoreApp.maintenanceEvent.asset')}
+                label={translate('SmartAssetCoreApp.maintenanceEvent.asset')}
                 type="select"
+                required
               >
                 <option value="" key="0" />
                 {assets
                   ? assets.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.assetCode}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/maintenance-event" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

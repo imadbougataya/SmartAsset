@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152055"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -72,12 +72,11 @@
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityField": "assetCode",
       "otherEntityName": "asset",
-      "otherEntityRelationshipName": "maintenanceEvents",
       "relationshipName": "asset",
-      "relationshipSide": "right",
-      "relationshipType": "many-to-one"
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
     }
   ],
   "service": "serviceClass"

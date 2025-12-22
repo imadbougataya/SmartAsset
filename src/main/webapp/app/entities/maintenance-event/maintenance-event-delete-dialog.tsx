@@ -43,8 +43,8 @@ export const MaintenanceEventDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="maintenanceEventDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.maintenanceEvent.delete.question">
-        <Translate contentKey="smartassetcoreApp.maintenanceEvent.delete.question" interpolate={{ id: maintenanceEventEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.maintenanceEvent.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.delete.question" interpolate={{ id: maintenanceEventEntity.id }}>
           Are you sure you want to delete this MaintenanceEvent?
         </Translate>
       </ModalBody>

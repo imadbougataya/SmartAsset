@@ -91,16 +91,16 @@ export const ProductionLine = () => {
   return (
     <div>
       <h2 id="production-line-heading" data-cy="ProductionLineHeading">
-        <Translate contentKey="smartassetcoreApp.productionLine.home.title">Production Lines</Translate>
+        <Translate contentKey="SmartAssetCoreApp.productionLine.home.title">Production Lines</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.productionLine.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.productionLine.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/production-line/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.productionLine.home.createLabel">Create new Production Line</Translate>
+            <Translate contentKey="SmartAssetCoreApp.productionLine.home.createLabel">Create new Production Line</Translate>
           </Link>
         </div>
       </h2>
@@ -110,23 +110,23 @@ export const ProductionLine = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.productionLine.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.productionLine.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('code')}>
-                  <Translate contentKey="smartassetcoreApp.productionLine.code">Code</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.productionLine.code">Code</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
                 </th>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="smartassetcoreApp.productionLine.name">Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.productionLine.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="smartassetcoreApp.productionLine.description">Description</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.productionLine.description">Description</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.productionLine.site">Site</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.productionLine.zone">Zone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -142,7 +142,7 @@ export const ProductionLine = () => {
                   <td>{productionLine.code}</td>
                   <td>{productionLine.name}</td>
                   <td>{productionLine.description}</td>
-                  <td>{productionLine.site ? <Link to={`/site/${productionLine.site.id}`}>{productionLine.site.code}</Link> : ''}</td>
+                  <td>{productionLine.zone ? <Link to={`/zone/${productionLine.zone.id}`}>{productionLine.zone.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/production-line/${productionLine.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -185,7 +185,7 @@ export const ProductionLine = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.productionLine.home.notFound">No Production Lines found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.productionLine.home.notFound">No Production Lines found</Translate>
             </div>
           )
         )}

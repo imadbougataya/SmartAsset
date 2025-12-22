@@ -23,7 +23,7 @@ export const SystemEventDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="systemEventDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.systemEvent.detail.title">SystemEvent</Translate>
+          <Translate contentKey="SmartAssetCoreApp.systemEvent.detail.title">SystemEvent</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,43 +34,31 @@ export const SystemEventDetail = () => {
           <dd>{systemEventEntity.id}</dd>
           <dt>
             <span id="eventType">
-              <Translate contentKey="smartassetcoreApp.systemEvent.eventType">Event Type</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.eventType">Event Type</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.eventType}</dd>
           <dt>
-            <span id="entityType">
-              <Translate contentKey="smartassetcoreApp.systemEvent.entityType">Entity Type</Translate>
-            </span>
-          </dt>
-          <dd>{systemEventEntity.entityType}</dd>
-          <dt>
-            <span id="entityId">
-              <Translate contentKey="smartassetcoreApp.systemEvent.entityId">Entity Id</Translate>
-            </span>
-          </dt>
-          <dd>{systemEventEntity.entityId}</dd>
-          <dt>
             <span id="severity">
-              <Translate contentKey="smartassetcoreApp.systemEvent.severity">Severity</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.severity">Severity</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.severity}</dd>
           <dt>
             <span id="source">
-              <Translate contentKey="smartassetcoreApp.systemEvent.source">Source</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.source">Source</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.source}</dd>
           <dt>
             <span id="message">
-              <Translate contentKey="smartassetcoreApp.systemEvent.message">Message</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.message">Message</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.message}</dd>
           <dt>
             <span id="createdAt">
-              <Translate contentKey="smartassetcoreApp.systemEvent.createdAt">Created At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.createdAt">Created At</Translate>
             </span>
           </dt>
           <dd>
@@ -78,26 +66,22 @@ export const SystemEventDetail = () => {
           </dd>
           <dt>
             <span id="createdBy">
-              <Translate contentKey="smartassetcoreApp.systemEvent.createdBy">Created By</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.createdBy">Created By</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.createdBy}</dd>
           <dt>
             <span id="correlationId">
-              <Translate contentKey="smartassetcoreApp.systemEvent.correlationId">Correlation Id</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.correlationId">Correlation Id</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.correlationId}</dd>
           <dt>
             <span id="payload">
-              <Translate contentKey="smartassetcoreApp.systemEvent.payload">Payload</Translate>
+              <Translate contentKey="SmartAssetCoreApp.systemEvent.payload">Payload</Translate>
             </span>
           </dt>
           <dd>{systemEventEntity.payload}</dd>
-          <dt>
-            <Translate contentKey="smartassetcoreApp.systemEvent.asset">Asset</Translate>
-          </dt>
-          <dd>{systemEventEntity.asset ? systemEventEntity.asset.assetCode : ''}</dd>
         </dl>
         <Button tag={Link} to="/system-event" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

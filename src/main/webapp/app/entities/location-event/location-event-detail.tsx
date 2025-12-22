@@ -23,7 +23,7 @@ export const LocationEventDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="locationEventDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.locationEvent.detail.title">LocationEvent</Translate>
+          <Translate contentKey="SmartAssetCoreApp.locationEvent.detail.title">LocationEvent</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,13 +34,13 @@ export const LocationEventDetail = () => {
           <dd>{locationEventEntity.id}</dd>
           <dt>
             <span id="source">
-              <Translate contentKey="smartassetcoreApp.locationEvent.source">Source</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.source">Source</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.source}</dd>
           <dt>
             <span id="observedAt">
-              <Translate contentKey="smartassetcoreApp.locationEvent.observedAt">Observed At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.observedAt">Observed At</Translate>
             </span>
           </dt>
           <dd>
@@ -50,64 +50,74 @@ export const LocationEventDetail = () => {
           </dd>
           <dt>
             <span id="zoneConfidence">
-              <Translate contentKey="smartassetcoreApp.locationEvent.zoneConfidence">Zone Confidence</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.zoneConfidence">Zone Confidence</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.zoneConfidence}</dd>
           <dt>
             <span id="rssi">
-              <Translate contentKey="smartassetcoreApp.locationEvent.rssi">Rssi</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.rssi">Rssi</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.rssi}</dd>
           <dt>
             <span id="txPower">
-              <Translate contentKey="smartassetcoreApp.locationEvent.txPower">Tx Power</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.txPower">Tx Power</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.txPower}</dd>
           <dt>
             <span id="latitude">
-              <Translate contentKey="smartassetcoreApp.locationEvent.latitude">Latitude</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.latitude">Latitude</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.latitude}</dd>
           <dt>
             <span id="longitude">
-              <Translate contentKey="smartassetcoreApp.locationEvent.longitude">Longitude</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.longitude">Longitude</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.longitude}</dd>
           <dt>
             <span id="accuracyMeters">
-              <Translate contentKey="smartassetcoreApp.locationEvent.accuracyMeters">Accuracy Meters</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.accuracyMeters">Accuracy Meters</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.accuracyMeters}</dd>
           <dt>
             <span id="speedKmh">
-              <Translate contentKey="smartassetcoreApp.locationEvent.speedKmh">Speed Kmh</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.speedKmh">Speed Kmh</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.speedKmh}</dd>
           <dt>
+            <span id="gnssConstellation">
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.gnssConstellation">Gnss Constellation</Translate>
+            </span>
+          </dt>
+          <dd>{locationEventEntity.gnssConstellation}</dd>
+          <dt>
             <span id="rawPayload">
-              <Translate contentKey="smartassetcoreApp.locationEvent.rawPayload">Raw Payload</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.rawPayload">Raw Payload</Translate>
             </span>
           </dt>
           <dd>{locationEventEntity.rawPayload}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.locationEvent.asset">Asset</Translate>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.asset">Asset</Translate>
           </dt>
-          <dd>{locationEventEntity.asset ? locationEventEntity.asset.assetCode : ''}</dd>
+          <dd>{locationEventEntity.asset ? locationEventEntity.asset.id : ''}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.locationEvent.zone">Zone</Translate>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.sensor">Sensor</Translate>
           </dt>
-          <dd>{locationEventEntity.zone ? locationEventEntity.zone.code : ''}</dd>
+          <dd>{locationEventEntity.sensor ? locationEventEntity.sensor.id : ''}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.locationEvent.gateway">Gateway</Translate>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.matchedSite">Matched Site</Translate>
           </dt>
-          <dd>{locationEventEntity.gateway ? locationEventEntity.gateway.code : ''}</dd>
+          <dd>{locationEventEntity.matchedSite ? locationEventEntity.matchedSite.id : ''}</dd>
+          <dt>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.matchedZone">Matched Zone</Translate>
+          </dt>
+          <dd>{locationEventEntity.matchedZone ? locationEventEntity.matchedZone.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/location-event" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

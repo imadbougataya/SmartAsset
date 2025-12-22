@@ -1,32 +1,32 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "gateway": {
       "home": {
-        "title": "Gateways",
+        "title": "Balises de zone",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Gateway",
-        "createOrEditLabel": "Créer ou éditer un Gateway",
-        "notFound": "Aucun Gateway trouvé"
+        "createLabel": "Créer une nouvelle balise de zone",
+        "createOrEditLabel": "Créer ou modifier une balise de zone",
+        "notFound": "Aucune balise de zone trouvée"
       },
-      "created": "Un nouveau Gateway a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Gateway avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Gateway avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle balise de zone a été créée avec l'identifiant {{ param }}",
+      "updated": "La balise de zone avec l'identifiant {{ param }} a été mise à jour",
+      "deleted": "La balise de zone avec l'identifiant {{ param }} a été supprimée",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Gateway {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer la balise de zone {{ id }} ?"
       },
       "detail": {
-        "title": "Gateway"
+        "title": "Balise de zone"
       },
-      "id": "ID",
+      "id": "Identifiant",
       "code": "Code",
-      "name": "Name",
-      "vendor": "Vendor",
-      "model": "Model",
-      "macAddress": "Mac Address",
-      "ipAddress": "Ip Address",
-      "installedAt": "Installed At",
+      "name": "Nom",
+      "vendor": "Fournisseur",
+      "model": "Modèle",
+      "macAddress": "Adresse MAC",
+      "ipAddress": "Adresse IP",
+      "installedAt": "Date d’installation",
       "active": "Active",
-      "locationEvents": "Location Events",
+      "locationEvents": "Événements de localisation",
       "site": "Site",
       "zone": "Zone"
     }

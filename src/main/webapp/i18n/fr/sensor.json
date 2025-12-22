@@ -1,33 +1,33 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "sensor": {
       "home": {
-        "title": "Sensors",
+        "title": "Capteurs",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Sensor",
-        "createOrEditLabel": "Créer ou éditer un Sensor",
-        "notFound": "Aucun Sensor trouvé"
+        "createLabel": "Créer un nouveau capteur",
+        "createOrEditLabel": "Créer ou modifier un capteur",
+        "notFound": "Aucun capteur trouvé"
       },
-      "created": "Un nouveau Sensor a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Sensor avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Sensor avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau capteur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le capteur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le capteur avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Sensor {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le capteur {{ id }} ?"
       },
       "detail": {
-        "title": "Sensor"
+        "title": "Capteur"
       },
-      "id": "ID",
-      "sensorType": "Sensor Type",
-      "name": "Name",
-      "unit": "Unit",
-      "minThreshold": "Min Threshold",
-      "maxThreshold": "Max Threshold",
-      "installedAt": "Installed At",
-      "active": "Active",
-      "externalId": "External Id",
-      "measurements": "Measurements",
-      "asset": "Asset"
+      "id": "Identifiant",
+      "sensorType": "Type de capteur",
+      "name": "Nom",
+      "unit": "Unité",
+      "minThreshold": "Seuil minimum",
+      "maxThreshold": "Seuil maximum",
+      "installedAt": "Date d’installation",
+      "active": "Actif",
+      "externalId": "Identifiant externe",
+      "measurements": "Mesures",
+      "asset": "Équipement"
     }
   }
 }

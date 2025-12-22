@@ -1,10 +1,11 @@
 import dayjs from 'dayjs';
-import { ISite } from 'app/shared/model/site.model';
 import { IProductionLine } from 'app/shared/model/production-line.model';
+import { ISite } from 'app/shared/model/site.model';
 import { IZone } from 'app/shared/model/zone.model';
 import { AssetType } from 'app/shared/model/enumerations/asset-type.model';
 import { AssetStatus } from 'app/shared/model/enumerations/asset-status.model';
 import { Criticality } from 'app/shared/model/enumerations/criticality.model';
+import { AssetGeofencePolicy } from 'app/shared/model/enumerations/asset-geofence-policy.model';
 import { MountingType } from 'app/shared/model/enumerations/mounting-type.model';
 import { TemperatureProbeType } from 'app/shared/model/enumerations/temperature-probe-type.model';
 
@@ -16,6 +17,7 @@ export interface IAsset {
   description?: string | null;
   status?: keyof typeof AssetStatus;
   criticality?: keyof typeof Criticality;
+  geofencePolicy?: keyof typeof AssetGeofencePolicy;
   responsibleName?: string | null;
   costCenter?: string | null;
   brand?: string | null;
@@ -41,9 +43,9 @@ export interface IAsset {
   lastCommissioningDate?: dayjs.Dayjs | null;
   lastMaintenanceDate?: dayjs.Dayjs | null;
   maintenanceCount?: number | null;
-  site?: ISite | null;
-  productionLine?: IProductionLine | null;
-  currentZone?: IZone | null;
+  productionLine?: IProductionLine;
+  allowedSite?: ISite | null;
+  allowedZone?: IZone | null;
 }
 
 export const defaultValue: Readonly<IAsset> = {

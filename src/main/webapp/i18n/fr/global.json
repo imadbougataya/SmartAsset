@@ -1,34 +1,34 @@
 {
   "global": {
     "title": "OCP Smart Asset",
-    "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
+    "browsehappy": "Vous utilisez un <strong>navigateur obsolète</strong>. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">le mettre à jour</a> pour une meilleure expérience.",
     "menu": {
       "home": "Accueil",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entités",
+        "main": "Référentiels",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "site": "Site",
-        "productionLine": "Production Line",
-        "zone": "Zone",
-        "gateway": "Gateway",
-        "asset": "Asset",
-        "sensor": "Sensor",
-        "sensorMeasurement": "Sensor Measurement",
-        "maintenanceEvent": "Maintenance Event",
-        "document": "Document",
-        "documentLink": "Document Link",
-        "assetMovementRequest": "Asset Movement Request",
-        "locationEvent": "Location Event",
-        "systemEvent": "System Event"
+        "site": "Sites",
+        "productionLine": "Lignes de production",
+        "zone": "Zones",
+        "gateway": "Balises de zone",
+        "asset": "Équipements",
+        "sensor": "Capteurs",
+        "sensorMeasurement": "Mesures des capteurs",
+        "maintenanceEvent": "Événements de maintenance",
+        "document": "Documents",
+        "documentLink": "Liens de documents",
+        "assetMovementRequest": "Demandes de déplacement",
+        "locationEvent": "Événements de localisation",
+        "systemEvent": "Événements système"
       },
       "account": {
         "main": "Compte",
         "settings": "Profil",
         "password": "Mot de passe",
         "sessions": "Sessions",
-        "login": "S'authentifier",
-        "logout": "Déconnexion",
+        "login": "Se connecter",
+        "logout": "Se déconnecter",
         "register": "Créer un compte"
       },
       "admin": {
@@ -36,9 +36,9 @@
         "userManagement": "Gestion des utilisateurs",
         "tracker": "Suivi des utilisateurs",
         "metrics": "Métriques",
-        "health": "Diagnostics",
+        "health": "État du système",
         "configuration": "Configuration",
-        "logs": "Logs",
+        "logs": "Journaux",
         "apidocs": "API",
         "database": "Base de données",
         "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
@@ -54,15 +54,15 @@
       "newpassword.placeholder": "Nouveau mot de passe",
       "confirmpassword.label": "Confirmation du nouveau mot de passe",
       "confirmpassword.placeholder": "Confirmation du nouveau mot de passe",
-      "email.label": "Email",
-      "email.placeholder": "Votre email"
+      "email.label": "Adresse e-mail",
+      "email.placeholder": "Votre adresse e-mail"
     },
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "Si vous voulez vous ",
+          "prefix": "Si vous souhaitez vous ",
           "link": "connecter",
-          "suffix": ", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=\"admin\" et mot de passe =\"admin\") <br/> - Utilisateur (nom d'utilisateur=\"user\" et mot de passe =\"user\")."
+          "suffix": ", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur : \"admin\", mot de passe : \"admin\") <br/> - Utilisateur (nom d'utilisateur : \"user\", mot de passe : \"user\")."
         },
         "register": {
           "noaccount": "Vous n'avez pas encore de compte ?",
@@ -70,51 +70,51 @@
         }
       },
       "error": {
-        "dontmatch": "Le nouveau mot de passe et sa confirmation ne sont pas égaux !"
+        "dontmatch": "Le nouveau mot de passe et sa confirmation ne correspondent pas."
       },
       "validate": {
         "newpassword": {
-          "required": "Votre mot de passe est requis.",
-          "minlength": "Votre mot de passe doit comporter au moins 4 caractères.",
-          "maxlength": "Votre mot de passe ne doit pas comporter plus de 50 caractères.",
+          "required": "Le mot de passe est requis.",
+          "minlength": "Le mot de passe doit comporter au moins 4 caractères.",
+          "maxlength": "Le mot de passe ne doit pas dépasser 50 caractères.",
           "strength": "Robustesse du mot de passe :"
         },
         "confirmpassword": {
-          "required": "Votre confirmation du mot de passe est requise.",
-          "minlength": "Votre confirmation du mot de passe doit comporter au moins 4 caractères.",
-          "maxlength": "Votre confirmation du mot de passe ne doit pas comporter plus de 50 caractères."
+          "required": "La confirmation du mot de passe est requise.",
+          "minlength": "La confirmation du mot de passe doit comporter au moins 4 caractères.",
+          "maxlength": "La confirmation du mot de passe ne doit pas dépasser 50 caractères."
         },
         "email": {
-          "required": "Votre email est requis.",
-          "minlength": "Votre email doit comporter au moins 5 caractères.",
-          "maxlength": "Votre email ne doit pas comporter plus de 50 caractères.",
-          "invalid": "Votre email n'est pas valide."
+          "required": "L'adresse e-mail est requise.",
+          "minlength": "L'adresse e-mail doit comporter au moins 5 caractères.",
+          "maxlength": "L'adresse e-mail ne doit pas dépasser 50 caractères.",
+          "invalid": "L'adresse e-mail n'est pas valide."
         }
       }
     },
     "field": {
-      "id": "ID"
+      "id": "Identifiant"
     },
     "ribbon": {
-      "dev": "Développement"
+      "dev": "Environnement de développement"
     },
-    "item-count": "Affichage {{first}} - {{second}} de {{total}} items."
+    "item-count": "Affichage des éléments {{first}} à {{second}} sur {{total}}."
   },
   "entity": {
     "action": {
-      "addblob": "Ajouter blob",
-      "addimage": "Ajouter image",
+      "addblob": "Ajouter un fichier",
+      "addimage": "Ajouter une image",
       "back": "Retour",
       "cancel": "Annuler",
-      "edit": "Editer",
+      "edit": "Modifier",
       "delete": "Supprimer",
       "open": "Ouvrir",
-      "save": "Sauvegarder",
-      "view": "Voir",
-      "show": "Show {{otherEntity}}"
+      "save": "Enregistrer",
+      "view": "Consulter",
+      "show": "Afficher {{otherEntity}}"
     },
     "detail": {
-      "field": "Champs",
+      "field": "Champ",
       "value": "Valeur"
     },
     "delete": {
@@ -122,39 +122,39 @@
     },
     "validation": {
       "required": "Ce champ est obligatoire.",
-      "minlength": "Ce champ doit faire au minimum {{min}} caractères.",
-      "maxlength": "Ce champ doit faire moins de {{max}} caractères.",
-      "min": "Ce champ doit être supérieur à {{min}}.",
-      "max": "Ce champ doit être inférieur à {{max}}.",
-      "minbytes": "Ce champ doit être supérieur à {{min}} bytes.",
-      "maxbytes": "Ce champ doit être inférieur à {{max}} bytes.",
-      "pattern": "Ce champ doit suivre l'expression régulière {{pattern}}.",
+      "minlength": "Ce champ doit comporter au minimum {{min}} caractères.",
+      "maxlength": "Ce champ doit comporter au maximum {{max}} caractères.",
+      "min": "Ce champ doit être supérieur ou égal à {{min}}.",
+      "max": "Ce champ doit être inférieur ou égal à {{max}}.",
+      "minbytes": "Ce champ doit être supérieur à {{min}} octets.",
+      "maxbytes": "Ce champ doit être inférieur à {{max}} octets.",
+      "pattern": "Ce champ doit respecter l'expression régulière {{pattern}}.",
       "number": "Ce champ doit être un nombre.",
       "datetimelocal": "Ce champ doit être une date et une heure.",
-      "patternLogin": "Ce champ ne peut contenir que des lettres, des chiffres ou des adresses e-mail."
+      "patternLogin": "Ce champ ne peut contenir que des lettres, des chiffres ou une adresse e-mail."
     },
     "filters": {
-      "set": "Following filters are set",
-      "clear": "Clear filter",
-      "clearAll": "Clear all filters"
+      "set": "Filtres actifs",
+      "clear": "Effacer le filtre",
+      "clearAll": "Effacer tous les filtres"
     }
   },
   "error": {
     "internalServerError": "Erreur interne du serveur",
     "server.not.reachable": "Serveur inaccessible",
-    "url.not.found": "Non trouvé",
-    "NotNull": "Le champ {{fieldName}} ne peut pas être vide !",
-    "Size": "Le champ {{fieldName}} ne respecte pas les critères minimum et maximum !",
-    "userexists": "Login déjà utilisé !",
-    "emailexists": "Email déjà utilisé !",
-    "idexists": "Une nouvelle entité {{entityName}} ne peut pas avoir d'identifiant !",
+    "url.not.found": "Ressource introuvable",
+    "NotNull": "Le champ {{fieldName}} ne peut pas être vide.",
+    "Size": "Le champ {{fieldName}} ne respecte pas les tailles minimales et maximales.",
+    "userexists": "Identifiant déjà utilisé.",
+    "emailexists": "Adresse e-mail déjà utilisée.",
+    "idexists": "Une nouvelle entité {{entityName}} ne peut pas avoir d'identifiant.",
     "idnull": "Identifiant invalide",
-    "idinvalid": "Invalid Id",
-    "idnotfound": "ID cannot be found",
+    "idinvalid": "Identifiant invalide",
+    "idnotfound": "Identifiant introuvable",
     "file": {
       "could.not.extract": "Impossible d'extraire le fichier",
       "not.image": "Le fichier doit être une image et non du type \"{{ fileType }}\""
     }
   },
-  "footer": "Ceci est votre pied de page"
+  "footer": "© OCP – Smart Asset Management"
 }

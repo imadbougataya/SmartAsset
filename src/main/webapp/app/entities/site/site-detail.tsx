@@ -22,7 +22,7 @@ export const SiteDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="siteDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.site.detail.title">Site</Translate>
+          <Translate contentKey="SmartAssetCoreApp.site.detail.title">Site</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -33,22 +33,40 @@ export const SiteDetail = () => {
           <dd>{siteEntity.id}</dd>
           <dt>
             <span id="code">
-              <Translate contentKey="smartassetcoreApp.site.code">Code</Translate>
+              <Translate contentKey="SmartAssetCoreApp.site.code">Code</Translate>
             </span>
           </dt>
           <dd>{siteEntity.code}</dd>
           <dt>
             <span id="name">
-              <Translate contentKey="smartassetcoreApp.site.name">Name</Translate>
+              <Translate contentKey="SmartAssetCoreApp.site.name">Name</Translate>
             </span>
           </dt>
           <dd>{siteEntity.name}</dd>
           <dt>
             <span id="description">
-              <Translate contentKey="smartassetcoreApp.site.description">Description</Translate>
+              <Translate contentKey="SmartAssetCoreApp.site.description">Description</Translate>
             </span>
           </dt>
           <dd>{siteEntity.description}</dd>
+          <dt>
+            <span id="centerLat">
+              <Translate contentKey="SmartAssetCoreApp.site.centerLat">Center Lat</Translate>
+            </span>
+          </dt>
+          <dd>{siteEntity.centerLat}</dd>
+          <dt>
+            <span id="centerLon">
+              <Translate contentKey="SmartAssetCoreApp.site.centerLon">Center Lon</Translate>
+            </span>
+          </dt>
+          <dd>{siteEntity.centerLon}</dd>
+          <dt>
+            <span id="radiusMeters">
+              <Translate contentKey="SmartAssetCoreApp.site.radiusMeters">Radius Meters</Translate>
+            </span>
+          </dt>
+          <dd>{siteEntity.radiusMeters}</dd>
         </dl>
         <Button tag={Link} to="/site" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
+import { Button, Col, FormText, Row } from 'reactstrap';
 import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -87,8 +87,8 @@ export const SensorUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.sensor.home.createOrEditLabel" data-cy="SensorCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.sensor.home.createOrEditLabel">Create or edit a Sensor</Translate>
+          <h2 id="SmartAssetCoreApp.sensor.home.createOrEditLabel" data-cy="SensorCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.sensor.home.createOrEditLabel">Create or edit a Sensor</Translate>
           </h2>
         </Col>
       </Row>
@@ -109,7 +109,7 @@ export const SensorUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.sensorType')}
+                label={translate('SmartAssetCoreApp.sensor.sensorType')}
                 id="sensor-sensorType"
                 name="sensorType"
                 data-cy="sensorType"
@@ -117,12 +117,23 @@ export const SensorUpdate = () => {
               >
                 {sensorTypeValues.map(sensorType => (
                   <option value={sensorType} key={sensorType}>
-                    {translate(`smartassetcoreApp.SensorType.${sensorType}`)}
+                    {translate(`SmartAssetCoreApp.SensorType.${sensorType}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.name')}
+                label={translate('SmartAssetCoreApp.sensor.externalId')}
+                id="sensor-externalId"
+                name="externalId"
+                data-cy="externalId"
+                type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
+                }}
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.sensor.name')}
                 id="sensor-name"
                 name="name"
                 data-cy="name"
@@ -132,7 +143,7 @@ export const SensorUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.unit')}
+                label={translate('SmartAssetCoreApp.sensor.unit')}
                 id="sensor-unit"
                 name="unit"
                 data-cy="unit"
@@ -142,21 +153,21 @@ export const SensorUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.minThreshold')}
+                label={translate('SmartAssetCoreApp.sensor.minThreshold')}
                 id="sensor-minThreshold"
                 name="minThreshold"
                 data-cy="minThreshold"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.maxThreshold')}
+                label={translate('SmartAssetCoreApp.sensor.maxThreshold')}
                 id="sensor-maxThreshold"
                 name="maxThreshold"
                 data-cy="maxThreshold"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.installedAt')}
+                label={translate('SmartAssetCoreApp.sensor.installedAt')}
                 id="sensor-installedAt"
                 name="installedAt"
                 data-cy="installedAt"
@@ -164,7 +175,7 @@ export const SensorUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.active')}
+                label={translate('SmartAssetCoreApp.sensor.active')}
                 id="sensor-active"
                 name="active"
                 data-cy="active"
@@ -172,31 +183,25 @@ export const SensorUpdate = () => {
                 type="checkbox"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensor.externalId')}
-                id="sensor-externalId"
-                name="externalId"
-                data-cy="externalId"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
                 id="sensor-asset"
                 name="asset"
                 data-cy="asset"
-                label={translate('smartassetcoreApp.sensor.asset')}
+                label={translate('SmartAssetCoreApp.sensor.asset')}
                 type="select"
+                required
               >
                 <option value="" key="0" />
                 {assets
                   ? assets.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.assetCode}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/sensor" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

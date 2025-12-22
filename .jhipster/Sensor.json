@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152053"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -10,6 +10,12 @@
       "fieldType": "SensorType",
       "fieldValidateRules": ["required"],
       "fieldValues": "TEMPERATURE,VIBRATION,PRESSURE,CURRENT,VOLTAGE,OIL_LEVEL,LIQUID_LEVEL,HUMIDITY,BLE_TAG,GNSS_TRACKER"
+    },
+    {
+      "fieldName": "externalId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "120"
     },
     {
       "fieldName": "name",
@@ -39,12 +45,6 @@
       "fieldName": "active",
       "fieldType": "Boolean",
       "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "externalId",
-      "fieldType": "String",
-      "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "120"
     }
   ],
   "jpaMetamodelFiltering": true,
@@ -52,20 +52,11 @@
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityField": "measuredAt",
-      "otherEntityName": "sensorMeasurement",
-      "otherEntityRelationshipName": "sensor",
-      "relationshipName": "measurements",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
-      "otherEntityField": "assetCode",
       "otherEntityName": "asset",
-      "otherEntityRelationshipName": "sensors",
       "relationshipName": "asset",
-      "relationshipSide": "right",
-      "relationshipType": "many-to-one"
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
     }
   ],
   "service": "serviceClass"

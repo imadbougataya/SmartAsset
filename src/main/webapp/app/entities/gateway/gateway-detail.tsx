@@ -23,7 +23,7 @@ export const GatewayDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="gatewayDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.gateway.detail.title">Gateway</Translate>
+          <Translate contentKey="SmartAssetCoreApp.gateway.detail.title">Gateway</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,43 +34,43 @@ export const GatewayDetail = () => {
           <dd>{gatewayEntity.id}</dd>
           <dt>
             <span id="code">
-              <Translate contentKey="smartassetcoreApp.gateway.code">Code</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.code">Code</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.code}</dd>
           <dt>
             <span id="name">
-              <Translate contentKey="smartassetcoreApp.gateway.name">Name</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.name">Name</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.name}</dd>
           <dt>
             <span id="vendor">
-              <Translate contentKey="smartassetcoreApp.gateway.vendor">Vendor</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.vendor">Vendor</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.vendor}</dd>
           <dt>
             <span id="model">
-              <Translate contentKey="smartassetcoreApp.gateway.model">Model</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.model">Model</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.model}</dd>
           <dt>
             <span id="macAddress">
-              <Translate contentKey="smartassetcoreApp.gateway.macAddress">Mac Address</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.macAddress">Mac Address</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.macAddress}</dd>
           <dt>
             <span id="ipAddress">
-              <Translate contentKey="smartassetcoreApp.gateway.ipAddress">Ip Address</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.ipAddress">Ip Address</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.ipAddress}</dd>
           <dt>
             <span id="installedAt">
-              <Translate contentKey="smartassetcoreApp.gateway.installedAt">Installed At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.installedAt">Installed At</Translate>
             </span>
           </dt>
           <dd>
@@ -78,18 +78,18 @@ export const GatewayDetail = () => {
           </dd>
           <dt>
             <span id="active">
-              <Translate contentKey="smartassetcoreApp.gateway.active">Active</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.active">Active</Translate>
             </span>
           </dt>
           <dd>{gatewayEntity.active ? 'true' : 'false'}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.gateway.site">Site</Translate>
+            <Translate contentKey="SmartAssetCoreApp.gateway.site">Site</Translate>
           </dt>
-          <dd>{gatewayEntity.site ? gatewayEntity.site.code : ''}</dd>
+          <dd>{gatewayEntity.site ? gatewayEntity.site.id : ''}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.gateway.zone">Zone</Translate>
+            <Translate contentKey="SmartAssetCoreApp.gateway.zone">Zone</Translate>
           </dt>
-          <dd>{gatewayEntity.zone ? gatewayEntity.zone.code : ''}</dd>
+          <dd>{gatewayEntity.zone ? gatewayEntity.zone.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/gateway" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152056"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -47,15 +47,7 @@
   ],
   "jpaMetamodelFiltering": true,
   "name": "Document",
-  "relationships": [
-    {
-      "otherEntityField": "linkedAt",
-      "otherEntityName": "documentLink",
-      "otherEntityRelationshipName": "document",
-      "relationshipName": "links",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    }
-  ],
+  "pagination": "pagination",
+  "relationships": [],
   "service": "serviceClass"
 }

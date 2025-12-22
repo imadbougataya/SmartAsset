@@ -23,7 +23,7 @@ export const AssetMovementRequestDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="assetMovementRequestDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.assetMovementRequest.detail.title">AssetMovementRequest</Translate>
+          <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.detail.title">AssetMovementRequest</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,13 +34,13 @@ export const AssetMovementRequestDetail = () => {
           <dd>{assetMovementRequestEntity.id}</dd>
           <dt>
             <span id="status">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.status">Status</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.status">Status</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.status}</dd>
           <dt>
             <span id="requestedAt">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.requestedAt">Requested At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.requestedAt">Requested At</Translate>
             </span>
           </dt>
           <dd>
@@ -50,37 +50,37 @@ export const AssetMovementRequestDetail = () => {
           </dd>
           <dt>
             <span id="reason">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.reason">Reason</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.reason">Reason</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.reason}</dd>
           <dt>
             <span id="fromLocationLabel">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.fromLocationLabel">From Location Label</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.fromLocationLabel">From Location Label</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.fromLocationLabel}</dd>
           <dt>
             <span id="toLocationLabel">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.toLocationLabel">To Location Label</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.toLocationLabel">To Location Label</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.toLocationLabel}</dd>
           <dt>
             <span id="esignWorkflowId">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignWorkflowId">Esign Workflow Id</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignWorkflowId">Esign Workflow Id</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.esignWorkflowId}</dd>
           <dt>
             <span id="esignStatus">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignStatus">Esign Status</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignStatus">Esign Status</Translate>
             </span>
           </dt>
           <dd>{assetMovementRequestEntity.esignStatus}</dd>
           <dt>
             <span id="esignLastUpdate">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignLastUpdate">Esign Last Update</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignLastUpdate">Esign Last Update</Translate>
             </span>
           </dt>
           <dd>
@@ -90,7 +90,7 @@ export const AssetMovementRequestDetail = () => {
           </dd>
           <dt>
             <span id="signedAt">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.signedAt">Signed At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.signedAt">Signed At</Translate>
             </span>
           </dt>
           <dd>
@@ -100,7 +100,7 @@ export const AssetMovementRequestDetail = () => {
           </dd>
           <dt>
             <span id="executedAt">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.executedAt">Executed At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.executedAt">Executed At</Translate>
             </span>
           </dt>
           <dd>
@@ -109,21 +109,17 @@ export const AssetMovementRequestDetail = () => {
             ) : null}
           </dd>
           <dt>
-            <span id="requestedBy">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.requestedBy">Requested By</Translate>
-            </span>
+            <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.asset">Asset</Translate>
           </dt>
-          <dd>{assetMovementRequestEntity.requestedBy}</dd>
+          <dd>{assetMovementRequestEntity.asset ? assetMovementRequestEntity.asset.id : ''}</dd>
           <dt>
-            <span id="approvedBy">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.approvedBy">Approved By</Translate>
-            </span>
+            <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.requestedBy">Requested By</Translate>
           </dt>
-          <dd>{assetMovementRequestEntity.approvedBy}</dd>
+          <dd>{assetMovementRequestEntity.requestedBy ? assetMovementRequestEntity.requestedBy.id : ''}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.assetMovementRequest.asset">Asset</Translate>
+            <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.approvedBy">Approved By</Translate>
           </dt>
-          <dd>{assetMovementRequestEntity.asset ? assetMovementRequestEntity.asset.assetCode : ''}</dd>
+          <dd>{assetMovementRequestEntity.approvedBy ? assetMovementRequestEntity.approvedBy.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/asset-movement-request" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

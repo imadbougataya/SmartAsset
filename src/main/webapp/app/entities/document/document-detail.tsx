@@ -23,7 +23,7 @@ export const DocumentDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="documentDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.document.detail.title">Document</Translate>
+          <Translate contentKey="SmartAssetCoreApp.document.detail.title">Document</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,37 +34,37 @@ export const DocumentDetail = () => {
           <dd>{documentEntity.id}</dd>
           <dt>
             <span id="fileName">
-              <Translate contentKey="smartassetcoreApp.document.fileName">File Name</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.fileName">File Name</Translate>
             </span>
           </dt>
           <dd>{documentEntity.fileName}</dd>
           <dt>
             <span id="mimeType">
-              <Translate contentKey="smartassetcoreApp.document.mimeType">Mime Type</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.mimeType">Mime Type</Translate>
             </span>
           </dt>
           <dd>{documentEntity.mimeType}</dd>
           <dt>
             <span id="sizeBytes">
-              <Translate contentKey="smartassetcoreApp.document.sizeBytes">Size Bytes</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.sizeBytes">Size Bytes</Translate>
             </span>
           </dt>
           <dd>{documentEntity.sizeBytes}</dd>
           <dt>
             <span id="storageRef">
-              <Translate contentKey="smartassetcoreApp.document.storageRef">Storage Ref</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.storageRef">Storage Ref</Translate>
             </span>
           </dt>
           <dd>{documentEntity.storageRef}</dd>
           <dt>
             <span id="checksumSha256">
-              <Translate contentKey="smartassetcoreApp.document.checksumSha256">Checksum Sha 256</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.checksumSha256">Checksum Sha 256</Translate>
             </span>
           </dt>
           <dd>{documentEntity.checksumSha256}</dd>
           <dt>
             <span id="uploadedAt">
-              <Translate contentKey="smartassetcoreApp.document.uploadedAt">Uploaded At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.uploadedAt">Uploaded At</Translate>
             </span>
           </dt>
           <dd>
@@ -72,7 +72,7 @@ export const DocumentDetail = () => {
           </dd>
           <dt>
             <span id="uploadedBy">
-              <Translate contentKey="smartassetcoreApp.document.uploadedBy">Uploaded By</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.uploadedBy">Uploaded By</Translate>
             </span>
           </dt>
           <dd>{documentEntity.uploadedBy}</dd>

@@ -1,5 +1,5 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "MovementRequestStatus": {
       "null": "",
       "DRAFT": "DRAFT",

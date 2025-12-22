@@ -1,20 +1,20 @@
 {
   "home": {
-    "title": "Bienvenue, Java Hipster !",
+    "title": "Bienvenue",
     "subtitle": "Ceci est votre page d'accueil",
     "logged": {
       "message": "Vous êtes connecté en tant que \"{{username}}\"."
     },
     "map": {
       "title": "Carte du site – Jorf Lasfar",
-      "subtitle": "Localisation temps réel des équipements industriels"
+      "subtitle": "Localisation en temps réel des équipements industriels"
     },
     "question": "Si vous avez des questions à propos de JHipster :",
     "link": {
       "homepage": "Page d'accueil de JHipster",
       "stackoverflow": "JHipster sur Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
+      "bugtracker": "Suivi des anomalies JHipster",
+      "chat": "Salon de discussion public JHipster",
       "follow": "Suivez @jhipster sur Twitter"
     },
     "dashboard": {
@@ -34,24 +34,24 @@
     },
     "events": {
       "title": "Derniers événements",
-      "sample.entry": "Entrée équipement – Zone magasin",
-      "sample.exit": "Sortie équipement – Atelier maintenance",
-      "sample.alert": "Alerte température – Compresseur",
+      "sample.entry": "Entrée d’équipement – Zone magasin",
+      "sample.exit": "Sortie d’équipement – Atelier maintenance",
+      "sample.alert": "Alerte de température – Compresseur",
       "sample.movement": "Mouvement non planifié – Zone critique"
     },
     "shortcuts": {
       "title": "Accès rapides",
       "assets": "Gestion des équipements",
-      "zones": "Zones & emplacements",
+      "zones": "Zones et emplacements",
       "locationEvents": "Événements de localisation",
-      "maintenance": "Maintenance & interventions",
+      "maintenance": "Maintenance et interventions",
       "documents": "Documentation technique"
     },
     "login": {
-      "required": "Veuillez vous connecter pour accéder aux fonctionnalités de l’application.",
+      "required": "Veuillez vous connecter pour accéder aux fonctionnalités de l'application.",
       "link": "Se connecter"
     },
-    "like": "Si vous aimez JHipster, donnez nous une étoile sur",
-    "github": "GitHub "
+    "like": "Si vous aimez JHipster, donnez-nous une étoile sur",
+    "github": "GitHub"
   }
 }

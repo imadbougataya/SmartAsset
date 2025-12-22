@@ -1,31 +1,31 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "zone": {
       "home": {
         "title": "Zones",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Zone",
-        "createOrEditLabel": "Créer ou éditer un Zone",
-        "notFound": "Aucun Zone trouvé"
+        "createLabel": "Créer une nouvelle zone",
+        "createOrEditLabel": "Créer ou modifier une zone",
+        "notFound": "Aucune zone trouvée"
       },
-      "created": "Un nouveau Zone a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Zone avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Zone avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle zone a été créée avec l'identifiant {{ param }}",
+      "updated": "La zone avec l'identifiant {{ param }} a été mise à jour",
+      "deleted": "La zone avec l'identifiant {{ param }} a été supprimée",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Zone {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer la zone {{ id }} ?"
       },
       "detail": {
         "title": "Zone"
       },
-      "id": "ID",
+      "id": "Identifiant",
       "code": "Code",
-      "name": "Name",
+      "name": "Nom",
       "description": "Description",
-      "zoneType": "Zone Type",
-      "centerLat": "Center Lat",
-      "centerLon": "Center Lon",
-      "radiusMeters": "Radius Meters",
-      "locationEvents": "Location Events",
+      "zoneType": "Type de zone",
+      "centerLat": "Latitude",
+      "centerLon": "Longitude",
+      "radiusMeters": "Rayon (mètres)",
+      "locationEvents": "Événements de localisation",
       "site": "Site"
     }
   }

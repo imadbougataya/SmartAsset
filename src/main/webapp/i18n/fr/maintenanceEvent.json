@@ -1,36 +1,36 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "maintenanceEvent": {
       "home": {
-        "title": "MaintenanceEvents",
+        "title": "Événements de maintenance",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Maintenance Event",
-        "createOrEditLabel": "Créer ou éditer un Maintenance Event",
-        "notFound": "Aucun Maintenance Event trouvé"
+        "createLabel": "Créer un nouvel événement de maintenance",
+        "createOrEditLabel": "Créer ou modifier un événement de maintenance",
+        "notFound": "Aucun événement de maintenance trouvé"
       },
-      "created": "Un nouveau Maintenance Event a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Maintenance Event avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Maintenance Event avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouvel événement de maintenance a été créé avec l'identifiant {{ param }}",
+      "updated": "L'événement de maintenance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "L'événement de maintenance avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Maintenance Event {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer l'événement de maintenance {{ id }} ?"
       },
       "detail": {
-        "title": "Maintenance Event"
+        "title": "Événement de maintenance"
       },
-      "id": "ID",
-      "maintenanceType": "Maintenance Type",
-      "status": "Status",
-      "requestedAt": "Requested At",
-      "plannedAt": "Planned At",
-      "startedAt": "Started At",
-      "finishedAt": "Finished At",
-      "title": "Title",
+      "id": "Identifiant",
+      "maintenanceType": "Type de maintenance",
+      "status": "Statut",
+      "requestedAt": "Demandée le",
+      "plannedAt": "Planifiée le",
+      "startedAt": "Démarrée le",
+      "finishedAt": "Terminée le",
+      "title": "Titre",
       "description": "Description",
-      "technician": "Technician",
-      "downtimeMinutes": "Downtime Minutes",
-      "costAmount": "Cost Amount",
+      "technician": "Technicien",
+      "downtimeMinutes": "Durée d’arrêt (minutes)",
+      "costAmount": "Coût",
       "notes": "Notes",
-      "asset": "Asset"
+      "asset": "Équipement"
     }
   }
 }

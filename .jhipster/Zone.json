@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152050"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -24,12 +24,6 @@
       "fieldValidateRulesMaxlength": "500"
     },
     {
-      "fieldName": "zoneType",
-      "fieldType": "String",
-      "fieldValidateRules": ["maxlength"],
-      "fieldValidateRulesMaxlength": "80"
-    },
-    {
       "fieldName": "centerLat",
       "fieldType": "Double"
     },
@@ -39,7 +33,9 @@
     },
     {
       "fieldName": "radiusMeters",
-      "fieldType": "Double"
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "1"
     }
   ],
   "jpaMetamodelFiltering": true,
@@ -47,19 +43,11 @@
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityField": "observedAt",
-      "otherEntityName": "locationEvent",
-      "otherEntityRelationshipName": "zone",
-      "relationshipName": "locationEvents",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
-      "otherEntityField": "code",
       "otherEntityName": "site",
       "relationshipName": "site",
       "relationshipSide": "left",
-      "relationshipType": "many-to-one"
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
     }
   ],
   "service": "serviceClass"

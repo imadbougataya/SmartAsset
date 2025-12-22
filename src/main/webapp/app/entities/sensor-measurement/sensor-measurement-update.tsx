@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
+import { Button, Col, FormText, Row } from 'reactstrap';
 import { Translate, ValidatedField, ValidatedForm, isNumber, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -81,8 +81,8 @@ export const SensorMeasurementUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.sensorMeasurement.home.createOrEditLabel" data-cy="SensorMeasurementCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.sensorMeasurement.home.createOrEditLabel">
+          <h2 id="SmartAssetCoreApp.sensorMeasurement.home.createOrEditLabel" data-cy="SensorMeasurementCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.home.createOrEditLabel">
               Create or edit a SensorMeasurement
             </Translate>
           </h2>
@@ -105,7 +105,7 @@ export const SensorMeasurementUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.sensorMeasurement.measuredAt')}
+                label={translate('SmartAssetCoreApp.sensorMeasurement.measuredAt')}
                 id="sensor-measurement-measuredAt"
                 name="measuredAt"
                 data-cy="measuredAt"
@@ -116,7 +116,7 @@ export const SensorMeasurementUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensorMeasurement.value')}
+                label={translate('SmartAssetCoreApp.sensorMeasurement.value')}
                 id="sensor-measurement-value"
                 name="value"
                 data-cy="value"
@@ -127,7 +127,7 @@ export const SensorMeasurementUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensorMeasurement.quality')}
+                label={translate('SmartAssetCoreApp.sensorMeasurement.quality')}
                 id="sensor-measurement-quality"
                 name="quality"
                 data-cy="quality"
@@ -137,7 +137,7 @@ export const SensorMeasurementUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.sensorMeasurement.source')}
+                label={translate('SmartAssetCoreApp.sensorMeasurement.source')}
                 id="sensor-measurement-source"
                 name="source"
                 data-cy="source"
@@ -150,18 +150,22 @@ export const SensorMeasurementUpdate = () => {
                 id="sensor-measurement-sensor"
                 name="sensor"
                 data-cy="sensor"
-                label={translate('smartassetcoreApp.sensorMeasurement.sensor')}
+                label={translate('SmartAssetCoreApp.sensorMeasurement.sensor')}
                 type="select"
+                required
               >
                 <option value="" key="0" />
                 {sensors
                   ? sensors.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.name}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/sensor-measurement" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

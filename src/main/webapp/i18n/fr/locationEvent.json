@@ -1,36 +1,39 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "locationEvent": {
       "home": {
-        "title": "LocationEvents",
+        "title": "Événements de localisation",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Location Event",
-        "createOrEditLabel": "Créer ou éditer un Location Event",
-        "notFound": "Aucun Location Event trouvé"
+        "createLabel": "Créer un nouvel événement de localisation",
+        "createOrEditLabel": "Créer ou modifier un événement de localisation",
+        "notFound": "Aucun événement de localisation trouvé"
       },
-      "created": "Un nouveau Location Event a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Location Event avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Location Event avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouvel événement de localisation a été créé avec l'identifiant {{ param }}",
+      "updated": "L'événement de localisation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "L'événement de localisation avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Location Event {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer l'événement de localisation {{ id }} ?"
       },
       "detail": {
-        "title": "Location Event"
+        "title": "Événement de localisation"
       },
-      "id": "ID",
+      "id": "Identifiant",
       "source": "Source",
-      "observedAt": "Observed At",
-      "zoneConfidence": "Zone Confidence",
-      "rssi": "Rssi",
-      "txPower": "Tx Power",
+      "observedAt": "Date d’observation",
+      "zoneConfidence": "Niveau de confiance de la zone",
+      "rssi": "RSSI",
+      "txPower": "Puissance d’émission (Tx)",
       "latitude": "Latitude",
       "longitude": "Longitude",
-      "accuracyMeters": "Accuracy Meters",
-      "speedKmh": "Speed Kmh",
-      "rawPayload": "Raw Payload",
-      "asset": "Asset",
-      "zone": "Zone",
-      "gateway": "Gateway"
+      "accuracyMeters": "Précision (mètres)",
+      "speedKmh": "Vitesse (km/h)",
+      "gnssConstellation": "Constellation GNSS",
+      "rawPayload": "Données brutes",
+      "asset": "Équipement",
+      "sensor": "Capteur",
+      "gateway": "Balise de zone",
+      "matchedSite": "Site détecté",
+      "matchedZone": "Zone détectée"
     }
   }
 }

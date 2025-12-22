@@ -92,16 +92,16 @@ export const MaintenanceEvent = () => {
   return (
     <div>
       <h2 id="maintenance-event-heading" data-cy="MaintenanceEventHeading">
-        <Translate contentKey="smartassetcoreApp.maintenanceEvent.home.title">Maintenance Events</Translate>
+        <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.home.title">Maintenance Events</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.maintenanceEvent.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/maintenance-event/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.maintenanceEvent.home.createLabel">Create new Maintenance Event</Translate>
+            <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.home.createLabel">Create new Maintenance Event</Translate>
           </Link>
         </div>
       </h2>
@@ -111,59 +111,59 @@ export const MaintenanceEvent = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('maintenanceType')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.maintenanceType">Maintenance Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.maintenanceType">Maintenance Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('maintenanceType')} />
                 </th>
                 <th className="hand" onClick={sort('status')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.status">Status</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.status">Status</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
                 </th>
                 <th className="hand" onClick={sort('requestedAt')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.requestedAt">Requested At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.requestedAt">Requested At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('requestedAt')} />
                 </th>
                 <th className="hand" onClick={sort('plannedAt')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.plannedAt">Planned At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.plannedAt">Planned At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('plannedAt')} />
                 </th>
                 <th className="hand" onClick={sort('startedAt')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.startedAt">Started At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.startedAt">Started At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('startedAt')} />
                 </th>
                 <th className="hand" onClick={sort('finishedAt')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.finishedAt">Finished At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.finishedAt">Finished At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('finishedAt')} />
                 </th>
                 <th className="hand" onClick={sort('title')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.title">Title</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.title">Title</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('title')} />
                 </th>
                 <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.description">Description</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.description">Description</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
                 </th>
                 <th className="hand" onClick={sort('technician')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.technician">Technician</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.technician">Technician</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('technician')} />
                 </th>
                 <th className="hand" onClick={sort('downtimeMinutes')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.downtimeMinutes">Downtime Minutes</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.downtimeMinutes">Downtime Minutes</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('downtimeMinutes')} />
                 </th>
                 <th className="hand" onClick={sort('costAmount')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.costAmount">Cost Amount</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.costAmount">Cost Amount</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('costAmount')} />
                 </th>
                 <th className="hand" onClick={sort('notes')}>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.notes">Notes</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.notes">Notes</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('notes')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.maintenanceEvent.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -177,10 +177,10 @@ export const MaintenanceEvent = () => {
                     </Button>
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.MaintenanceType.${maintenanceEvent.maintenanceType}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.MaintenanceType.${maintenanceEvent.maintenanceType}`} />
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.MaintenanceStatus.${maintenanceEvent.status}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.MaintenanceStatus.${maintenanceEvent.status}`} />
                   </td>
                   <td>
                     {maintenanceEvent.requestedAt ? (
@@ -209,11 +209,7 @@ export const MaintenanceEvent = () => {
                   <td>{maintenanceEvent.costAmount}</td>
                   <td>{maintenanceEvent.notes}</td>
                   <td>
-                    {maintenanceEvent.asset ? (
-                      <Link to={`/asset/${maintenanceEvent.asset.id}`}>{maintenanceEvent.asset.assetCode}</Link>
-                    ) : (
-                      ''
-                    )}
+                    {maintenanceEvent.asset ? <Link to={`/asset/${maintenanceEvent.asset.id}`}>{maintenanceEvent.asset.id}</Link> : ''}
                   </td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
@@ -263,7 +259,7 @@ export const MaintenanceEvent = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.maintenanceEvent.home.notFound">No Maintenance Events found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.maintenanceEvent.home.notFound">No Maintenance Events found</Translate>
             </div>
           )
         )}

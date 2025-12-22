@@ -92,16 +92,16 @@ export const Asset = () => {
   return (
     <div>
       <h2 id="asset-heading" data-cy="AssetHeading">
-        <Translate contentKey="smartassetcoreApp.asset.home.title">Assets</Translate>
+        <Translate contentKey="SmartAssetCoreApp.asset.home.title">Assets</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.asset.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.asset.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/asset/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.asset.home.createLabel">Create new Asset</Translate>
+            <Translate contentKey="SmartAssetCoreApp.asset.home.createLabel">Create new Asset</Translate>
           </Link>
         </div>
       </h2>
@@ -111,140 +111,144 @@ export const Asset = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.asset.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
+                  <Translate contentKey="SmartAssetCoreApp.asset.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('assetType')}>
-                  <Translate contentKey="smartassetcoreApp.asset.assetType">Asset Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.assetType">Asset Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('assetType')} />
                 </th>
                 <th className="hand" onClick={sort('assetCode')}>
-                  <Translate contentKey="smartassetcoreApp.asset.assetCode">Asset Code</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.assetCode">Asset Code</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('assetCode')} />
                 </th>
                 <th className="hand" onClick={sort('reference')}>
-                  <Translate contentKey="smartassetcoreApp.asset.reference">Reference</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.reference">Reference</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('reference')} />
                 </th>
                 <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="smartassetcoreApp.asset.description">Description</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.description">Description</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
                 </th>
                 <th className="hand" onClick={sort('status')}>
-                  <Translate contentKey="smartassetcoreApp.asset.status">Status</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.status">Status</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
                 </th>
                 <th className="hand" onClick={sort('criticality')}>
-                  <Translate contentKey="smartassetcoreApp.asset.criticality">Criticality</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.criticality">Criticality</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('criticality')} />
                 </th>
+                <th className="hand" onClick={sort('geofencePolicy')}>
+                  <Translate contentKey="SmartAssetCoreApp.asset.geofencePolicy">Geofence Policy</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('geofencePolicy')} />
+                </th>
                 <th className="hand" onClick={sort('responsibleName')}>
-                  <Translate contentKey="smartassetcoreApp.asset.responsibleName">Responsible Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.responsibleName">Responsible Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('responsibleName')} />
                 </th>
                 <th className="hand" onClick={sort('costCenter')}>
-                  <Translate contentKey="smartassetcoreApp.asset.costCenter">Cost Center</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.costCenter">Cost Center</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('costCenter')} />
                 </th>
                 <th className="hand" onClick={sort('brand')}>
-                  <Translate contentKey="smartassetcoreApp.asset.brand">Brand</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.brand">Brand</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('brand')} />
                 </th>
                 <th className="hand" onClick={sort('model')}>
-                  <Translate contentKey="smartassetcoreApp.asset.model">Model</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.model">Model</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('model')} />
                 </th>
                 <th className="hand" onClick={sort('serialNumber')}>
-                  <Translate contentKey="smartassetcoreApp.asset.serialNumber">Serial Number</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.serialNumber">Serial Number</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('serialNumber')} />
                 </th>
                 <th className="hand" onClick={sort('powerKw')}>
-                  <Translate contentKey="smartassetcoreApp.asset.powerKw">Power Kw</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.powerKw">Power Kw</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('powerKw')} />
                 </th>
                 <th className="hand" onClick={sort('voltageV')}>
-                  <Translate contentKey="smartassetcoreApp.asset.voltageV">Voltage V</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.voltageV">Voltage V</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('voltageV')} />
                 </th>
                 <th className="hand" onClick={sort('currentA')}>
-                  <Translate contentKey="smartassetcoreApp.asset.currentA">Current A</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.currentA">Current A</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('currentA')} />
                 </th>
                 <th className="hand" onClick={sort('cosPhi')}>
-                  <Translate contentKey="smartassetcoreApp.asset.cosPhi">Cos Phi</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.cosPhi">Cos Phi</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('cosPhi')} />
                 </th>
                 <th className="hand" onClick={sort('speedRpm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.speedRpm">Speed Rpm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.speedRpm">Speed Rpm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('speedRpm')} />
                 </th>
                 <th className="hand" onClick={sort('ipRating')}>
-                  <Translate contentKey="smartassetcoreApp.asset.ipRating">Ip Rating</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.ipRating">Ip Rating</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('ipRating')} />
                 </th>
                 <th className="hand" onClick={sort('insulationClass')}>
-                  <Translate contentKey="smartassetcoreApp.asset.insulationClass">Insulation Class</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.insulationClass">Insulation Class</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('insulationClass')} />
                 </th>
                 <th className="hand" onClick={sort('mountingType')}>
-                  <Translate contentKey="smartassetcoreApp.asset.mountingType">Mounting Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.mountingType">Mounting Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('mountingType')} />
                 </th>
                 <th className="hand" onClick={sort('shaftDiameterMm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.shaftDiameterMm">Shaft Diameter Mm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.shaftDiameterMm">Shaft Diameter Mm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('shaftDiameterMm')} />
                 </th>
                 <th className="hand" onClick={sort('footDistanceAmm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.footDistanceAmm">Foot Distance Amm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.footDistanceAmm">Foot Distance Amm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('footDistanceAmm')} />
                 </th>
                 <th className="hand" onClick={sort('footDistanceBmm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.footDistanceBmm">Foot Distance Bmm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.footDistanceBmm">Foot Distance Bmm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('footDistanceBmm')} />
                 </th>
                 <th className="hand" onClick={sort('frontFlangeMm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.frontFlangeMm">Front Flange Mm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.frontFlangeMm">Front Flange Mm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('frontFlangeMm')} />
                 </th>
                 <th className="hand" onClick={sort('rearFlangeMm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.rearFlangeMm">Rear Flange Mm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.rearFlangeMm">Rear Flange Mm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('rearFlangeMm')} />
                 </th>
                 <th className="hand" onClick={sort('iecAxisHeightMm')}>
-                  <Translate contentKey="smartassetcoreApp.asset.iecAxisHeightMm">Iec Axis Height Mm</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.iecAxisHeightMm">Iec Axis Height Mm</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('iecAxisHeightMm')} />
                 </th>
                 <th className="hand" onClick={sort('dimensionsSource')}>
-                  <Translate contentKey="smartassetcoreApp.asset.dimensionsSource">Dimensions Source</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.dimensionsSource">Dimensions Source</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('dimensionsSource')} />
                 </th>
                 <th className="hand" onClick={sort('hasHeating')}>
-                  <Translate contentKey="smartassetcoreApp.asset.hasHeating">Has Heating</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.hasHeating">Has Heating</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('hasHeating')} />
                 </th>
                 <th className="hand" onClick={sort('temperatureProbeType')}>
-                  <Translate contentKey="smartassetcoreApp.asset.temperatureProbeType">Temperature Probe Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.temperatureProbeType">Temperature Probe Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('temperatureProbeType')} />
                 </th>
                 <th className="hand" onClick={sort('lastCommissioningDate')}>
-                  <Translate contentKey="smartassetcoreApp.asset.lastCommissioningDate">Last Commissioning Date</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.lastCommissioningDate">Last Commissioning Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('lastCommissioningDate')} />
                 </th>
                 <th className="hand" onClick={sort('lastMaintenanceDate')}>
-                  <Translate contentKey="smartassetcoreApp.asset.lastMaintenanceDate">Last Maintenance Date</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.lastMaintenanceDate">Last Maintenance Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('lastMaintenanceDate')} />
                 </th>
                 <th className="hand" onClick={sort('maintenanceCount')}>
-                  <Translate contentKey="smartassetcoreApp.asset.maintenanceCount">Maintenance Count</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.asset.maintenanceCount">Maintenance Count</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('maintenanceCount')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.asset.site">Site</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.asset.productionLine">Production Line</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.asset.productionLine">Production Line</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.asset.allowedSite">Allowed Site</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.asset.currentZone">Current Zone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.asset.allowedZone">Allowed Zone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -258,16 +262,19 @@ export const Asset = () => {
                     </Button>
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.AssetType.${asset.assetType}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.AssetType.${asset.assetType}`} />
                   </td>
                   <td>{asset.assetCode}</td>
                   <td>{asset.reference}</td>
                   <td>{asset.description}</td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.AssetStatus.${asset.status}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.AssetStatus.${asset.status}`} />
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.Criticality.${asset.criticality}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.Criticality.${asset.criticality}`} />
+                  </td>
+                  <td>
+                    <Translate contentKey={`SmartAssetCoreApp.AssetGeofencePolicy.${asset.geofencePolicy}`} />
                   </td>
                   <td>{asset.responsibleName}</td>
                   <td>{asset.costCenter}</td>
@@ -282,7 +289,7 @@ export const Asset = () => {
                   <td>{asset.ipRating}</td>
                   <td>{asset.insulationClass}</td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.MountingType.${asset.mountingType}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.MountingType.${asset.mountingType}`} />
                   </td>
                   <td>{asset.shaftDiameterMm}</td>
                   <td>{asset.footDistanceAmm}</td>
@@ -293,7 +300,7 @@ export const Asset = () => {
                   <td>{asset.dimensionsSource}</td>
                   <td>{asset.hasHeating ? 'true' : 'false'}</td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.TemperatureProbeType.${asset.temperatureProbeType}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.TemperatureProbeType.${asset.temperatureProbeType}`} />
                   </td>
                   <td>
                     {asset.lastCommissioningDate ? (
@@ -306,15 +313,11 @@ export const Asset = () => {
                     ) : null}
                   </td>
                   <td>{asset.maintenanceCount}</td>
-                  <td>{asset.site ? <Link to={`/site/${asset.site.id}`}>{asset.site.code}</Link> : ''}</td>
                   <td>
-                    {asset.productionLine ? (
-                      <Link to={`/production-line/${asset.productionLine.id}`}>{asset.productionLine.code}</Link>
-                    ) : (
-                      ''
-                    )}
+                    {asset.productionLine ? <Link to={`/production-line/${asset.productionLine.id}`}>{asset.productionLine.id}</Link> : ''}
                   </td>
-                  <td>{asset.currentZone ? <Link to={`/zone/${asset.currentZone.id}`}>{asset.currentZone.code}</Link> : ''}</td>
+                  <td>{asset.allowedSite ? <Link to={`/site/${asset.allowedSite.id}`}>{asset.allowedSite.id}</Link> : ''}</td>
+                  <td>{asset.allowedZone ? <Link to={`/zone/${asset.allowedZone.id}`}>{asset.allowedZone.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/asset/${asset.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -357,7 +360,7 @@ export const Asset = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.asset.home.notFound">No Assets found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.asset.home.notFound">No Assets found</Translate>
             </div>
           )
         )}

@@ -1,28 +1,32 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "documentLink": {
       "home": {
-        "title": "DocumentLinks",
+        "title": "Liens de documents",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Document Link",
-        "createOrEditLabel": "Créer ou éditer un Document Link",
-        "notFound": "Aucun Document Link trouvé"
+        "createLabel": "Créer un nouveau lien de document",
+        "createOrEditLabel": "Créer ou modifier un lien de document",
+        "notFound": "Aucun lien de document trouvé"
       },
-      "created": "Un nouveau Document Link a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Document Link avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Document Link avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau lien de document a été créé avec l'identifiant {{ param }}",
+      "updated": "Le lien de document avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le lien de document avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Document Link {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le lien de document {{ id }} ?"
       },
       "detail": {
-        "title": "Document Link"
+        "title": "Lien de document"
       },
-      "id": "ID",
-      "entityType": "Entity Type",
-      "entityId": "Entity Id",
-      "label": "Label",
-      "linkedAt": "Linked At",
-      "document": "Document"
+      "id": "Identifiant",
+      "entityType": "Type d'entité",
+      "entityId": "Identifiant de l'entité",
+      "label": "Libellé",
+      "linkedAt": "Date de liaison",
+      "document": "Document",
+      "createdBy": "Créé par",
+      "createdDate": "Date de création",
+      "lastModifiedBy": "Dernière modification par",
+      "lastModifiedDate": "Date de dernière modification"
     }
   }
 }

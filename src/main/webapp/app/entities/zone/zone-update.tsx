@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
-import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
+import { Button, Col, FormText, Row } from 'reactstrap';
+import { Translate, ValidatedField, ValidatedForm, isNumber, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -82,8 +82,8 @@ export const ZoneUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.zone.home.createOrEditLabel" data-cy="ZoneCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.zone.home.createOrEditLabel">Create or edit a Zone</Translate>
+          <h2 id="SmartAssetCoreApp.zone.home.createOrEditLabel" data-cy="ZoneCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.zone.home.createOrEditLabel">Create or edit a Zone</Translate>
           </h2>
         </Col>
       </Row>
@@ -104,7 +104,7 @@ export const ZoneUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.code')}
+                label={translate('SmartAssetCoreApp.zone.code')}
                 id="zone-code"
                 name="code"
                 data-cy="code"
@@ -115,7 +115,7 @@ export const ZoneUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.name')}
+                label={translate('SmartAssetCoreApp.zone.name')}
                 id="zone-name"
                 name="name"
                 data-cy="name"
@@ -126,7 +126,7 @@ export const ZoneUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.description')}
+                label={translate('SmartAssetCoreApp.zone.description')}
                 id="zone-description"
                 name="description"
                 data-cy="description"
@@ -136,46 +136,50 @@ export const ZoneUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.zoneType')}
-                id="zone-zoneType"
-                name="zoneType"
-                data-cy="zoneType"
-                type="text"
-                validate={{
-                  maxLength: { value: 80, message: translate('entity.validation.maxlength', { max: 80 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('smartassetcoreApp.zone.centerLat')}
+                label={translate('SmartAssetCoreApp.zone.centerLat')}
                 id="zone-centerLat"
                 name="centerLat"
                 data-cy="centerLat"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.centerLon')}
+                label={translate('SmartAssetCoreApp.zone.centerLon')}
                 id="zone-centerLon"
                 name="centerLon"
                 data-cy="centerLon"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.zone.radiusMeters')}
+                label={translate('SmartAssetCoreApp.zone.radiusMeters')}
                 id="zone-radiusMeters"
                 name="radiusMeters"
                 data-cy="radiusMeters"
                 type="text"
+                validate={{
+                  min: { value: 1, message: translate('entity.validation.min', { min: 1 }) },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
+                }}
               />
-              <ValidatedField id="zone-site" name="site" data-cy="site" label={translate('smartassetcoreApp.zone.site')} type="select">
+              <ValidatedField
+                id="zone-site"
+                name="site"
+                data-cy="site"
+                label={translate('SmartAssetCoreApp.zone.site')}
+                type="select"
+                required
+              >
                 <option value="" key="0" />
                 {sites
                   ? sites.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.code}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/zone" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

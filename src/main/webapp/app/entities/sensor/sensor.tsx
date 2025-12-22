@@ -92,16 +92,16 @@ export const Sensor = () => {
   return (
     <div>
       <h2 id="sensor-heading" data-cy="SensorHeading">
-        <Translate contentKey="smartassetcoreApp.sensor.home.title">Sensors</Translate>
+        <Translate contentKey="SmartAssetCoreApp.sensor.home.title">Sensors</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.sensor.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.sensor.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/sensor/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.sensor.home.createLabel">Create new Sensor</Translate>
+            <Translate contentKey="SmartAssetCoreApp.sensor.home.createLabel">Create new Sensor</Translate>
           </Link>
         </div>
       </h2>
@@ -111,42 +111,42 @@ export const Sensor = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
+                  <Translate contentKey="SmartAssetCoreApp.sensor.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('sensorType')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.sensorType">Sensor Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.sensorType">Sensor Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('sensorType')} />
                 </th>
+                <th className="hand" onClick={sort('externalId')}>
+                  <Translate contentKey="SmartAssetCoreApp.sensor.externalId">External Id</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('externalId')} />
+                </th>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.name">Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('unit')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.unit">Unit</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.unit">Unit</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('unit')} />
                 </th>
                 <th className="hand" onClick={sort('minThreshold')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.minThreshold">Min Threshold</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.minThreshold">Min Threshold</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('minThreshold')} />
                 </th>
                 <th className="hand" onClick={sort('maxThreshold')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.maxThreshold">Max Threshold</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.maxThreshold">Max Threshold</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('maxThreshold')} />
                 </th>
                 <th className="hand" onClick={sort('installedAt')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.installedAt">Installed At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.installedAt">Installed At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('installedAt')} />
                 </th>
                 <th className="hand" onClick={sort('active')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.active">Active</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.sensor.active">Active</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('active')} />
                 </th>
-                <th className="hand" onClick={sort('externalId')}>
-                  <Translate contentKey="smartassetcoreApp.sensor.externalId">External Id</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('externalId')} />
-                </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.sensor.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.sensor.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -160,16 +160,16 @@ export const Sensor = () => {
                     </Button>
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.SensorType.${sensor.sensorType}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.SensorType.${sensor.sensorType}`} />
                   </td>
+                  <td>{sensor.externalId}</td>
                   <td>{sensor.name}</td>
                   <td>{sensor.unit}</td>
                   <td>{sensor.minThreshold}</td>
                   <td>{sensor.maxThreshold}</td>
                   <td>{sensor.installedAt ? <TextFormat type="date" value={sensor.installedAt} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{sensor.active ? 'true' : 'false'}</td>
-                  <td>{sensor.externalId}</td>
-                  <td>{sensor.asset ? <Link to={`/asset/${sensor.asset.id}`}>{sensor.asset.assetCode}</Link> : ''}</td>
+                  <td>{sensor.asset ? <Link to={`/asset/${sensor.asset.id}`}>{sensor.asset.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/sensor/${sensor.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -212,7 +212,7 @@ export const Sensor = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.sensor.home.notFound">No Sensors found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensor.home.notFound">No Sensors found</Translate>
             </div>
           )
         )}

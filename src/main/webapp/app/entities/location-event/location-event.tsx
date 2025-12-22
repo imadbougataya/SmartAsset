@@ -92,16 +92,16 @@ export const LocationEvent = () => {
   return (
     <div>
       <h2 id="location-event-heading" data-cy="LocationEventHeading">
-        <Translate contentKey="smartassetcoreApp.locationEvent.home.title">Location Events</Translate>
+        <Translate contentKey="SmartAssetCoreApp.locationEvent.home.title">Location Events</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.locationEvent.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/location-event/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.locationEvent.home.createLabel">Create new Location Event</Translate>
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.home.createLabel">Create new Location Event</Translate>
           </Link>
         </div>
       </h2>
@@ -111,57 +111,66 @@ export const LocationEvent = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('source')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.source">Source</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.source">Source</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('source')} />
                 </th>
                 <th className="hand" onClick={sort('observedAt')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.observedAt">Observed At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.observedAt">Observed At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('observedAt')} />
                 </th>
                 <th className="hand" onClick={sort('zoneConfidence')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.zoneConfidence">Zone Confidence</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.zoneConfidence">Zone Confidence</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('zoneConfidence')} />
                 </th>
                 <th className="hand" onClick={sort('rssi')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.rssi">Rssi</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.rssi">Rssi</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('rssi')} />
                 </th>
                 <th className="hand" onClick={sort('txPower')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.txPower">Tx Power</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.txPower">Tx Power</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('txPower')} />
                 </th>
                 <th className="hand" onClick={sort('latitude')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.latitude">Latitude</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.latitude">Latitude</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('latitude')} />
                 </th>
                 <th className="hand" onClick={sort('longitude')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.longitude">Longitude</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.longitude">Longitude</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('longitude')} />
                 </th>
                 <th className="hand" onClick={sort('accuracyMeters')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.accuracyMeters">Accuracy Meters</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.accuracyMeters">Accuracy Meters</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('accuracyMeters')} />
                 </th>
                 <th className="hand" onClick={sort('speedKmh')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.speedKmh">Speed Kmh</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.speedKmh">Speed Kmh</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('speedKmh')} />
                 </th>
+                <th className="hand" onClick={sort('gnssConstellation')}>
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.gnssConstellation">Gnss Constellation</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('gnssConstellation')} />
+                </th>
                 <th className="hand" onClick={sort('rawPayload')}>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.rawPayload">Raw Payload</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.rawPayload">Raw Payload</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('rawPayload')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.zone">Zone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.sensor">Sensor</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.locationEvent.gateway">Gateway</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.matchedSite">Matched Site</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="SmartAssetCoreApp.locationEvent.matchedZone">Matched Zone</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -175,7 +184,7 @@ export const LocationEvent = () => {
                     </Button>
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.LocationSource.${locationEvent.source}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.LocationSource.${locationEvent.source}`} />
                   </td>
                   <td>
                     {locationEvent.observedAt ? <TextFormat type="date" value={locationEvent.observedAt} format={APP_DATE_FORMAT} /> : null}
@@ -187,11 +196,23 @@ export const LocationEvent = () => {
                   <td>{locationEvent.longitude}</td>
                   <td>{locationEvent.accuracyMeters}</td>
                   <td>{locationEvent.speedKmh}</td>
+                  <td>{locationEvent.gnssConstellation}</td>
                   <td>{locationEvent.rawPayload}</td>
-                  <td>{locationEvent.asset ? <Link to={`/asset/${locationEvent.asset.id}`}>{locationEvent.asset.assetCode}</Link> : ''}</td>
-                  <td>{locationEvent.zone ? <Link to={`/zone/${locationEvent.zone.id}`}>{locationEvent.zone.code}</Link> : ''}</td>
+                  <td>{locationEvent.asset ? <Link to={`/asset/${locationEvent.asset.id}`}>{locationEvent.asset.id}</Link> : ''}</td>
+                  <td>{locationEvent.sensor ? <Link to={`/sensor/${locationEvent.sensor.id}`}>{locationEvent.sensor.id}</Link> : ''}</td>
                   <td>
-                    {locationEvent.gateway ? <Link to={`/gateway/${locationEvent.gateway.id}`}>{locationEvent.gateway.code}</Link> : ''}
+                    {locationEvent.matchedSite ? (
+                      <Link to={`/site/${locationEvent.matchedSite.id}`}>{locationEvent.matchedSite.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>
+                    {locationEvent.matchedZone ? (
+                      <Link to={`/zone/${locationEvent.matchedZone.id}`}>{locationEvent.matchedZone.id}</Link>
+                    ) : (
+                      ''
+                    )}
                   </td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
@@ -235,7 +256,7 @@ export const LocationEvent = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.locationEvent.home.notFound">No Location Events found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.locationEvent.home.notFound">No Location Events found</Translate>
             </div>
           )
         )}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
+import { Button, Col, FormText, Row } from 'reactstrap';
 import { Translate, ValidatedField, ValidatedForm, isNumber, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,7 +8,7 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getDocuments } from 'app/entities/document/document.reducer';
-import { DocumentEntityType } from 'app/shared/model/enumerations/document-entity-type.model';
+import { DocumentLinkEntityType } from 'app/shared/model/enumerations/document-link-entity-type.model';
 import { createEntity, getEntity, reset, updateEntity } from './document-link.reducer';
 
 export const DocumentLinkUpdate = () => {
@@ -24,10 +24,10 @@ export const DocumentLinkUpdate = () => {
   const loading = useAppSelector(state => state.documentLink.loading);
   const updating = useAppSelector(state => state.documentLink.updating);
   const updateSuccess = useAppSelector(state => state.documentLink.updateSuccess);
-  const documentEntityTypeValues = Object.keys(DocumentEntityType);
+  const documentLinkEntityTypeValues = Object.keys(DocumentLinkEntityType);
 
   const handleClose = () => {
-    navigate('/document-link');
+    navigate(`/document-link${location.search}`);
   };
 
   useEffect(() => {
@@ -54,6 +54,8 @@ export const DocumentLinkUpdate = () => {
       values.entityId = Number(values.entityId);
     }
     values.linkedAt = convertDateTimeToServer(values.linkedAt);
+    values.createdDate = convertDateTimeToServer(values.createdDate);
+    values.lastModifiedDate = convertDateTimeToServer(values.lastModifiedDate);
 
     const entity = {
       ...documentLinkEntity,
@@ -72,11 +74,15 @@ export const DocumentLinkUpdate = () => {
     isNew
       ? {
           linkedAt: displayDefaultDateTime(),
+          createdDate: displayDefaultDateTime(),
+          lastModifiedDate: displayDefaultDateTime(),
         }
       : {
           entityType: 'ASSET',
           ...documentLinkEntity,
           linkedAt: convertDateTimeFromServer(documentLinkEntity.linkedAt),
+          createdDate: convertDateTimeFromServer(documentLinkEntity.createdDate),
+          lastModifiedDate: convertDateTimeFromServer(documentLinkEntity.lastModifiedDate),
           document: documentLinkEntity?.document?.id,
         };
 
@@ -84,8 +90,8 @@ export const DocumentLinkUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.documentLink.home.createOrEditLabel" data-cy="DocumentLinkCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.documentLink.home.createOrEditLabel">Create or edit a DocumentLink</Translate>
+          <h2 id="SmartAssetCoreApp.documentLink.home.createOrEditLabel" data-cy="DocumentLinkCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.documentLink.home.createOrEditLabel">Create or edit a DocumentLink</Translate>
           </h2>
         </Col>
       </Row>
@@ -106,20 +112,20 @@ export const DocumentLinkUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.documentLink.entityType')}
+                label={translate('SmartAssetCoreApp.documentLink.entityType')}
                 id="document-link-entityType"
                 name="entityType"
                 data-cy="entityType"
                 type="select"
               >
-                {documentEntityTypeValues.map(documentEntityType => (
-                  <option value={documentEntityType} key={documentEntityType}>
-                    {translate(`smartassetcoreApp.DocumentEntityType.${documentEntityType}`)}
+                {documentLinkEntityTypeValues.map(documentLinkEntityType => (
+                  <option value={documentLinkEntityType} key={documentLinkEntityType}>
+                    {translate(`SmartAssetCoreApp.DocumentLinkEntityType.${documentLinkEntityType}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.documentLink.entityId')}
+                label={translate('SmartAssetCoreApp.documentLink.entityId')}
                 id="document-link-entityId"
                 name="entityId"
                 data-cy="entityId"
@@ -130,17 +136,17 @@ export const DocumentLinkUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.documentLink.label')}
+                label={translate('SmartAssetCoreApp.documentLink.label')}
                 id="document-link-label"
                 name="label"
                 data-cy="label"
                 type="text"
                 validate={{
-                  maxLength: { value: 150, message: translate('entity.validation.maxlength', { max: 150 }) },
+                  maxLength: { value: 200, message: translate('entity.validation.maxlength', { max: 200 }) },
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.documentLink.linkedAt')}
+                label={translate('SmartAssetCoreApp.documentLink.linkedAt')}
                 id="document-link-linkedAt"
                 name="linkedAt"
                 data-cy="linkedAt"
@@ -151,21 +157,61 @@ export const DocumentLinkUpdate = () => {
                 }}
               />
               <ValidatedField
+                label={translate('SmartAssetCoreApp.documentLink.createdBy')}
+                id="document-link-createdBy"
+                name="createdBy"
+                data-cy="createdBy"
+                type="text"
+                validate={{
+                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
+                }}
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.documentLink.createdDate')}
+                id="document-link-createdDate"
+                name="createdDate"
+                data-cy="createdDate"
+                type="datetime-local"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.documentLink.lastModifiedBy')}
+                id="document-link-lastModifiedBy"
+                name="lastModifiedBy"
+                data-cy="lastModifiedBy"
+                type="text"
+                validate={{
+                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
+                }}
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.documentLink.lastModifiedDate')}
+                id="document-link-lastModifiedDate"
+                name="lastModifiedDate"
+                data-cy="lastModifiedDate"
+                type="datetime-local"
+                placeholder="YYYY-MM-DD HH:mm"
+              />
+              <ValidatedField
                 id="document-link-document"
                 name="document"
                 data-cy="document"
-                label={translate('smartassetcoreApp.documentLink.document')}
+                label={translate('SmartAssetCoreApp.documentLink.document')}
                 type="select"
+                required
               >
                 <option value="" key="0" />
                 {documents
                   ? documents.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.fileName}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/document-link" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

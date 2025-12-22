@@ -23,7 +23,7 @@ export const SensorMeasurementDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="sensorMeasurementDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.sensorMeasurement.detail.title">SensorMeasurement</Translate>
+          <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.detail.title">SensorMeasurement</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -34,7 +34,7 @@ export const SensorMeasurementDetail = () => {
           <dd>{sensorMeasurementEntity.id}</dd>
           <dt>
             <span id="measuredAt">
-              <Translate contentKey="smartassetcoreApp.sensorMeasurement.measuredAt">Measured At</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.measuredAt">Measured At</Translate>
             </span>
           </dt>
           <dd>
@@ -44,26 +44,26 @@ export const SensorMeasurementDetail = () => {
           </dd>
           <dt>
             <span id="value">
-              <Translate contentKey="smartassetcoreApp.sensorMeasurement.value">Value</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.value">Value</Translate>
             </span>
           </dt>
           <dd>{sensorMeasurementEntity.value}</dd>
           <dt>
             <span id="quality">
-              <Translate contentKey="smartassetcoreApp.sensorMeasurement.quality">Quality</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.quality">Quality</Translate>
             </span>
           </dt>
           <dd>{sensorMeasurementEntity.quality}</dd>
           <dt>
             <span id="source">
-              <Translate contentKey="smartassetcoreApp.sensorMeasurement.source">Source</Translate>
+              <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.source">Source</Translate>
             </span>
           </dt>
           <dd>{sensorMeasurementEntity.source}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.sensorMeasurement.sensor">Sensor</Translate>
+            <Translate contentKey="SmartAssetCoreApp.sensorMeasurement.sensor">Sensor</Translate>
           </dt>
-          <dd>{sensorMeasurementEntity.sensor ? sensorMeasurementEntity.sensor.name : ''}</dd>
+          <dd>{sensorMeasurementEntity.sensor ? sensorMeasurementEntity.sensor.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/sensor-measurement" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

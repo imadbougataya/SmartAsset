@@ -1,28 +1,28 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "sensorMeasurement": {
       "home": {
-        "title": "SensorMeasurements",
+        "title": "Mesures des capteurs",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Sensor Measurement",
-        "createOrEditLabel": "Créer ou éditer un Sensor Measurement",
-        "notFound": "Aucun Sensor Measurement trouvé"
+        "createLabel": "Créer une nouvelle mesure de capteur",
+        "createOrEditLabel": "Créer ou modifier une mesure de capteur",
+        "notFound": "Aucune mesure de capteur trouvée"
       },
-      "created": "Un nouveau Sensor Measurement a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Sensor Measurement avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Sensor Measurement avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle mesure de capteur a été créée avec l'identifiant {{ param }}",
+      "updated": "La mesure de capteur avec l'identifiant {{ param }} a été mise à jour",
+      "deleted": "La mesure de capteur avec l'identifiant {{ param }} a été supprimée",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Sensor Measurement {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer la mesure de capteur {{ id }} ?"
       },
       "detail": {
-        "title": "Sensor Measurement"
+        "title": "Mesure de capteur"
       },
-      "id": "ID",
-      "measuredAt": "Measured At",
-      "value": "Value",
-      "quality": "Quality",
+      "id": "Identifiant",
+      "measuredAt": "Date de mesure",
+      "value": "Valeur",
+      "quality": "Qualité",
       "source": "Source",
-      "sensor": "Sensor"
+      "sensor": "Capteur"
     }
   }
 }

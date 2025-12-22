@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,6 @@ import { deleteEntity, getEntity } from './system-event.reducer';
 
 export const SystemEventDeleteDialog = () => {
   const dispatch = useAppDispatch();
-  const pageLocation = useLocation();
   const navigate = useNavigate();
   const { id } = useParams<'id'>();
 
@@ -24,7 +23,7 @@ export const SystemEventDeleteDialog = () => {
   const updateSuccess = useAppSelector(state => state.systemEvent.updateSuccess);
 
   const handleClose = () => {
-    navigate(`/system-event${pageLocation.search}`);
+    navigate('/system-event');
   };
 
   useEffect(() => {
@@ -43,8 +42,8 @@ export const SystemEventDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="systemEventDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.systemEvent.delete.question">
-        <Translate contentKey="smartassetcoreApp.systemEvent.delete.question" interpolate={{ id: systemEventEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.systemEvent.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.systemEvent.delete.question" interpolate={{ id: systemEventEntity.id }}>
           Are you sure you want to delete this SystemEvent?
         </Translate>
       </ModalBody>

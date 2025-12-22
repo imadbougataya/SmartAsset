@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-import { getEntities as getAssets } from 'app/entities/asset/asset.reducer';
-import { SystemEntityType } from 'app/shared/model/enumerations/system-entity-type.model';
 import { SystemEventSeverity } from 'app/shared/model/enumerations/system-event-severity.model';
 import { SystemEventSource } from 'app/shared/model/enumerations/system-event-source.model';
 import { createEntity, getEntity, reset, updateEntity } from './system-event.reducer';
@@ -21,17 +19,15 @@ export const SystemEventUpdate = () => {
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
 
-  const assets = useAppSelector(state => state.asset.entities);
   const systemEventEntity = useAppSelector(state => state.systemEvent.entity);
   const loading = useAppSelector(state => state.systemEvent.loading);
   const updating = useAppSelector(state => state.systemEvent.updating);
   const updateSuccess = useAppSelector(state => state.systemEvent.updateSuccess);
-  const systemEntityTypeValues = Object.keys(SystemEntityType);
   const systemEventSeverityValues = Object.keys(SystemEventSeverity);
   const systemEventSourceValues = Object.keys(SystemEventSource);
 
   const handleClose = () => {
-    navigate(`/system-event${location.search}`);
+    navigate('/system-event');
   };
 
   useEffect(() => {
@@ -40,8 +36,6 @@ export const SystemEventUpdate = () => {
     } else {
       dispatch(getEntity(id));
     }
-
-    dispatch(getAssets({}));
   }, []);
 
   useEffect(() => {
@@ -54,15 +48,11 @@ export const SystemEventUpdate = () => {
     if (values.id !== undefined && typeof values.id !== 'number') {
       values.id = Number(values.id);
     }
-    if (values.entityId !== undefined && typeof values.entityId !== 'number') {
-      values.entityId = Number(values.entityId);
-    }
     values.createdAt = convertDateTimeToServer(values.createdAt);
 
     const entity = {
       ...systemEventEntity,
       ...values,
-      asset: assets.find(it => it.id.toString() === values.asset?.toString()),
     };
 
     if (isNew) {
@@ -78,20 +68,18 @@ export const SystemEventUpdate = () => {
           createdAt: displayDefaultDateTime(),
         }
       : {
-          entityType: 'ASSET',
           severity: 'INFO',
           source: 'UI',
           ...systemEventEntity,
           createdAt: convertDateTimeFromServer(systemEventEntity.createdAt),
-          asset: systemEventEntity?.asset?.id,
         };
 
   return (
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.systemEvent.home.createOrEditLabel" data-cy="SystemEventCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.systemEvent.home.createOrEditLabel">Create or edit a SystemEvent</Translate>
+          <h2 id="SmartAssetCoreApp.systemEvent.home.createOrEditLabel" data-cy="SystemEventCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.systemEvent.home.createOrEditLabel">Create or edit a SystemEvent</Translate>
           </h2>
         </Col>
       </Row>
@@ -112,7 +100,7 @@ export const SystemEventUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.eventType')}
+                label={translate('SmartAssetCoreApp.systemEvent.eventType')}
                 id="system-event-eventType"
                 name="eventType"
                 data-cy="eventType"
@@ -123,27 +111,7 @@ export const SystemEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.entityType')}
-                id="system-event-entityType"
-                name="entityType"
-                data-cy="entityType"
-                type="select"
-              >
-                {systemEntityTypeValues.map(systemEntityType => (
-                  <option value={systemEntityType} key={systemEntityType}>
-                    {translate(`smartassetcoreApp.SystemEntityType.${systemEntityType}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.entityId')}
-                id="system-event-entityId"
-                name="entityId"
-                data-cy="entityId"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.severity')}
+                label={translate('SmartAssetCoreApp.systemEvent.severity')}
                 id="system-event-severity"
                 name="severity"
                 data-cy="severity"
@@ -151,12 +119,12 @@ export const SystemEventUpdate = () => {
               >
                 {systemEventSeverityValues.map(systemEventSeverity => (
                   <option value={systemEventSeverity} key={systemEventSeverity}>
-                    {translate(`smartassetcoreApp.SystemEventSeverity.${systemEventSeverity}`)}
+                    {translate(`SmartAssetCoreApp.SystemEventSeverity.${systemEventSeverity}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.source')}
+                label={translate('SmartAssetCoreApp.systemEvent.source')}
                 id="system-event-source"
                 name="source"
                 data-cy="source"
@@ -164,12 +132,12 @@ export const SystemEventUpdate = () => {
               >
                 {systemEventSourceValues.map(systemEventSource => (
                   <option value={systemEventSource} key={systemEventSource}>
-                    {translate(`smartassetcoreApp.SystemEventSource.${systemEventSource}`)}
+                    {translate(`SmartAssetCoreApp.SystemEventSource.${systemEventSource}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.message')}
+                label={translate('SmartAssetCoreApp.systemEvent.message')}
                 id="system-event-message"
                 name="message"
                 data-cy="message"
@@ -179,7 +147,7 @@ export const SystemEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.createdAt')}
+                label={translate('SmartAssetCoreApp.systemEvent.createdAt')}
                 id="system-event-createdAt"
                 name="createdAt"
                 data-cy="createdAt"
@@ -190,7 +158,7 @@ export const SystemEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.createdBy')}
+                label={translate('SmartAssetCoreApp.systemEvent.createdBy')}
                 id="system-event-createdBy"
                 name="createdBy"
                 data-cy="createdBy"
@@ -200,7 +168,7 @@ export const SystemEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.correlationId')}
+                label={translate('SmartAssetCoreApp.systemEvent.correlationId')}
                 id="system-event-correlationId"
                 name="correlationId"
                 data-cy="correlationId"
@@ -210,28 +178,12 @@ export const SystemEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.systemEvent.payload')}
+                label={translate('SmartAssetCoreApp.systemEvent.payload')}
                 id="system-event-payload"
                 name="payload"
                 data-cy="payload"
                 type="textarea"
               />
-              <ValidatedField
-                id="system-event-asset"
-                name="asset"
-                data-cy="asset"
-                label={translate('smartassetcoreApp.systemEvent.asset')}
-                type="select"
-              >
-                <option value="" key="0" />
-                {assets
-                  ? assets.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.assetCode}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/system-event" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

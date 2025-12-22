@@ -83,8 +83,8 @@ export const GatewayUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.gateway.home.createOrEditLabel" data-cy="GatewayCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.gateway.home.createOrEditLabel">Create or edit a Gateway</Translate>
+          <h2 id="SmartAssetCoreApp.gateway.home.createOrEditLabel" data-cy="GatewayCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.gateway.home.createOrEditLabel">Create or edit a Gateway</Translate>
           </h2>
         </Col>
       </Row>
@@ -105,7 +105,7 @@ export const GatewayUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.code')}
+                label={translate('SmartAssetCoreApp.gateway.code')}
                 id="gateway-code"
                 name="code"
                 data-cy="code"
@@ -116,7 +116,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.name')}
+                label={translate('SmartAssetCoreApp.gateway.name')}
                 id="gateway-name"
                 name="name"
                 data-cy="name"
@@ -126,7 +126,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.vendor')}
+                label={translate('SmartAssetCoreApp.gateway.vendor')}
                 id="gateway-vendor"
                 name="vendor"
                 data-cy="vendor"
@@ -136,7 +136,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.model')}
+                label={translate('SmartAssetCoreApp.gateway.model')}
                 id="gateway-model"
                 name="model"
                 data-cy="model"
@@ -146,7 +146,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.macAddress')}
+                label={translate('SmartAssetCoreApp.gateway.macAddress')}
                 id="gateway-macAddress"
                 name="macAddress"
                 data-cy="macAddress"
@@ -156,7 +156,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.ipAddress')}
+                label={translate('SmartAssetCoreApp.gateway.ipAddress')}
                 id="gateway-ipAddress"
                 name="ipAddress"
                 data-cy="ipAddress"
@@ -166,7 +166,7 @@ export const GatewayUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.installedAt')}
+                label={translate('SmartAssetCoreApp.gateway.installedAt')}
                 id="gateway-installedAt"
                 name="installedAt"
                 data-cy="installedAt"
@@ -174,7 +174,7 @@ export const GatewayUpdate = () => {
                 placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.gateway.active')}
+                label={translate('SmartAssetCoreApp.gateway.active')}
                 id="gateway-active"
                 name="active"
                 data-cy="active"
@@ -185,14 +185,14 @@ export const GatewayUpdate = () => {
                 id="gateway-site"
                 name="site"
                 data-cy="site"
-                label={translate('smartassetcoreApp.gateway.site')}
+                label={translate('SmartAssetCoreApp.gateway.site')}
                 type="select"
               >
                 <option value="" key="0" />
                 {sites
                   ? sites.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.code}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
@@ -201,14 +201,14 @@ export const GatewayUpdate = () => {
                 id="gateway-zone"
                 name="zone"
                 data-cy="zone"
-                label={translate('smartassetcoreApp.gateway.zone')}
+                label={translate('SmartAssetCoreApp.gateway.zone')}
                 type="select"
               >
                 <option value="" key="0" />
                 {zones
                   ? zones.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.code}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}

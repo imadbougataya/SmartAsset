@@ -91,16 +91,16 @@ export const Zone = () => {
   return (
     <div>
       <h2 id="zone-heading" data-cy="ZoneHeading">
-        <Translate contentKey="smartassetcoreApp.zone.home.title">Zones</Translate>
+        <Translate contentKey="SmartAssetCoreApp.zone.home.title">Zones</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.zone.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.zone.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/zone/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.zone.home.createLabel">Create new Zone</Translate>
+            <Translate contentKey="SmartAssetCoreApp.zone.home.createLabel">Create new Zone</Translate>
           </Link>
         </div>
       </h2>
@@ -110,38 +110,34 @@ export const Zone = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.zone.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
+                  <Translate contentKey="SmartAssetCoreApp.zone.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('code')}>
-                  <Translate contentKey="smartassetcoreApp.zone.code">Code</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.code">Code</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
                 </th>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="smartassetcoreApp.zone.name">Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="smartassetcoreApp.zone.description">Description</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.description">Description</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
                 </th>
-                <th className="hand" onClick={sort('zoneType')}>
-                  <Translate contentKey="smartassetcoreApp.zone.zoneType">Zone Type</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('zoneType')} />
-                </th>
                 <th className="hand" onClick={sort('centerLat')}>
-                  <Translate contentKey="smartassetcoreApp.zone.centerLat">Center Lat</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.centerLat">Center Lat</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('centerLat')} />
                 </th>
                 <th className="hand" onClick={sort('centerLon')}>
-                  <Translate contentKey="smartassetcoreApp.zone.centerLon">Center Lon</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.centerLon">Center Lon</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('centerLon')} />
                 </th>
                 <th className="hand" onClick={sort('radiusMeters')}>
-                  <Translate contentKey="smartassetcoreApp.zone.radiusMeters">Radius Meters</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.zone.radiusMeters">Radius Meters</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('radiusMeters')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.zone.site">Site</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.zone.site">Site</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -157,11 +153,10 @@ export const Zone = () => {
                   <td>{zone.code}</td>
                   <td>{zone.name}</td>
                   <td>{zone.description}</td>
-                  <td>{zone.zoneType}</td>
                   <td>{zone.centerLat}</td>
                   <td>{zone.centerLon}</td>
                   <td>{zone.radiusMeters}</td>
-                  <td>{zone.site ? <Link to={`/site/${zone.site.id}`}>{zone.site.code}</Link> : ''}</td>
+                  <td>{zone.site ? <Link to={`/site/${zone.site.id}`}>{zone.site.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/zone/${zone.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -204,7 +199,7 @@ export const Zone = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.zone.home.notFound">No Zones found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.zone.home.notFound">No Zones found</Translate>
             </div>
           )
         )}

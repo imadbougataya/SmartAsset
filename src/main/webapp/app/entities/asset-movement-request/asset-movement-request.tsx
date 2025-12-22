@@ -92,11 +92,11 @@ export const AssetMovementRequest = () => {
   return (
     <div>
       <h2 id="asset-movement-request-heading" data-cy="AssetMovementRequestHeading">
-        <Translate contentKey="smartassetcoreApp.assetMovementRequest.home.title">Asset Movement Requests</Translate>
+        <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.home.title">Asset Movement Requests</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.assetMovementRequest.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link
             to="/asset-movement-request/new"
@@ -106,7 +106,7 @@ export const AssetMovementRequest = () => {
           >
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.assetMovementRequest.home.createLabel">Create new Asset Movement Request</Translate>
+            <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.home.createLabel">Create new Asset Movement Request</Translate>
           </Link>
         </div>
       </h2>
@@ -116,59 +116,59 @@ export const AssetMovementRequest = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('status')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.status">Status</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.status">Status</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
                 </th>
                 <th className="hand" onClick={sort('requestedAt')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.requestedAt">Requested At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.requestedAt">Requested At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('requestedAt')} />
                 </th>
                 <th className="hand" onClick={sort('reason')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.reason">Reason</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.reason">Reason</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('reason')} />
                 </th>
                 <th className="hand" onClick={sort('fromLocationLabel')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.fromLocationLabel">From Location Label</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.fromLocationLabel">From Location Label</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('fromLocationLabel')} />
                 </th>
                 <th className="hand" onClick={sort('toLocationLabel')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.toLocationLabel">To Location Label</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.toLocationLabel">To Location Label</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('toLocationLabel')} />
                 </th>
                 <th className="hand" onClick={sort('esignWorkflowId')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignWorkflowId">Esign Workflow Id</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignWorkflowId">Esign Workflow Id</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('esignWorkflowId')} />
                 </th>
                 <th className="hand" onClick={sort('esignStatus')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignStatus">Esign Status</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignStatus">Esign Status</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('esignStatus')} />
                 </th>
                 <th className="hand" onClick={sort('esignLastUpdate')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.esignLastUpdate">Esign Last Update</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.esignLastUpdate">Esign Last Update</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('esignLastUpdate')} />
                 </th>
                 <th className="hand" onClick={sort('signedAt')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.signedAt">Signed At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.signedAt">Signed At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('signedAt')} />
                 </th>
                 <th className="hand" onClick={sort('executedAt')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.executedAt">Executed At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.executedAt">Executed At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('executedAt')} />
                 </th>
-                <th className="hand" onClick={sort('requestedBy')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.requestedBy">Requested By</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('requestedBy')} />
-                </th>
-                <th className="hand" onClick={sort('approvedBy')}>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.approvedBy">Approved By</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('approvedBy')} />
+                <th>
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.assetMovementRequest.asset">Asset</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.requestedBy">Requested By</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.approvedBy">Approved By</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -182,7 +182,7 @@ export const AssetMovementRequest = () => {
                     </Button>
                   </td>
                   <td>
-                    <Translate contentKey={`smartassetcoreApp.MovementRequestStatus.${assetMovementRequest.status}`} />
+                    <Translate contentKey={`SmartAssetCoreApp.MovementRequestStatus.${assetMovementRequest.status}`} />
                   </td>
                   <td>
                     {assetMovementRequest.requestedAt ? (
@@ -193,7 +193,9 @@ export const AssetMovementRequest = () => {
                   <td>{assetMovementRequest.fromLocationLabel}</td>
                   <td>{assetMovementRequest.toLocationLabel}</td>
                   <td>{assetMovementRequest.esignWorkflowId}</td>
-                  <td>{assetMovementRequest.esignStatus}</td>
+                  <td>
+                    <Translate contentKey={`SmartAssetCoreApp.EsignStatus.${assetMovementRequest.esignStatus}`} />
+                  </td>
                   <td>
                     {assetMovementRequest.esignLastUpdate ? (
                       <TextFormat type="date" value={assetMovementRequest.esignLastUpdate} format={APP_DATE_FORMAT} />
@@ -209,15 +211,15 @@ export const AssetMovementRequest = () => {
                       <TextFormat type="date" value={assetMovementRequest.executedAt} format={APP_DATE_FORMAT} />
                     ) : null}
                   </td>
-                  <td>{assetMovementRequest.requestedBy}</td>
-                  <td>{assetMovementRequest.approvedBy}</td>
                   <td>
                     {assetMovementRequest.asset ? (
-                      <Link to={`/asset/${assetMovementRequest.asset.id}`}>{assetMovementRequest.asset.assetCode}</Link>
+                      <Link to={`/asset/${assetMovementRequest.asset.id}`}>{assetMovementRequest.asset.id}</Link>
                     ) : (
                       ''
                     )}
                   </td>
+                  <td>{assetMovementRequest.requestedBy ? assetMovementRequest.requestedBy.id : ''}</td>
+                  <td>{assetMovementRequest.approvedBy ? assetMovementRequest.approvedBy.id : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button
@@ -266,7 +268,7 @@ export const AssetMovementRequest = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.assetMovementRequest.home.notFound">No Asset Movement Requests found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.home.notFound">No Asset Movement Requests found</Translate>
             </div>
           )
         )}

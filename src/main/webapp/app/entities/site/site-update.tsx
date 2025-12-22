@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
-import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
+import { Translate, ValidatedField, ValidatedForm, isNumber, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
@@ -43,6 +43,15 @@ export const SiteUpdate = () => {
     if (values.id !== undefined && typeof values.id !== 'number') {
       values.id = Number(values.id);
     }
+    if (values.centerLat !== undefined && typeof values.centerLat !== 'number') {
+      values.centerLat = Number(values.centerLat);
+    }
+    if (values.centerLon !== undefined && typeof values.centerLon !== 'number') {
+      values.centerLon = Number(values.centerLon);
+    }
+    if (values.radiusMeters !== undefined && typeof values.radiusMeters !== 'number') {
+      values.radiusMeters = Number(values.radiusMeters);
+    }
 
     const entity = {
       ...siteEntity,
@@ -67,8 +76,8 @@ export const SiteUpdate = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.site.home.createOrEditLabel" data-cy="SiteCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.site.home.createOrEditLabel">Create or edit a Site</Translate>
+          <h2 id="SmartAssetCoreApp.site.home.createOrEditLabel" data-cy="SiteCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.site.home.createOrEditLabel">Create or edit a Site</Translate>
           </h2>
         </Col>
       </Row>
@@ -89,7 +98,7 @@ export const SiteUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.site.code')}
+                label={translate('SmartAssetCoreApp.site.code')}
                 id="site-code"
                 name="code"
                 data-cy="code"
@@ -100,7 +109,7 @@ export const SiteUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.site.name')}
+                label={translate('SmartAssetCoreApp.site.name')}
                 id="site-name"
                 name="name"
                 data-cy="name"
@@ -111,13 +120,38 @@ export const SiteUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.site.description')}
+                label={translate('SmartAssetCoreApp.site.description')}
                 id="site-description"
                 name="description"
                 data-cy="description"
                 type="text"
                 validate={{
                   maxLength: { value: 500, message: translate('entity.validation.maxlength', { max: 500 }) },
+                }}
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.site.centerLat')}
+                id="site-centerLat"
+                name="centerLat"
+                data-cy="centerLat"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.site.centerLon')}
+                id="site-centerLon"
+                name="centerLon"
+                data-cy="centerLon"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.site.radiusMeters')}
+                id="site-radiusMeters"
+                name="radiusMeters"
+                data-cy="radiusMeters"
+                type="text"
+                validate={{
+                  min: { value: 1, message: translate('entity.validation.min', { min: 1 }) },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
                 }}
               />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/site" replace color="info">

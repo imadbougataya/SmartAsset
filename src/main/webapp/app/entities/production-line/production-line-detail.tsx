@@ -22,7 +22,7 @@ export const ProductionLineDetail = () => {
     <Row>
       <Col md="8">
         <h2 data-cy="productionLineDetailsHeading">
-          <Translate contentKey="smartassetcoreApp.productionLine.detail.title">ProductionLine</Translate>
+          <Translate contentKey="SmartAssetCoreApp.productionLine.detail.title">ProductionLine</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -33,26 +33,26 @@ export const ProductionLineDetail = () => {
           <dd>{productionLineEntity.id}</dd>
           <dt>
             <span id="code">
-              <Translate contentKey="smartassetcoreApp.productionLine.code">Code</Translate>
+              <Translate contentKey="SmartAssetCoreApp.productionLine.code">Code</Translate>
             </span>
           </dt>
           <dd>{productionLineEntity.code}</dd>
           <dt>
             <span id="name">
-              <Translate contentKey="smartassetcoreApp.productionLine.name">Name</Translate>
+              <Translate contentKey="SmartAssetCoreApp.productionLine.name">Name</Translate>
             </span>
           </dt>
           <dd>{productionLineEntity.name}</dd>
           <dt>
             <span id="description">
-              <Translate contentKey="smartassetcoreApp.productionLine.description">Description</Translate>
+              <Translate contentKey="SmartAssetCoreApp.productionLine.description">Description</Translate>
             </span>
           </dt>
           <dd>{productionLineEntity.description}</dd>
           <dt>
-            <Translate contentKey="smartassetcoreApp.productionLine.site">Site</Translate>
+            <Translate contentKey="SmartAssetCoreApp.productionLine.zone">Zone</Translate>
           </dt>
-          <dd>{productionLineEntity.site ? productionLineEntity.site.code : ''}</dd>
+          <dd>{productionLineEntity.zone ? productionLineEntity.zone.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/production-line" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

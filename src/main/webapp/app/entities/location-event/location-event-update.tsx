@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, Row } from 'reactstrap';
-import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
+import { Button, Col, FormText, Row } from 'reactstrap';
+import { Translate, ValidatedField, ValidatedForm, isNumber, translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getAssets } from 'app/entities/asset/asset.reducer';
+import { getEntities as getSensors } from 'app/entities/sensor/sensor.reducer';
+import { getEntities as getSites } from 'app/entities/site/site.reducer';
 import { getEntities as getZones } from 'app/entities/zone/zone.reducer';
-import { getEntities as getGateways } from 'app/entities/gateway/gateway.reducer';
 import { LocationSource } from 'app/shared/model/enumerations/location-source.model';
 import { createEntity, getEntity, reset, updateEntity } from './location-event.reducer';
 
@@ -22,8 +23,9 @@ export const LocationEventUpdate = () => {
   const isNew = id === undefined;
 
   const assets = useAppSelector(state => state.asset.entities);
+  const sensors = useAppSelector(state => state.sensor.entities);
+  const sites = useAppSelector(state => state.site.entities);
   const zones = useAppSelector(state => state.zone.entities);
-  const gateways = useAppSelector(state => state.gateway.entities);
   const locationEventEntity = useAppSelector(state => state.locationEvent.entity);
   const loading = useAppSelector(state => state.locationEvent.loading);
   const updating = useAppSelector(state => state.locationEvent.updating);
@@ -42,8 +44,9 @@ export const LocationEventUpdate = () => {
     }
 
     dispatch(getAssets({}));
+    dispatch(getSensors({}));
+    dispatch(getSites({}));
     dispatch(getZones({}));
-    dispatch(getGateways({}));
   }, []);
 
   useEffect(() => {
@@ -83,8 +86,9 @@ export const LocationEventUpdate = () => {
       ...locationEventEntity,
       ...values,
       asset: assets.find(it => it.id.toString() === values.asset?.toString()),
-      zone: zones.find(it => it.id.toString() === values.zone?.toString()),
-      gateway: gateways.find(it => it.id.toString() === values.gateway?.toString()),
+      sensor: sensors.find(it => it.id.toString() === values.sensor?.toString()),
+      matchedSite: sites.find(it => it.id.toString() === values.matchedSite?.toString()),
+      matchedZone: zones.find(it => it.id.toString() === values.matchedZone?.toString()),
     };
 
     if (isNew) {
@@ -104,16 +108,17 @@ export const LocationEventUpdate = () => {
           ...locationEventEntity,
           observedAt: convertDateTimeFromServer(locationEventEntity.observedAt),
           asset: locationEventEntity?.asset?.id,
-          zone: locationEventEntity?.zone?.id,
-          gateway: locationEventEntity?.gateway?.id,
+          sensor: locationEventEntity?.sensor?.id,
+          matchedSite: locationEventEntity?.matchedSite?.id,
+          matchedZone: locationEventEntity?.matchedZone?.id,
         };
 
   return (
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="smartassetcoreApp.locationEvent.home.createOrEditLabel" data-cy="LocationEventCreateUpdateHeading">
-            <Translate contentKey="smartassetcoreApp.locationEvent.home.createOrEditLabel">Create or edit a LocationEvent</Translate>
+          <h2 id="SmartAssetCoreApp.locationEvent.home.createOrEditLabel" data-cy="LocationEventCreateUpdateHeading">
+            <Translate contentKey="SmartAssetCoreApp.locationEvent.home.createOrEditLabel">Create or edit a LocationEvent</Translate>
           </h2>
         </Col>
       </Row>
@@ -134,7 +139,7 @@ export const LocationEventUpdate = () => {
                 />
               ) : null}
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.source')}
+                label={translate('SmartAssetCoreApp.locationEvent.source')}
                 id="location-event-source"
                 name="source"
                 data-cy="source"
@@ -142,12 +147,12 @@ export const LocationEventUpdate = () => {
               >
                 {locationSourceValues.map(locationSource => (
                   <option value={locationSource} key={locationSource}>
-                    {translate(`smartassetcoreApp.LocationSource.${locationSource}`)}
+                    {translate(`SmartAssetCoreApp.LocationSource.${locationSource}`)}
                   </option>
                 ))}
               </ValidatedField>
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.observedAt')}
+                label={translate('SmartAssetCoreApp.locationEvent.observedAt')}
                 id="location-event-observedAt"
                 name="observedAt"
                 data-cy="observedAt"
@@ -158,56 +163,74 @@ export const LocationEventUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.zoneConfidence')}
+                label={translate('SmartAssetCoreApp.locationEvent.zoneConfidence')}
                 id="location-event-zoneConfidence"
                 name="zoneConfidence"
                 data-cy="zoneConfidence"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.rssi')}
+                label={translate('SmartAssetCoreApp.locationEvent.rssi')}
                 id="location-event-rssi"
                 name="rssi"
                 data-cy="rssi"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.txPower')}
+                label={translate('SmartAssetCoreApp.locationEvent.txPower')}
                 id="location-event-txPower"
                 name="txPower"
                 data-cy="txPower"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.latitude')}
+                label={translate('SmartAssetCoreApp.locationEvent.latitude')}
                 id="location-event-latitude"
                 name="latitude"
                 data-cy="latitude"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
+                }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.longitude')}
+                label={translate('SmartAssetCoreApp.locationEvent.longitude')}
                 id="location-event-longitude"
                 name="longitude"
                 data-cy="longitude"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                  validate: v => isNumber(v) || translate('entity.validation.number'),
+                }}
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.accuracyMeters')}
+                label={translate('SmartAssetCoreApp.locationEvent.accuracyMeters')}
                 id="location-event-accuracyMeters"
                 name="accuracyMeters"
                 data-cy="accuracyMeters"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.speedKmh')}
+                label={translate('SmartAssetCoreApp.locationEvent.speedKmh')}
                 id="location-event-speedKmh"
                 name="speedKmh"
                 data-cy="speedKmh"
                 type="text"
               />
               <ValidatedField
-                label={translate('smartassetcoreApp.locationEvent.rawPayload')}
+                label={translate('SmartAssetCoreApp.locationEvent.gnssConstellation')}
+                id="location-event-gnssConstellation"
+                name="gnssConstellation"
+                data-cy="gnssConstellation"
+                type="text"
+                validate={{
+                  maxLength: { value: 50, message: translate('entity.validation.maxlength', { max: 50 }) },
+                }}
+              />
+              <ValidatedField
+                label={translate('SmartAssetCoreApp.locationEvent.rawPayload')}
                 id="location-event-rawPayload"
                 name="rawPayload"
                 data-cy="rawPayload"
@@ -220,46 +243,66 @@ export const LocationEventUpdate = () => {
                 id="location-event-asset"
                 name="asset"
                 data-cy="asset"
-                label={translate('smartassetcoreApp.locationEvent.asset')}
+                label={translate('SmartAssetCoreApp.locationEvent.asset')}
                 type="select"
+                required
               >
                 <option value="" key="0" />
                 {assets
                   ? assets.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.assetCode}
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <FormText>
+                <Translate contentKey="entity.validation.required">This field is required.</Translate>
+              </FormText>
+              <ValidatedField
+                id="location-event-sensor"
+                name="sensor"
+                data-cy="sensor"
+                label={translate('SmartAssetCoreApp.locationEvent.sensor')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {sensors
+                  ? sensors.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}
               </ValidatedField>
               <ValidatedField
-                id="location-event-zone"
-                name="zone"
-                data-cy="zone"
-                label={translate('smartassetcoreApp.locationEvent.zone')}
+                id="location-event-matchedSite"
+                name="matchedSite"
+                data-cy="matchedSite"
+                label={translate('SmartAssetCoreApp.locationEvent.matchedSite')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {sites
+                  ? sites.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                id="location-event-matchedZone"
+                name="matchedZone"
+                data-cy="matchedZone"
+                label={translate('SmartAssetCoreApp.locationEvent.matchedZone')}
                 type="select"
               >
                 <option value="" key="0" />
                 {zones
                   ? zones.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.code}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <ValidatedField
-                id="location-event-gateway"
-                name="gateway"
-                data-cy="gateway"
-                label={translate('smartassetcoreApp.locationEvent.gateway')}
-                type="select"
-              >
-                <option value="" key="0" />
-                {gateways
-                  ? gateways.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.code}
+                        {otherEntity.id}
                       </option>
                     ))
                   : null}

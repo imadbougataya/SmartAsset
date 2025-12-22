@@ -43,8 +43,8 @@ export const AssetMovementRequestDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="assetMovementRequestDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.assetMovementRequest.delete.question">
-        <Translate contentKey="smartassetcoreApp.assetMovementRequest.delete.question" interpolate={{ id: assetMovementRequestEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.assetMovementRequest.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.assetMovementRequest.delete.question" interpolate={{ id: assetMovementRequestEntity.id }}>
           Are you sure you want to delete this AssetMovementRequest?
         </Translate>
       </ModalBody>

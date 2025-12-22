@@ -92,16 +92,16 @@ export const Gateway = () => {
   return (
     <div>
       <h2 id="gateway-heading" data-cy="GatewayHeading">
-        <Translate contentKey="smartassetcoreApp.gateway.home.title">Gateways</Translate>
+        <Translate contentKey="SmartAssetCoreApp.gateway.home.title">Gateways</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.gateway.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.gateway.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/gateway/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.gateway.home.createLabel">Create new Gateway</Translate>
+            <Translate contentKey="SmartAssetCoreApp.gateway.home.createLabel">Create new Gateway</Translate>
           </Link>
         </div>
       </h2>
@@ -111,46 +111,46 @@ export const Gateway = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('code')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.code">Code</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.code">Code</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
                 </th>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.name">Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th className="hand" onClick={sort('vendor')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.vendor">Vendor</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.vendor">Vendor</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('vendor')} />
                 </th>
                 <th className="hand" onClick={sort('model')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.model">Model</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.model">Model</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('model')} />
                 </th>
                 <th className="hand" onClick={sort('macAddress')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.macAddress">Mac Address</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.macAddress">Mac Address</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('macAddress')} />
                 </th>
                 <th className="hand" onClick={sort('ipAddress')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.ipAddress">Ip Address</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.ipAddress">Ip Address</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('ipAddress')} />
                 </th>
                 <th className="hand" onClick={sort('installedAt')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.installedAt">Installed At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.installedAt">Installed At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('installedAt')} />
                 </th>
                 <th className="hand" onClick={sort('active')}>
-                  <Translate contentKey="smartassetcoreApp.gateway.active">Active</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.gateway.active">Active</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('active')} />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.gateway.site">Site</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.gateway.site">Site</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th>
-                  <Translate contentKey="smartassetcoreApp.gateway.zone">Zone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="SmartAssetCoreApp.gateway.zone">Zone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -171,8 +171,8 @@ export const Gateway = () => {
                   <td>{gateway.ipAddress}</td>
                   <td>{gateway.installedAt ? <TextFormat type="date" value={gateway.installedAt} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{gateway.active ? 'true' : 'false'}</td>
-                  <td>{gateway.site ? <Link to={`/site/${gateway.site.id}`}>{gateway.site.code}</Link> : ''}</td>
-                  <td>{gateway.zone ? <Link to={`/zone/${gateway.zone.id}`}>{gateway.zone.code}</Link> : ''}</td>
+                  <td>{gateway.site ? <Link to={`/site/${gateway.site.id}`}>{gateway.site.id}</Link> : ''}</td>
+                  <td>{gateway.zone ? <Link to={`/zone/${gateway.zone.id}`}>{gateway.zone.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/gateway/${gateway.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -215,7 +215,7 @@ export const Gateway = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.gateway.home.notFound">No Gateways found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.gateway.home.notFound">No Gateways found</Translate>
             </div>
           )
         )}

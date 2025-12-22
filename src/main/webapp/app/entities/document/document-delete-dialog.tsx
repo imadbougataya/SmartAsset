@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,7 @@ import { deleteEntity, getEntity } from './document.reducer';
 
 export const DocumentDeleteDialog = () => {
   const dispatch = useAppDispatch();
+  const pageLocation = useLocation();
   const navigate = useNavigate();
   const { id } = useParams<'id'>();
 
@@ -23,7 +24,7 @@ export const DocumentDeleteDialog = () => {
   const updateSuccess = useAppSelector(state => state.document.updateSuccess);
 
   const handleClose = () => {
-    navigate('/document');
+    navigate(`/document${pageLocation.search}`);
   };
 
   useEffect(() => {
@@ -42,8 +43,8 @@ export const DocumentDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="documentDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.document.delete.question">
-        <Translate contentKey="smartassetcoreApp.document.delete.question" interpolate={{ id: documentEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.document.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.document.delete.question" interpolate={{ id: documentEntity.id }}>
           Are you sure you want to delete this Document?
         </Translate>
       </ModalBody>

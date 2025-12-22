@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
-import { TextFormat, Translate, getSortState } from 'react-jhipster';
+import { JhiItemCount, JhiPagination, TextFormat, Translate, getPaginationState } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { APP_DATE_FORMAT } from 'app/config/constants';
-import { ASC, DESC } from 'app/shared/util/pagination.constants';
-import { overrideSortStateWithQueryParams } from 'app/shared/util/entity-utils';
+import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
+import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities } from './document.reducer';
@@ -17,22 +17,27 @@ export const Document = () => {
   const pageLocation = useLocation();
   const navigate = useNavigate();
 
-  const [sortState, setSortState] = useState(overrideSortStateWithQueryParams(getSortState(pageLocation, 'id'), pageLocation.search));
+  const [paginationState, setPaginationState] = useState(
+    overridePaginationStateWithQueryParams(getPaginationState(pageLocation, ITEMS_PER_PAGE, 'id'), pageLocation.search),
+  );
 
   const documentList = useAppSelector(state => state.document.entities);
   const loading = useAppSelector(state => state.document.loading);
+  const totalItems = useAppSelector(state => state.document.totalItems);
 
   const getAllEntities = () => {
     dispatch(
       getEntities({
-        sort: `${sortState.sort},${sortState.order}`,
+        page: paginationState.activePage - 1,
+        size: paginationState.itemsPerPage,
+        sort: `${paginationState.sort},${paginationState.order}`,
       }),
     );
   };
 
   const sortEntities = () => {
     getAllEntities();
-    const endURL = `?sort=${sortState.sort},${sortState.order}`;
+    const endURL = `?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`;
     if (pageLocation.search !== endURL) {
       navigate(`${pageLocation.pathname}${endURL}`);
     }
@@ -40,23 +45,44 @@ export const Document = () => {
 
   useEffect(() => {
     sortEntities();
-  }, [sortState.order, sortState.sort]);
+  }, [paginationState.activePage, paginationState.order, paginationState.sort]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(pageLocation.search);
+    const page = params.get('page');
+    const sort = params.get(SORT);
+    if (page && sort) {
+      const sortSplit = sort.split(',');
+      setPaginationState({
+        ...paginationState,
+        activePage: +page,
+        sort: sortSplit[0],
+        order: sortSplit[1],
+      });
+    }
+  }, [pageLocation.search]);
 
   const sort = p => () => {
-    setSortState({
-      ...sortState,
-      order: sortState.order === ASC ? DESC : ASC,
+    setPaginationState({
+      ...paginationState,
+      order: paginationState.order === ASC ? DESC : ASC,
       sort: p,
     });
   };
+
+  const handlePagination = currentPage =>
+    setPaginationState({
+      ...paginationState,
+      activePage: currentPage,
+    });
 
   const handleSyncList = () => {
     sortEntities();
   };
 
   const getSortIconByFieldName = (fieldName: string) => {
-    const sortFieldName = sortState.sort;
-    const order = sortState.order;
+    const sortFieldName = paginationState.sort;
+    const order = paginationState.order;
     if (sortFieldName !== fieldName) {
       return faSort;
     }
@@ -66,16 +92,16 @@ export const Document = () => {
   return (
     <div>
       <h2 id="document-heading" data-cy="DocumentHeading">
-        <Translate contentKey="smartassetcoreApp.document.home.title">Documents</Translate>
+        <Translate contentKey="SmartAssetCoreApp.document.home.title">Documents</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="smartassetcoreApp.document.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="SmartAssetCoreApp.document.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to="/document/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="smartassetcoreApp.document.home.createLabel">Create new Document</Translate>
+            <Translate contentKey="SmartAssetCoreApp.document.home.createLabel">Create new Document</Translate>
           </Link>
         </div>
       </h2>
@@ -85,35 +111,35 @@ export const Document = () => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="smartassetcoreApp.document.id">ID</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.id">ID</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('fileName')}>
-                  <Translate contentKey="smartassetcoreApp.document.fileName">File Name</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.fileName">File Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('fileName')} />
                 </th>
                 <th className="hand" onClick={sort('mimeType')}>
-                  <Translate contentKey="smartassetcoreApp.document.mimeType">Mime Type</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.mimeType">Mime Type</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('mimeType')} />
                 </th>
                 <th className="hand" onClick={sort('sizeBytes')}>
-                  <Translate contentKey="smartassetcoreApp.document.sizeBytes">Size Bytes</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.sizeBytes">Size Bytes</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('sizeBytes')} />
                 </th>
                 <th className="hand" onClick={sort('storageRef')}>
-                  <Translate contentKey="smartassetcoreApp.document.storageRef">Storage Ref</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.storageRef">Storage Ref</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('storageRef')} />
                 </th>
                 <th className="hand" onClick={sort('checksumSha256')}>
-                  <Translate contentKey="smartassetcoreApp.document.checksumSha256">Checksum Sha 256</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.checksumSha256">Checksum Sha 256</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('checksumSha256')} />
                 </th>
                 <th className="hand" onClick={sort('uploadedAt')}>
-                  <Translate contentKey="smartassetcoreApp.document.uploadedAt">Uploaded At</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.uploadedAt">Uploaded At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('uploadedAt')} />
                 </th>
                 <th className="hand" onClick={sort('uploadedBy')}>
-                  <Translate contentKey="smartassetcoreApp.document.uploadedBy">Uploaded By</Translate>{' '}
+                  <Translate contentKey="SmartAssetCoreApp.document.uploadedBy">Uploaded By</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('uploadedBy')} />
                 </th>
                 <th />
@@ -142,14 +168,22 @@ export const Document = () => {
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
-                      <Button tag={Link} to={`/document/${document.id}/edit`} color="primary" size="sm" data-cy="entityEditButton">
+                      <Button
+                        tag={Link}
+                        to={`/document/${document.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
+                        color="primary"
+                        size="sm"
+                        data-cy="entityEditButton"
+                      >
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
                         </span>
                       </Button>
                       <Button
-                        onClick={() => (window.location.href = `/document/${document.id}/delete`)}
+                        onClick={() =>
+                          (window.location.href = `/document/${document.id}/delete?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`)
+                        }
                         color="danger"
                         size="sm"
                         data-cy="entityDeleteButton"
@@ -168,11 +202,29 @@ export const Document = () => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="smartassetcoreApp.document.home.notFound">No Documents found</Translate>
+              <Translate contentKey="SmartAssetCoreApp.document.home.notFound">No Documents found</Translate>
             </div>
           )
         )}
       </div>
+      {totalItems ? (
+        <div className={documentList && documentList.length > 0 ? '' : 'd-none'}>
+          <div className="justify-content-center d-flex">
+            <JhiItemCount page={paginationState.activePage} total={totalItems} itemsPerPage={paginationState.itemsPerPage} i18nEnabled />
+          </div>
+          <div className="justify-content-center d-flex">
+            <JhiPagination
+              activePage={paginationState.activePage}
+              onSelect={handlePagination}
+              maxButtons={5}
+              itemsPerPage={paginationState.itemsPerPage}
+              totalItems={totalItems}
+            />
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

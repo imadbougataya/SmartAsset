@@ -43,8 +43,8 @@ export const ProductionLineDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="productionLineDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.productionLine.delete.question">
-        <Translate contentKey="smartassetcoreApp.productionLine.delete.question" interpolate={{ id: productionLineEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.productionLine.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.productionLine.delete.question" interpolate={{ id: productionLineEntity.id }}>
           Are you sure you want to delete this ProductionLine?
         </Translate>
       </ModalBody>

@@ -43,8 +43,8 @@ export const GatewayDeleteDialog = () => {
       <ModalHeader toggle={handleClose} data-cy="gatewayDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="smartassetcoreApp.gateway.delete.question">
-        <Translate contentKey="smartassetcoreApp.gateway.delete.question" interpolate={{ id: gatewayEntity.id }}>
+      <ModalBody id="SmartAssetCoreApp.gateway.delete.question">
+        <Translate contentKey="SmartAssetCoreApp.gateway.delete.question" interpolate={{ id: gatewayEntity.id }}>
           Are you sure you want to delete this Gateway?
         </Translate>
       </ModalBody>

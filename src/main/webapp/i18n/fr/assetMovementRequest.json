@@ -1,36 +1,36 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "assetMovementRequest": {
       "home": {
-        "title": "AssetMovementRequests",
+        "title": "Demandes de déplacement d’équipement",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Asset Movement Request",
-        "createOrEditLabel": "Créer ou éditer un Asset Movement Request",
-        "notFound": "Aucun Asset Movement Request trouvé"
+        "createLabel": "Créer une nouvelle demande de déplacement",
+        "createOrEditLabel": "Créer ou modifier une demande de déplacement",
+        "notFound": "Aucune demande de déplacement trouvée"
       },
-      "created": "Un nouveau Asset Movement Request a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Asset Movement Request avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Asset Movement Request avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle demande de déplacement a été créée avec l'identifiant {{ param }}",
+      "updated": "La demande de déplacement avec l'identifiant {{ param }} a été mise à jour",
+      "deleted": "La demande de déplacement avec l'identifiant {{ param }} a été supprimée",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Asset Movement Request {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer la demande de déplacement {{ id }} ?"
       },
       "detail": {
-        "title": "Asset Movement Request"
+        "title": "Demande de déplacement d’équipement"
       },
-      "id": "ID",
-      "status": "Status",
-      "requestedAt": "Requested At",
-      "reason": "Reason",
-      "fromLocationLabel": "From Location Label",
-      "toLocationLabel": "To Location Label",
-      "esignWorkflowId": "Esign Workflow Id",
-      "esignStatus": "Esign Status",
-      "esignLastUpdate": "Esign Last Update",
-      "signedAt": "Signed At",
-      "executedAt": "Executed At",
-      "requestedBy": "Requested By",
-      "approvedBy": "Approved By",
-      "asset": "Asset"
+      "id": "Identifiant",
+      "status": "Statut",
+      "requestedAt": "Date de la demande",
+      "reason": "Motif",
+      "fromLocationLabel": "Emplacement de départ",
+      "toLocationLabel": "Emplacement de destination",
+      "esignWorkflowId": "Identifiant du workflow de signature",
+      "esignStatus": "Statut de la signature électronique",
+      "esignLastUpdate": "Dernière mise à jour de la signature",
+      "signedAt": "Signée le",
+      "executedAt": "Exécutée le",
+      "requestedBy": "Demandée par",
+      "approvedBy": "Approuvée par",
+      "asset": "Équipement"
     }
   }
 }

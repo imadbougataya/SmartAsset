@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152051"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -56,22 +56,12 @@
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityField": "observedAt",
-      "otherEntityName": "locationEvent",
-      "otherEntityRelationshipName": "gateway",
-      "relationshipName": "locationEvents",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
-      "otherEntityField": "code",
       "otherEntityName": "site",
       "relationshipName": "site",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },
     {
-      "otherEntityField": "code",
       "otherEntityName": "zone",
       "relationshipName": "zone",
       "relationshipSide": "left",

@@ -1,34 +1,34 @@
 {
-  "smartassetcoreApp": {
+  "SmartAssetCoreApp": {
     "systemEvent": {
       "home": {
-        "title": "SystemEvents",
+        "title": "Événements système",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau System Event",
-        "createOrEditLabel": "Créer ou éditer un System Event",
-        "notFound": "Aucun System Event trouvé"
+        "createLabel": "Créer un nouvel événement système",
+        "createOrEditLabel": "Créer ou modifier un événement système",
+        "notFound": "Aucun événement système trouvé"
       },
-      "created": "Un nouveau System Event a été créé avec l'identifiant {{ param }}",
-      "updated": "Le System Event avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le System Event avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouvel événement système a été créé avec l'identifiant {{ param }}",
+      "updated": "L'événement système avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "L'événement système avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le System Event {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer l'événement système {{ id }} ?"
       },
       "detail": {
-        "title": "System Event"
+        "title": "Événement système"
       },
-      "id": "ID",
-      "eventType": "Event Type",
-      "entityType": "Entity Type",
-      "entityId": "Entity Id",
-      "severity": "Severity",
+      "id": "Identifiant",
+      "eventType": "Type d’événement",
+      "entityType": "Type d’entité",
+      "entityId": "Identifiant de l’entité",
+      "severity": "Niveau de sévérité",
       "source": "Source",
       "message": "Message",
-      "createdAt": "Created At",
-      "createdBy": "Created By",
-      "correlationId": "Correlation Id",
-      "payload": "Payload",
-      "asset": "Asset"
+      "createdAt": "Date de création",
+      "createdBy": "Créé par",
+      "correlationId": "Identifiant de corrélation",
+      "payload": "Données associées",
+      "asset": "Équipement"
     }
   }
 }

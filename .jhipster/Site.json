@@ -2,7 +2,7 @@
   "annotations": {
     "changelogDate": "20251217152048"
   },
-  "applications": ["smartassetcore"],
+  "applications": ["SmartAssetCore"],
   "dto": "mapstruct",
   "fields": [
     {
@@ -22,6 +22,20 @@
       "fieldType": "String",
       "fieldValidateRules": ["maxlength"],
       "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "centerLat",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "centerLon",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "radiusMeters",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "1"
     }
   ],
   "jpaMetamodelFiltering": true,
