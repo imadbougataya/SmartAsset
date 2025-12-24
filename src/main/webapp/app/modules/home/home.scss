@@ -1,10 +1,134 @@
 /* ==========================================================================
-Main page styles
+Home dashboard – Map & Leaflet
 ========================================================================== */
-.hipster {
+
+.home-dashboard {
+  .map-card {
+    border-radius: 0.5rem;
+  }
+
+  .home-map-container {
+    width: 100%;
+    height: 420px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    .leaflet-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* ==========================================================================
+Leaflet LayersControl – HAUT DROITE (TOGGLABLE)
+========================================================================== */
+
+/* Laisse Leaflet gérer la position */
+.leaflet-top.leaflet-right {
+  pointer-events: auto;
+}
+
+/* Bouton ☰ */
+.leaflet-control-layers-toggle {
+  width: 40px !important;
+  height: 40px !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background-position: center !important;
+  background-size: 20px 20px !important;
+
+  border-radius: 6px;
+}
+
+/* Panneau ouvert */
+.leaflet-control-layers-expanded {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Alignement checkbox + label */
+.leaflet-control-layers label {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.leaflet-control-layers input[type='checkbox'] {
+  margin: 0;
+}
+
+/* ==========================================================================
+Custom Legend – BAS DROITE (TOUJOURS VISIBLE)
+========================================================================== */
+
+/* IMPORTANT : on sort la légende du flux Leaflet */
+.map-legend {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* Boîte de légende */
+.map-legend-box {
+  background: #ffffff;
+  padding: 8px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  min-width: 160px;
+  text-align: left;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre */
+.map-legend-box strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Lignes */
+.map-legend-box div {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Icônes */
+.map-legend-box span {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
   display: inline-block;
-  width: 100%;
-  height: 497px;
-  background: url('/content/images/jhipster_family_member_2.svg') no-repeat center top;
-  background-size: contain;
+  border-radius: 2px;
+}
+
+.legend-site {
+  background-color: #14532d;
+}
+
+.legend-zone {
+  background-color: #2563eb;
+}
+
+.legend-gateway {
+  background-color: #2563eb;
+  border-radius: 50%;
+}
+
+.legend-asset {
+  background-color: #000000;
 }
