@@ -1,37 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Col, FormText, Row } from 'reactstrap';
-import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
+import { Button, Card, CardBody, CardHeader, Col, FormText, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
-
 import { getEntities as getProductionLines } from 'app/entities/production-line/production-line.reducer';
 import { getEntities as getSites } from 'app/entities/site/site.reducer';
 import { getEntities as getZones } from 'app/entities/zone/zone.reducer';
+
 import { AssetType } from 'app/shared/model/enumerations/asset-type.model';
 import { AssetStatus } from 'app/shared/model/enumerations/asset-status.model';
 import { Criticality } from 'app/shared/model/enumerations/criticality.model';
 import { AssetGeofencePolicy } from 'app/shared/model/enumerations/asset-geofence-policy.model';
 import { MountingType } from 'app/shared/model/enumerations/mounting-type.model';
 import { TemperatureProbeType } from 'app/shared/model/enumerations/temperature-probe-type.model';
+
 import { createEntity, getEntity, reset, updateEntity } from './asset.reducer';
 
 export const AssetUpdate = () => {
   const dispatch = useAppDispatch();
-
   const navigate = useNavigate();
-
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
+
+  const [activeTab, setActiveTab] = useState<'general' | 'technical' | 'organization'>('general');
 
   const productionLines = useAppSelector(state => state.productionLine.entities);
   const sites = useAppSelector(state => state.site.entities);
   const zones = useAppSelector(state => state.zone.entities);
+
   const assetEntity = useAppSelector(state => state.asset.entity);
   const loading = useAppSelector(state => state.asset.loading);
   const updating = useAppSelector(state => state.asset.updating);
   const updateSuccess = useAppSelector(state => state.asset.updateSuccess);
+
   const assetTypeValues = Object.keys(AssetType);
   const assetStatusValues = Object.keys(AssetStatus);
   const criticalityValues = Object.keys(Criticality);
@@ -40,20 +43,20 @@ export const AssetUpdate = () => {
   const temperatureProbeTypeValues = Object.keys(TemperatureProbeType);
 
   const handleClose = () => {
-    navigate(`/asset${location.search}`);
+    navigate('/asset');
   };
 
   useEffect(() => {
     if (isNew) {
       dispatch(reset());
-    } else {
+    } else if (id) {
       dispatch(getEntity(id));
     }
 
     dispatch(getProductionLines({}));
     dispatch(getSites({}));
     dispatch(getZones({}));
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (updateSuccess) {
@@ -62,52 +65,24 @@ export const AssetUpdate = () => {
   }, [updateSuccess]);
 
   const saveEntity = values => {
-    if (values.id !== undefined && typeof values.id !== 'number') {
-      values.id = Number(values.id);
-    }
-    if (values.powerKw !== undefined && typeof values.powerKw !== 'number') {
-      values.powerKw = Number(values.powerKw);
-    }
-    if (values.voltageV !== undefined && typeof values.voltageV !== 'number') {
-      values.voltageV = Number(values.voltageV);
-    }
-    if (values.currentA !== undefined && typeof values.currentA !== 'number') {
-      values.currentA = Number(values.currentA);
-    }
-    if (values.cosPhi !== undefined && typeof values.cosPhi !== 'number') {
-      values.cosPhi = Number(values.cosPhi);
-    }
-    if (values.speedRpm !== undefined && typeof values.speedRpm !== 'number') {
-      values.speedRpm = Number(values.speedRpm);
-    }
-    if (values.shaftDiameterMm !== undefined && typeof values.shaftDiameterMm !== 'number') {
-      values.shaftDiameterMm = Number(values.shaftDiameterMm);
-    }
-    if (values.footDistanceAmm !== undefined && typeof values.footDistanceAmm !== 'number') {
-      values.footDistanceAmm = Number(values.footDistanceAmm);
-    }
-    if (values.footDistanceBmm !== undefined && typeof values.footDistanceBmm !== 'number') {
-      values.footDistanceBmm = Number(values.footDistanceBmm);
-    }
-    if (values.frontFlangeMm !== undefined && typeof values.frontFlangeMm !== 'number') {
-      values.frontFlangeMm = Number(values.frontFlangeMm);
-    }
-    if (values.rearFlangeMm !== undefined && typeof values.rearFlangeMm !== 'number') {
-      values.rearFlangeMm = Number(values.rearFlangeMm);
-    }
-    if (values.iecAxisHeightMm !== undefined && typeof values.iecAxisHeightMm !== 'number') {
-      values.iecAxisHeightMm = Number(values.iecAxisHeightMm);
-    }
-    if (values.maintenanceCount !== undefined && typeof values.maintenanceCount !== 'number') {
-      values.maintenanceCount = Number(values.maintenanceCount);
-    }
-
     const entity = {
       ...assetEntity,
       ...values,
-      productionLine: productionLines.find(it => it.id.toString() === values.productionLine?.toString()),
-      allowedSite: sites.find(it => it.id.toString() === values.allowedSite?.toString()),
-      allowedZone: zones.find(it => it.id.toString() === values.allowedZone?.toString()),
+      powerKw: values.powerKw ? Number(values.powerKw) : undefined,
+      voltageV: values.voltageV ? Number(values.voltageV) : undefined,
+      currentA: values.currentA ? Number(values.currentA) : undefined,
+      cosPhi: values.cosPhi ? Number(values.cosPhi) : undefined,
+      speedRpm: values.speedRpm ? Number(values.speedRpm) : undefined,
+      shaftDiameterMm: values.shaftDiameterMm ? Number(values.shaftDiameterMm) : undefined,
+      footDistanceAmm: values.footDistanceAmm ? Number(values.footDistanceAmm) : undefined,
+      footDistanceBmm: values.footDistanceBmm ? Number(values.footDistanceBmm) : undefined,
+      frontFlangeMm: values.frontFlangeMm ? Number(values.frontFlangeMm) : undefined,
+      rearFlangeMm: values.rearFlangeMm ? Number(values.rearFlangeMm) : undefined,
+      iecAxisHeightMm: values.iecAxisHeightMm ? Number(values.iecAxisHeightMm) : undefined,
+      maintenanceCount: values.maintenanceCount ? Number(values.maintenanceCount) : undefined,
+      productionLine: productionLines.find(it => it.id === values.productionLine),
+      allowedSite: sites.find(it => it.id === values.allowedSite),
+      allowedZone: zones.find(it => it.id === values.allowedZone),
     };
 
     if (isNew) {
@@ -119,405 +94,189 @@ export const AssetUpdate = () => {
 
   const defaultValues = () =>
     isNew
-      ? {}
-      : {
+      ? {
           assetType: 'INDUSTRIAL_ASSET',
           status: 'ACTIVE',
           criticality: 'LOW',
           geofencePolicy: 'NONE',
           mountingType: 'B3',
           temperatureProbeType: 'NONE',
+        }
+      : {
           ...assetEntity,
-          productionLine: assetEntity?.productionLine?.id,
-          allowedSite: assetEntity?.allowedSite?.id,
-          allowedZone: assetEntity?.allowedZone?.id,
+          productionLine: assetEntity.productionLine?.id,
+          allowedSite: assetEntity.allowedSite?.id,
+          allowedZone: assetEntity.allowedZone?.id,
         };
 
   return (
     <div>
       <Row className="justify-content-center">
-        <Col md="8">
-          <h2 id="SmartAssetCoreApp.asset.home.createOrEditLabel" data-cy="AssetCreateUpdateHeading">
-            <Translate contentKey="SmartAssetCoreApp.asset.home.createOrEditLabel">Create or edit a Asset</Translate>
+        <Col md="10">
+          <h2>
+            <Translate contentKey="SmartAssetCoreApp.asset.home.createOrEditLabel">Create or edit an Asset</Translate>
           </h2>
         </Col>
       </Row>
+
       <Row className="justify-content-center">
-        <Col md="8">
+        <Col md="10">
           {loading ? (
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!isNew ? (
-                <ValidatedField
-                  name="id"
-                  required
-                  readOnly
-                  id="asset-id"
-                  label={translate('global.field.id')}
-                  validate={{ required: true }}
-                />
-              ) : null}
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.assetType')}
-                id="asset-assetType"
-                name="assetType"
-                data-cy="assetType"
-                type="select"
-              >
-                {assetTypeValues.map(assetType => (
-                  <option value={assetType} key={assetType}>
-                    {translate(`SmartAssetCoreApp.AssetType.${assetType}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.assetCode')}
-                id="asset-assetCode"
-                name="assetCode"
-                data-cy="assetCode"
-                type="text"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                  maxLength: { value: 80, message: translate('entity.validation.maxlength', { max: 80 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.reference')}
-                id="asset-reference"
-                name="reference"
-                data-cy="reference"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.description')}
-                id="asset-description"
-                name="description"
-                data-cy="description"
-                type="text"
-                validate={{
-                  maxLength: { value: 500, message: translate('entity.validation.maxlength', { max: 500 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.status')}
-                id="asset-status"
-                name="status"
-                data-cy="status"
-                type="select"
-              >
-                {assetStatusValues.map(assetStatus => (
-                  <option value={assetStatus} key={assetStatus}>
-                    {translate(`SmartAssetCoreApp.AssetStatus.${assetStatus}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.criticality')}
-                id="asset-criticality"
-                name="criticality"
-                data-cy="criticality"
-                type="select"
-              >
-                {criticalityValues.map(criticality => (
-                  <option value={criticality} key={criticality}>
-                    {translate(`SmartAssetCoreApp.Criticality.${criticality}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.geofencePolicy')}
-                id="asset-geofencePolicy"
-                name="geofencePolicy"
-                data-cy="geofencePolicy"
-                type="select"
-              >
-                {assetGeofencePolicyValues.map(assetGeofencePolicy => (
-                  <option value={assetGeofencePolicy} key={assetGeofencePolicy}>
-                    {translate(`SmartAssetCoreApp.AssetGeofencePolicy.${assetGeofencePolicy}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.responsibleName')}
-                id="asset-responsibleName"
-                name="responsibleName"
-                data-cy="responsibleName"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.costCenter')}
-                id="asset-costCenter"
-                name="costCenter"
-                data-cy="costCenter"
-                type="text"
-                validate={{
-                  maxLength: { value: 80, message: translate('entity.validation.maxlength', { max: 80 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.brand')}
-                id="asset-brand"
-                name="brand"
-                data-cy="brand"
-                type="text"
-                validate={{
-                  maxLength: { value: 80, message: translate('entity.validation.maxlength', { max: 80 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.model')}
-                id="asset-model"
-                name="model"
-                data-cy="model"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.serialNumber')}
-                id="asset-serialNumber"
-                name="serialNumber"
-                data-cy="serialNumber"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.powerKw')}
-                id="asset-powerKw"
-                name="powerKw"
-                data-cy="powerKw"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.voltageV')}
-                id="asset-voltageV"
-                name="voltageV"
-                data-cy="voltageV"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.currentA')}
-                id="asset-currentA"
-                name="currentA"
-                data-cy="currentA"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.cosPhi')}
-                id="asset-cosPhi"
-                name="cosPhi"
-                data-cy="cosPhi"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.speedRpm')}
-                id="asset-speedRpm"
-                name="speedRpm"
-                data-cy="speedRpm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.ipRating')}
-                id="asset-ipRating"
-                name="ipRating"
-                data-cy="ipRating"
-                type="text"
-                validate={{
-                  maxLength: { value: 20, message: translate('entity.validation.maxlength', { max: 20 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.insulationClass')}
-                id="asset-insulationClass"
-                name="insulationClass"
-                data-cy="insulationClass"
-                type="text"
-                validate={{
-                  maxLength: { value: 30, message: translate('entity.validation.maxlength', { max: 30 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.mountingType')}
-                id="asset-mountingType"
-                name="mountingType"
-                data-cy="mountingType"
-                type="select"
-              >
-                {mountingTypeValues.map(mountingType => (
-                  <option value={mountingType} key={mountingType}>
-                    {translate(`SmartAssetCoreApp.MountingType.${mountingType}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.shaftDiameterMm')}
-                id="asset-shaftDiameterMm"
-                name="shaftDiameterMm"
-                data-cy="shaftDiameterMm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.footDistanceAmm')}
-                id="asset-footDistanceAmm"
-                name="footDistanceAmm"
-                data-cy="footDistanceAmm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.footDistanceBmm')}
-                id="asset-footDistanceBmm"
-                name="footDistanceBmm"
-                data-cy="footDistanceBmm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.frontFlangeMm')}
-                id="asset-frontFlangeMm"
-                name="frontFlangeMm"
-                data-cy="frontFlangeMm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.rearFlangeMm')}
-                id="asset-rearFlangeMm"
-                name="rearFlangeMm"
-                data-cy="rearFlangeMm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.iecAxisHeightMm')}
-                id="asset-iecAxisHeightMm"
-                name="iecAxisHeightMm"
-                data-cy="iecAxisHeightMm"
-                type="text"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.dimensionsSource')}
-                id="asset-dimensionsSource"
-                name="dimensionsSource"
-                data-cy="dimensionsSource"
-                type="text"
-                validate={{
-                  maxLength: { value: 120, message: translate('entity.validation.maxlength', { max: 120 }) },
-                }}
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.hasHeating')}
-                id="asset-hasHeating"
-                name="hasHeating"
-                data-cy="hasHeating"
-                check
-                type="checkbox"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.temperatureProbeType')}
-                id="asset-temperatureProbeType"
-                name="temperatureProbeType"
-                data-cy="temperatureProbeType"
-                type="select"
-              >
-                {temperatureProbeTypeValues.map(temperatureProbeType => (
-                  <option value={temperatureProbeType} key={temperatureProbeType}>
-                    {translate(`SmartAssetCoreApp.TemperatureProbeType.${temperatureProbeType}`)}
-                  </option>
-                ))}
-              </ValidatedField>
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.lastCommissioningDate')}
-                id="asset-lastCommissioningDate"
-                name="lastCommissioningDate"
-                data-cy="lastCommissioningDate"
-                type="date"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.lastMaintenanceDate')}
-                id="asset-lastMaintenanceDate"
-                name="lastMaintenanceDate"
-                data-cy="lastMaintenanceDate"
-                type="date"
-              />
-              <ValidatedField
-                label={translate('SmartAssetCoreApp.asset.maintenanceCount')}
-                id="asset-maintenanceCount"
-                name="maintenanceCount"
-                data-cy="maintenanceCount"
-                type="text"
-              />
-              <ValidatedField
-                id="asset-productionLine"
-                name="productionLine"
-                data-cy="productionLine"
-                label={translate('SmartAssetCoreApp.asset.productionLine')}
-                type="select"
-                required
-              >
-                <option value="" key="0" />
-                {productionLines
-                  ? productionLines.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
-              <ValidatedField
-                id="asset-allowedSite"
-                name="allowedSite"
-                data-cy="allowedSite"
-                label={translate('SmartAssetCoreApp.asset.allowedSite')}
-                type="select"
-              >
-                <option value="" key="0" />
-                {sites
-                  ? sites.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <ValidatedField
-                id="asset-allowedZone"
-                name="allowedZone"
-                data-cy="allowedZone"
-                label={translate('SmartAssetCoreApp.asset.allowedZone')}
-                type="select"
-              >
-                <option value="" key="0" />
-                {zones
-                  ? zones.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/asset" replace color="info">
-                <FontAwesomeIcon icon="arrow-left" />
+              {/* ===================== TABS ===================== */}
+              <Nav tabs>
+                <NavItem>
+                  <NavLink active={activeTab === 'general'} onClick={() => setActiveTab('general')} style={{ cursor: 'pointer' }}>
+                    Général
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink active={activeTab === 'technical'} onClick={() => setActiveTab('technical')} style={{ cursor: 'pointer' }}>
+                    Technique
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink active={activeTab === 'organization'} onClick={() => setActiveTab('organization')} style={{ cursor: 'pointer' }}>
+                    Organisation
+                  </NavLink>
+                </NavItem>
+              </Nav>
+
+              <TabContent activeTab={activeTab}>
+                {/* ===================== GENERAL ===================== */}
+                <TabPane tabId="general">
+                  <Card className="mt-3">
+                    <CardHeader>Informations générales</CardHeader>
+                    <CardBody>
+                      {!isNew && <ValidatedField name="id" readOnly label={translate('global.field.id')} />}
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.assetType')} name="assetType" type="select">
+                        {assetTypeValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.AssetType.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.assetCode')} name="assetCode" required />
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.reference')} name="reference" />
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.description')} name="description" />
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.status')} name="status" type="select">
+                        {assetStatusValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.AssetStatus.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.criticality')} name="criticality" type="select">
+                        {criticalityValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.Criticality.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.geofencePolicy')} name="geofencePolicy" type="select">
+                        {assetGeofencePolicyValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.AssetGeofencePolicy.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+                    </CardBody>
+                  </Card>
+                </TabPane>
+
+                {/* ===================== TECHNIQUE ===================== */}
+                <TabPane tabId="technical">
+                  <Card className="mt-3">
+                    <CardHeader>Données techniques</CardHeader>
+                    <CardBody>
+                      <ValidatedField label="Puissance (kW)" name="powerKw" />
+                      <ValidatedField label="Tension (V)" name="voltageV" />
+                      <ValidatedField label="Courant (A)" name="currentA" />
+                      <ValidatedField label="Cos φ" name="cosPhi" />
+                      <ValidatedField label="Vitesse (rpm)" name="speedRpm" />
+
+                      <ValidatedField label={translate('SmartAssetCoreApp.asset.mountingType')} name="mountingType" type="select">
+                        {mountingTypeValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.MountingType.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+
+                      <ValidatedField label="Indice IP" name="ipRating" />
+                      <ValidatedField label="Classe isolation" name="insulationClass" />
+
+                      <ValidatedField
+                        label={translate('SmartAssetCoreApp.asset.temperatureProbeType')}
+                        name="temperatureProbeType"
+                        type="select"
+                      >
+                        {temperatureProbeTypeValues.map(v => (
+                          <option key={v} value={v}>
+                            {translate(`SmartAssetCoreApp.TemperatureProbeType.${v}`)}
+                          </option>
+                        ))}
+                      </ValidatedField>
+                    </CardBody>
+                  </Card>
+                </TabPane>
+
+                {/* ===================== ORGANISATION ===================== */}
+                <TabPane tabId="organization">
+                  <Card className="mt-3">
+                    <CardHeader>Organisation & zones</CardHeader>
+                    <CardBody>
+                      <ValidatedField name="productionLine" label="Ligne de production" type="select" required>
+                        <option value="" />
+                        {productionLines.map(pl => (
+                          <option key={pl.id} value={pl.id}>
+                            {pl.name || pl.code || pl.label || `Ligne ${pl.id}`}
+                          </option>
+                        ))}
+                      </ValidatedField>
+                      <FormText>Champ requis</FormText>
+
+                      <ValidatedField name="allowedSite" label="Site autorisé" type="select">
+                        <option value="" />
+                        {sites.map(site => (
+                          <option key={site.id} value={site.id}>
+                            {site.name || site.code || `Site ${site.id}`}
+                          </option>
+                        ))}
+                      </ValidatedField>
+
+                      <ValidatedField name="allowedZone" label="Zone autorisée" type="select">
+                        <option value="" />
+                        {zones.map(zone => (
+                          <option key={zone.id} value={zone.id}>
+                            {zone.name || zone.code || `Zone ${zone.id}`}
+                          </option>
+                        ))}
+                      </ValidatedField>
+                    </CardBody>
+                  </Card>
+                </TabPane>
+              </TabContent>
+
+              {/* ===================== ACTIONS ===================== */}
+              <div className="mt-4">
+                <Button tag={Link} to="/asset" color="info">
+                  <FontAwesomeIcon icon="arrow-left" /> Back
+                </Button>
                 &nbsp;
-                <span className="d-none d-md-inline">
-                  <Translate contentKey="entity.action.back">Back</Translate>
-                </span>
-              </Button>
-              &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
-                <FontAwesomeIcon icon="save" />
-                &nbsp;
-                <Translate contentKey="entity.action.save">Save</Translate>
-              </Button>
+                <Button color="primary" type="submit" disabled={updating}>
+                  <FontAwesomeIcon icon="save" /> Save
+                </Button>
+              </div>
             </ValidatedForm>
           )}
         </Col>

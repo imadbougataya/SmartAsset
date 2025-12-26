@@ -12,6 +12,10 @@ const AssetMovementRequestRoutes = () => (
   <ErrorBoundaryRoutes>
     <Route index element={<AssetMovementRequest />} />
     <Route path="new" element={<AssetMovementRequestUpdate />} />
+
+    {/* ✅ ROUTE MÉTIER CONTEXTUALISÉE */}
+    <Route path="from-asset/:assetId" element={<AssetMovementRequestUpdate />} />
+
     <Route path=":id">
       <Route index element={<AssetMovementRequestDetail />} />
       <Route path="edit" element={<AssetMovementRequestUpdate />} />

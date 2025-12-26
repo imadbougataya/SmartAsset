@@ -56,7 +56,9 @@
       "locationEvents": "Événements de localisation",
       "site": "Site",
       "productionLine": "Ligne de production",
-      "currentZone": "Zone actuelle"
+      "currentZone": "Zone actuelle",
+      "allowedSite": "Site autorisé",
+      "allowedZone": "Zone autorisée"
     }
   }
 }

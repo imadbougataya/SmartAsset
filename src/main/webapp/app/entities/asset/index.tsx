@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
-
+import { Route } from 'react-router-dom';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 import Asset from './asset';
@@ -8,10 +7,18 @@ import AssetDetail from './asset-detail';
 import AssetUpdate from './asset-update';
 import AssetDeleteDialog from './asset-delete-dialog';
 
+import AssetMovementRequestUpdate from '../asset-movement-request/asset-movement-request-update';
+
 const AssetRoutes = () => (
   <ErrorBoundaryRoutes>
     <Route index element={<Asset />} />
     <Route path="new" element={<AssetUpdate />} />
+
+    {/* ✅ ROUTE MÉTIER CORRECTE */}
+    <Route path=":id/request-move">
+      <Route index element={<AssetMovementRequestUpdate />} />
+    </Route>
+
     <Route path=":id">
       <Route index element={<AssetDetail />} />
       <Route path="edit" element={<AssetUpdate />} />
